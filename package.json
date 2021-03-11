@@ -1,0 +1,31 @@
+{
+  "name": "webthethao",
+  "version": "1.0.0",
+  "description": "Web the thao lam do an mon hoc IE213.L21",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --inspect index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TuongPhat812/Web_The_Thao.git"
+  },
+  "keywords": [
+    "Web",
+    "the",
+    "thao"
+  ],
+  "author": "Tuong Phat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TuongPhat812/Web_The_Thao/issues"
+  },
+  "homepage": "https://github.com/TuongPhat812/Web_The_Thao#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
