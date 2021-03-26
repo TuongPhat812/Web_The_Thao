@@ -2,9 +2,9 @@
   "name": "webthethao",
   "version": "1.0.0",
   "description": "Web the thao lam do an mon hoc IE213.L21",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon --inspect index.js",
+    "start": "nodemon --inspect src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,7 +23,14 @@
   },
   "homepage": "https://github.com/TuongPhat812/Web_The_Thao#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.12.0",
+    "mongoose-delete": "^0.5.3",
+    "mongoose-slug-generator": "^1.0.4",
+    "morgan": "^1.10.0",
+    "node-sass": "^5.0.0"
   },
   "devDependencies": {
     "nodemon": "^2.0.7"
