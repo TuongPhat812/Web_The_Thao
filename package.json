@@ -33,6 +33,7 @@
     "node-sass": "^5.0.0"
   },
   "devDependencies": {
+    "mongodb": "^3.6.6",
     "nodemon": "^2.0.7"
   }
 }
