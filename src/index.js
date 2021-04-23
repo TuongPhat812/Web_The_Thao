@@ -3,13 +3,12 @@ const express = require('express');
 const morgan = require('morgan');
 const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
-//const db = require('./config/db');
 
-//db.connect();
 const app = express();
 const port = 3000;
 const route = require('./routes/');
-
+const db = require('./config/db/index') //chứa hàm connect()
+db.connect();
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({
@@ -29,8 +28,7 @@ app.set('views', path.join(__dirname, 'resources', 'views'));
 route(app);
 
 //connect db
-const db = require('./config/db/index') //chứa hàm connect()
-db.connect();
+
 
 var hello = () => "Hello"
 

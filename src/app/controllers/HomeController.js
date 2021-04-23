@@ -1,7 +1,16 @@
+const Product = require('../models/Product')
+
 class HomeController {
     // GET /home
     index(req, res, next) {
-        res.render("HomeView")
+        
+        Product.findOne({_id: 140})
+        // .then(function(product){
+        //     res.render('HomeView')//{product: product.toObject()})
+            
+        // })
+        .then(product => console.log(product))
+        .catch(next)
             //     .then(XoaSP)
             //     .then(XoaUser);
             // redirect

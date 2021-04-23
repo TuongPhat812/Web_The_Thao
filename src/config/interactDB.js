@@ -10,75 +10,75 @@ mongoClient.connect('mongodb://127.0.0.1:27017/WebTheThao', function(err, client
     var db = client.db('WebTheThao');
     //tao collection
     //chi tiet don hang
-    db.createCollection('InvoiceDetails', function(err, res) {
+    db.createCollection('invoicedetails', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //don hang
-    db.createCollection('Invoices', function(err, res) {
+    db.createCollection('invoices', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //danh muc category
-    db.createCollection('Categorys', function(err, res) {
+    db.createCollection('categories', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //  Nguoi dung
-    db.createCollection('Users', function(err, res) {
+    db.createCollection('users', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //lien he
-    db.createCollection('Contacts', function(err, res) {
+    db.createCollection('contacts', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //ProductGroup
-    db.createCollection('ProductGroups', function(err, res) {
+    db.createCollection('productgroups', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //slide
-    db.createCollection('Slides', function(err, res) {
+    db.createCollection('slides', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //san pham
-    db.createCollection('Products', function(err, res) {
+    db.createCollection('products', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //thong tin
-    db.createCollection('Infomations', function(err, res) {
+    db.createCollection('infomations', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
     //tin tức
-    db.createCollection('News', function(err, res) {
+    db.createCollection('news', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
 
-    var invoiceDetails = db.collection('InvoiceDetails');
-    var invoices = db.collection('Invoices');
-    var categorys = db.collection('Categorys');
-    var users = db.collection('Users');
-    var contacts = db.collection('Contacts');
-    var productGroups = db.collection('ProductGroups');
-    var slides = db.collection('Slides');
-    var products = db.collection('Products');
-    var infomations = db.collection('Infomations');
-    var news = db.collection('News');
+    var invoiceDetails = db.collection('invoicedetails');
+    var invoices = db.collection('invoices');
+    var categories = db.collection('categories');
+    var users = db.collection('users');
+    var contacts = db.collection('contacts');
+    var productGroups = db.collection('productgroups');
+    var slides = db.collection('slides');
+    var products = db.collection('products');
+    var infomations = db.collection('infomations');
+    var news = db.collection('news');
 
     var insertCall = function(err, res) {
         //neu xay ra loi
@@ -123,7 +123,7 @@ mongoClient.connect('mongodb://127.0.0.1:27017/WebTheThao', function(err, client
         { _id: 33, id_nhomsp: 1, ten_danhmuc: 'QUẦN, VÁY' },
         { _id: 34, id_nhomsp: 1, ten_danhmuc: 'GIÀY' }
     ];
-    categorys.insertMany(data, insertCall);
+    categories.insertMany(data, insertCall);
 
     //insert cho don hang
     data = [
