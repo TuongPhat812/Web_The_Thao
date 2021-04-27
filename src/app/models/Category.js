@@ -16,4 +16,4 @@ const Category = new Schema({
         overrideMethods: true
     });
     */
-module.exports = mongoose.model('categories', Category);
+module.exports = mongoose.model('categorys', Category);

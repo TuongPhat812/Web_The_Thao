@@ -22,7 +22,7 @@ mongoClient.connect('mongodb://127.0.0.1:27017/WebTheThao', function(err, client
     });
 
     //danh muc category
-    db.createCollection('categories', function(err, res) {
+    db.createCollection('categorys', function(err, res) {
         if (err) throw err;
         console.log('Tao thanh cong collection');
     });
@@ -71,7 +71,7 @@ mongoClient.connect('mongodb://127.0.0.1:27017/WebTheThao', function(err, client
 
     var invoiceDetails = db.collection('invoicedetails');
     var invoices = db.collection('invoices');
-    var categories = db.collection('categories');
+    var categories = db.collection('categorys');
     var users = db.collection('users');
     var contacts = db.collection('contacts');
     var productGroups = db.collection('productgroups');
@@ -123,7 +123,7 @@ mongoClient.connect('mongodb://127.0.0.1:27017/WebTheThao', function(err, client
         { _id: 33, id_nhomsp: 1, ten_danhmuc: 'QUẦN, VÁY' },
         { _id: 34, id_nhomsp: 1, ten_danhmuc: 'GIÀY' }
     ];
-    categories.insertMany(data, insertCall);
+    categorys.insertMany(data, insertCall);
 
     //insert cho don hang
     data = [

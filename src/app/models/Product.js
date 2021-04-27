@@ -7,7 +7,7 @@ const Schema = mongoose.Schema;
 
 const Product = new Schema({
         _id: { type: Number },
-        id_danhmuc: { type: Number, ref: 'categories', required: true },
+        id_danhmuc: { type: Number, ref: 'categorys', required: true },
         ten_sanpham: { type: String, max: 200 },
         anh_sanpham: { type: String },
         ngaydang: { type: Date, default: Date.now },
