@@ -1,1 +1,95 @@
-<h1>head</h1>
+
+<div class="dn">
+	<div class="user">  <!--Box chức năng đăng ký / đăng nhập  -->
+		<ul>
+			<li>
+				<a href="khach-hang.html"><i class="fas fa-user"></i></a>
+                <a href="khach-hang.html"> Chào </a>
+                <a href="index.php?controller=logout">/Đăng xuất</a>
+				
+                <a href="dang-nhap.html">Đăng nhập</a> /
+                <a href="dang-ky.html">Đăng ký</a>
+                
+                </a> </li>
+
+		</ul>
+	</div>
+	<div class="search">
+		<form method="GET">
+			<div class="search-box" style="">
+				<input name="ten_sp"  style="border:0px;  text-align:left; line-height:30px;"type="text" placeholder="Nhập từ khóa tìm kiếm" />
+				<a href="">
+				<input class="search_btn" type="submit" value="search" style="height: 28px; width: 55px">
+				</a>
+			</div> 
+			<input type="hidden" name="controller" value="search">
+		</form>
+		
+	</div>
+	<div class="cart">  <!-- box giỏ hàng  -->
+		<a href="gio-hang.html">
+			<div id="shopping-cart">
+				<i title="Click để xem giở hàng" class="fas fa-shopping-cart"></i>
+			</div>
+			<div id="thongbao">
+		<span  style="text-align:center; line-height:30px; color:#FFF; margin-left:10px;" class="tb">Có <strong style="color:#006633">
+			
+		</strong> sản phẩm</span>
+			</div>
+	</div> 
+	
+</div>
+<!--menu-->
+<div class="wrapper">
+	
+<div class="main">
+
+ 	
+</div>
+<!-- Footer -->
+	
+	<!-- Nút lên đầu trang-->
+	<a class="btn-top" href="javascript:void(0);" title="Top" style="display: inline;"><img style="width: 30px" src="https://1.bp.blogspot.com/-KzRQvTg-RsY/VVru5Zsk6kI/AAAAAAAARQA/om7gk_vC_8I/s300/up-arrow-icon.png"></a>
+	<!--chatbox-->
+	<button class="nut-mo-chatbox" onclick="moForm()"><img style="width: 40px" src="https://www.flaticon.com/svg/static/icons/svg/3814/3814507.svg"></button>
+	 <div class="Chatbox" id="myForm">
+	   <form action="" class="form-container">
+		 <h1>SPORT.VN</h1>
+		<label style="padding-top: 100px" for="msg">Xin chào! Chúng tôi có thể giúp gì cho bạn?</label>
+		 <textarea placeholder="Bạn hãy nhập lời nhắn.." name="msg" required></textarea>
+		<button type="submit" class="btn">Gửi</button>
+		 <button type="button" class="btn nut-dong-chatbox" onclick="dongForm()">Đóng</button>
+	   </form>
+</div>
+
+
+
+
+<!-- Menu Top Sản phẩm -->	
+<link rel="stylesheet" href="../css/style.css">
+
+<div class="menu_top">
+    <div class="logo">  <!-- ảnh logo shop  -->
+    <div class="anh_logo"><a href="trang-chu.html"><img src="../images/images_html/Capture.png" style="height:60px; border-bottom-left-radius: 5px;"></a></div>
+    </div>
+    <ul>
+        <li><a href="trang-chu.html">Trang Chủ</a></li>
+        <li><a href="san-pham-moi.html">Sản Phẩm Mới</a></li>
+        <li><a href="tin-tuc.html">Tin Tức</a></li>
+        <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
+        <li><a href="lien-he.html">Liên Hệ</a></li>
+        <li><a href="ban-do.html">Bản Đồ</a></li>
+        <li><a href="huong-dan-mua-hang.html">Mua Hàng</a></li>
+    </ul>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $(".zoom1").cycle({ 
+            fx:    'box', 
+            sync:  false, 
+            delay: -2000 
+        });
+    });
+</script>
+
+</div>
+

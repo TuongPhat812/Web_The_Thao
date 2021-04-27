@@ -1,4 +1,4 @@
-{ _id: 1, ten_khachhang: 'Diem', email: '18520596@gm.uit.edu.vn', message: 'hihi', tinh_trang: 0, ngaydang: '2020-12-27' },
+
 const mongoose = require('mongoose');
 const mongooseDelete = require('mongoose-delete');
 const slug = require('mongoose-slug-generator');
