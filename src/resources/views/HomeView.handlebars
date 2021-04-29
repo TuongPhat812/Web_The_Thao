@@ -189,7 +189,7 @@
 
 
 
-<!--
+
 <form action="/register" method="POST">
   <label for="username">username:</label><br>
   <input type="text" id="username" name="username"><br>
@@ -199,6 +199,8 @@
   <input type="text" id="email" name="email"><br>
   <label for="fullname">fullname:</label><br>
   <input type="text" id="fullname" name="fullname"><br>
+  <label for="diachi">diachi:</label><br>
+  <input type="text" id="diachi" name="diachi"><br>
   <label for="sdt">sdt:</label><br>
   <input type="text" id="sdt" name="sdt"><br>
   <input type="submit">    
@@ -213,9 +215,7 @@
   <input type="submit"> 
 </form>
 
-{{renderUserName authenticated}}
-{{renderUserEmail authenticated}}
-{{renderUserSDT authenticated}}
-{{renderUserDiaChi authenticated}}
-
--->
+{{renderUserName user}}
+{{renderUserEmail user}}
+{{renderUserSDT user}}
+{{renderUserDiaChi user}}

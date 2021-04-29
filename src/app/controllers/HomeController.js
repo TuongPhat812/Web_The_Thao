@@ -5,9 +5,9 @@ class HomeController {
     index(req, res, next) {
         
 
-        const authenticated = res.locals.user
+        const user = res.locals.user
         
-        res.render('HomeView',{authenticated})
+        res.render('HomeView',{user})
         // .then(function(product){
         //     res.render('HomeView')//{product: product.toObject()})
         // })
@@ -47,6 +47,20 @@ class HomeController {
             })
             .catch(next)
     }
+    logout(req, res, next) {
+                
+                    req.session.userName = undefined
+                    req.session.email = undefined
+                    req.session.fullname = undefined
+                    req.session.sdt = undefined
+                    req.session.diaChi = undefined
+                    res.redirect('/')
+                
+                
+    }
+            
+    
+
     register(req,res,next){
         User.findOne({
             username: req.body.username,
@@ -61,6 +75,7 @@ class HomeController {
             else
                 { 
                     const user = new User({
+                        _id : Math.random(),
                         username : req.body.username,
                         password : req.body.password,
                         diachi: req.body.diachi,
@@ -71,10 +86,10 @@ class HomeController {
                     })
                     
                     console.log(user);
-                    //user.save()
+                    user.save()
                 }
-                res.render('HomeView')
-            //res.redirect('/')
+                
+            res.redirect('/')
         })
         .catch(next)
     }

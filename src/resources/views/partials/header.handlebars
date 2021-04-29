@@ -3,14 +3,16 @@
 	<div class="user">  <!--Box chức năng đăng ký / đăng nhập  -->
 		<ul>
 			<li>
+				{{#if user.userName}}
 				<a href="khach-hang.html"><i class="fas fa-user"></i></a>
-                <a href="khach-hang.html"> Chào </a>
-                <a href="index.php?controller=logout">/Đăng xuất</a>
-				
+                <a href="khach-hang.html"> Chào {{user.userName}}</a>
+                <a href="/logout">/Đăng xuất</a>
+				{{else}}
                 <a href="dang-nhap.html">Đăng nhập</a> /
                 <a href="dang-ky.html">Đăng ký</a>
-                
+                {{/if}}
                 </a> </li>
+				
 
 		</ul>
 	</div>
@@ -70,10 +72,10 @@
 
 <div class="menu_top">
     <div class="logo">  <!-- ảnh logo shop  -->
-    <div class="anh_logo"><a href="trang-chu.html"><img src="../images/images_html/Capture.png" style="height:60px; border-bottom-left-radius: 5px;"></a></div>
+    <div class="anh_logo"><a href="/"><img src="../images/images_html/Capture.png" style="height:60px; border-bottom-left-radius: 5px;"></a></div>
     </div>
     <ul>
-        <li><a href="trang-chu.html">Trang Chủ</a></li>
+        <li><a href="/">Trang Chủ</a></li>
         <li><a href="san-pham-moi.html">Sản Phẩm Mới</a></li>
         <li><a href="tin-tuc.html">Tin Tức</a></li>
         <li><a href="gioi-thieu.html">Giới Thiệu</a></li>
