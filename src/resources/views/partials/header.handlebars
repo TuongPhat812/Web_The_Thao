@@ -5,7 +5,8 @@
 			<li>
 				{{#if user.userName}}
 				<a href="khach-hang.html"><i class="fas fa-user"></i></a>
-                <a href="khach-hang.html"> Chào {{user.userName}}</a>
+                <a href="#"> Chào {{user.userName}}</a>
+				
                 <a href="/logout">/Đăng xuất</a>
 				{{else}}
                 <a href="dang-nhap.html">Đăng nhập</a> /
@@ -91,6 +92,7 @@
             delay: -2000 
         });
     });
+
 </script>
 
 </div>

@@ -1,0 +1,102 @@
+<script type="text/javascript">
+	function checkform()
+	{
+		if(document.getElementById("soluong").value<0)
+		{
+			alert ('Số lượng không đk nhỏ hơn 0');
+			return false;
+		}
+		else
+			return true;
+	}
+</script>
+
+<div>
+
+<form method="post" action="index.php?controller=cart&act=update">
+	<table cellpadding="5" border="1" style="border-collapse: collapse; color:#000000; background-color:#FEFBF1
+	  ">
+		<tr style="height: 50px">
+			<th style="width: 50px;">STT</th>
+			<th style="width:100px">Ảnh</th>
+			<th style="width:200px">Tên sản phẩm</th>
+			<th style="width:200px">Giá</th>
+			<th style="width:100px">Số lượng</th>
+			<th style="width:100px">Thao tác</th>
+		</tr>
+	<!-- <?php
+		$stt = 0;
+		foreach($_SESSION["cart"] as $key=>$rows) //Lăp cả $key là key của mảng, $row là giá trị
+		{
+			$stt++;
+	?> -->
+		<tr style="height: 150px;">
+			<td style="text-align: center;width: 50px;"><?php #?></td> <!-- xuất stt -->
+			<td>
+			<img style="text-align: center;width:100px" src="<?php#?>"> <!-- xuất ảnh sp ($row)  -->
+			</td>
+			<td style="text-align: center;width:200px"><?php#?></td> <!-- xuất tên sp ($row) -->
+			<td style="text-align: center;width:200px"><?php#?> VND</td> <!-- xuất giá ($row) -->
+			<td style="text-align: center;">
+				<input type="number" id="soluong" name="product_<?php #?>" <!-- xuất mã sp ($row) --> value="<?php #?>" <!-- xuất số lượng ($row) --> style="width:50px;">
+			</td>
+			<td style="text-align: center;">
+				<a href="index.php?controller=cart&act=delete&id_sanpham=<?php #?>"> <!-- xuất mã sp ($row) -->
+				Delete
+				</a>
+			</td>
+		</tr>
+	<!-- <?php } ?> -->
+	</table>
+	<br>
+	<table cellpadding="20" cellspacing="20" style="margin-left:200px">
+		<tr>
+			<td>TÊN KHÁCH HÀNG:</td>
+			<td><?php # ?></td> <!-- xuất tên khách hàng (loged_customer) (isset)  --> 
+		</tr>
+		<tr>
+			<td>TỔNG TIỀN:</td>
+			<td><?php #?> VND</td> <!-- xuất cart_total --> 
+		</tr>
+		<tr>
+			<br>
+			<td><input type="submit" onclick="return checkform();" value="Cập nhập tổng tiền"></td>
+			<td><button><a href="index.php?controller=cart&act=destroy">Xóa giỏ hàng</a></button></td>
+
+		</tr>
+		<tr>
+			<td>
+				<div class="dathang"><a href="index.php"><p style="color:#FFF; font-weight:bold">Quay lại</p></a></div>
+			</td>
+<!-- 
+			<?php 
+				if(isset($_SESSION["loged_customer"]))
+				{
+					if(count($_SESSION["cart"])==0)
+					{
+
+
+			 ?>
+-->
+
+			 <td><div class="dathang"><a href=""><p style="color:#FFF; font-weight:bold">Chưa có sản phẩm</p></a></div></td>
+			<!-- <?php } else {?> -->
+
+			<td><div class="dathang"><a href="index.php?controller=dienthongtin"><p style="color:#FFF; font-weight:bold">Đặt Hàng</p></a></div></td>
+			<!-- <?php } ?> -->
+			<!-- <?php }
+			else if(count($_SESSION["cart"])!=0){
+
+			?> -->
+			<td><div class="dathang"><a href="index.php?controller=dienthongtin"><p style="color:#FFF; font-weight:bold">Điền Thông Tin</p></a></div></td>
+		<!-- <?php } 
+		else{
+			?> -->
+			<td><div class="dathang"><a href=""><p style="color:#FFF; font-weight:bold">Chưa có sản phẩm</p></a></div></td>
+		</tr>
+		<!-- <?php } ?> -->
+	</table>
+		
+	</form>
+
+</div>

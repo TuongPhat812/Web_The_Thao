@@ -14,3 +14,4 @@ const User = new Schema({
     isadmin: { type: Number, enum: [0, 1], default: 0 }
 })
 module.exports = mongoose.model('users', User);
+//

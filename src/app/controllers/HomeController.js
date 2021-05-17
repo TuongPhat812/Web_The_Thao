@@ -8,6 +8,7 @@ class HomeController {
         const user = res.locals.user
         
         res.render('HomeView',{user})
+        
         // .then(function(product){
         //     res.render('HomeView')//{product: product.toObject()})
         // })
@@ -23,7 +24,10 @@ class HomeController {
         // redirect
 
     }
+
     //[POST] login
+    //Dùng mongodb với thư viện mongoose
+    //session phiên này nó sẽ
     login(req, res, next) {
         User.findOne({
                 username: req.body.username,
@@ -43,19 +47,24 @@ class HomeController {
                 { 
                     req.session.userName = undefined
                     res.redirect('/login')
+                    
                 }
+                return "Hello"
             })
+            .then(LoiChao => {console.log(LoiChao)} )
             .catch(next)
+    //m dừng cái gì
+    //đù, t tưởng m chỉ đang thực hành cho t, cái đó t hiểu nên ok. chứ có nghe m nói gì đâu, thôi để t gọi lại trên lap
+
     }
     logout(req, res, next) {
                 
-                    req.session.userName = undefined
+        req.session.userName = undefined
                     req.session.email = undefined
                     req.session.fullname = undefined
                     req.session.sdt = undefined
                     req.session.diaChi = undefined
                     res.redirect('/')
-                
                 
     }
             
@@ -68,7 +77,6 @@ class HomeController {
         .then(user => {
             if(user)
             {
-
                 console.log("Username has already existed" + user.username)
                 res.redirect('/')
             }
@@ -105,8 +113,21 @@ class HomeController {
             console.log("No thing");
         }
     }
+    dangnhap(req,res,next){
 
+        res.render('Dangnhap')
+    }
+    dangky(req,res,next){
+
+        res.render('Dangky')
+    }
+    product(req,res,next){
+        const idProduct = req.params['id']
+        console.log(idProduct)
+        res.render('HomeView')
+    }
 
 }
 
 module.exports = new HomeController();
+//

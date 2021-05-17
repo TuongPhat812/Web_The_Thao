@@ -14,7 +14,12 @@ const renderUserSDT = (user) => getSessionUser(user) ? user.sdt : undefined
 const renderUserDiaChi = (user) => getSessionUser(user) ? user.diaChi : undefined
 
 
+const sum = (arr) => {
+    
 
+    const sum = 0
+    return sum;
+}
 
 
 module.exports = {
