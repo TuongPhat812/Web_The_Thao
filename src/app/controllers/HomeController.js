@@ -1,25 +1,33 @@
 const Product = require('../models/Product')
 const User = require('../models/User')
 class HomeController {
-    // GET /home
+    //[GET]: /
     index(req, res, next) {
 
+        //Lấy ra user nếu đã đăng nhập thành công
         const user = res.locals.user;
 
-        //Load sản phẩm hot
-        //load san pham moi
-        Promise.all([Product.find({ sanpham_hot: 1 }), Product.find({ ngaydang: "2020-12-17" })])
-            .then(([products_hot, products_new]) => {
+        //Load sản phẩm hot và mới nhất
+        Promise.all([
+            Product.find({ sanpham_hot: 1 }),
+            Product.find({ ngaydang: "2020-12-17" })
+        ])
+            .then(([
+                products_hot, 
+                products_new
+            ]) => {
                 products_hot = products_hot.map(product_hot => product_hot.toObject());
                 products_new = products_new.map(product_new => product_new.toObject());
-                res.render('HomeView', { products_hot, products_new, user });
+                res.render('HomeView', {
+                    products_hot,
+                    products_new, 
+                    user
+                });
             })
             .catch(next)
     }
 
-    //[POST] login
-    //Dùng mongodb với thư viện mongoose
-    //session phiên này nó sẽ
+    //[POST]: /login
     login(req, res, next) {
         User.findOne({
                 username: req.body.username,
@@ -38,27 +46,21 @@ class HomeController {
                     res.redirect('/login')
 
                 }
-                return "Hello"
             })
-            .then(LoiChao => { console.log(LoiChao) })
             .catch(next)
-            //m dừng cái gì
-            //đù, t tưởng m chỉ đang thực hành cho t, cái đó t hiểu nên ok. chứ có nghe m nói gì đâu, thôi để t gọi lại trên lap
-
     }
-    logout(req, res, next) {
 
+    //[POST]: /logout
+    logout(req, res, next) {
         req.session.userName = undefined
         req.session.email = undefined
         req.session.fullname = undefined
         req.session.sdt = undefined
         req.session.diaChi = undefined
         res.redirect('/')
-
     }
 
-
-
+    //[POST]: /register
     register(req, res, next) {
         User.findOne({
                 username: req.body.username,
@@ -66,7 +68,7 @@ class HomeController {
             .then(user => {
                 if (user) {
                     console.log("Username has already existed" + user.username)
-                    res.redirect('/')
+                    res.render('Dangky', {message: 'Tên đăng nhập đã tồn tại'})
                 } else {
                     const user = new User({
                         _id: Math.random(),
@@ -81,30 +83,19 @@ class HomeController {
 
                     console.log(user);
                     user.save()
+                    res.redirect('/')
                 }
-
-                res.redirect('/')
             })
             .catch(next)
     }
-    test(req, res, next) {
-
-        if (req.session.userName) {
-            res.render('HomeView')
-            console.log(req.session.userName);
-        } else
-
-        {
-            res.render('HomeView')
-            console.log("No thing");
-        }
-    }
+    
+    //[GET]: /login - di chuyển tới form đăng nhập
     dangnhap(req, res, next) {
-
         res.render('Dangnhap')
     }
-    dangky(req, res, next) {
 
+    //[GET]: /register - di chuyển tới form đăng ký
+    dangky(req, res, next) {
         res.render('Dangky')
     }
     product(req, res, next) {
@@ -112,8 +103,6 @@ class HomeController {
         console.log(idProduct)
         res.render('HomeView')
     }
-
 }
 
 module.exports = new HomeController();
-//
