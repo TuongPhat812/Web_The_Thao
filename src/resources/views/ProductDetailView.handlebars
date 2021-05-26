@@ -1,0 +1,277 @@
+    {{!-- <style type="text/css">
+        .t {
+            font-size: 18px;
+            text-align: center;
+            color: #FF9933;
+        }
+        
+        .anh {
+            float: left;
+            width: 400px;
+            margin-left: 10px
+        }
+        
+        .chitiet {
+            float: left;
+            padding-left: 100px;
+            width: 450px;
+        }
+        
+        .luu_y {
+            padding: 0px;
+        }
+        
+        .muahang {
+            border: 1px solid #f93;
+            height: 40px;
+            text-align: center;
+            border-radius: 2px;
+            width: 200px;
+            float: right;
+            background-color: #FF9933;
+        }
+        
+        .muahang a:hover {
+            background-color: #FFFFFF;
+            color: #000000;
+        }
+        
+        .thongtinsp {
+            margin-top: 20px;
+            line-height: 1.7;
+        }
+        
+        .box1 {
+            width: 960px;
+            padding-top: 0px;
+            padding-left: 340px;
+        }
+        
+        .box2 {
+            padding-top: 630px;
+            width: 1200px;
+            height: auto;
+            padding-left: 100px;
+        }
+    </style> --}}
+
+
+<style>
+a:hover{
+	text-decoration: none;
+}
+							
+#myCarousel .thumbnail {    
+margin-bottom: 0;
+
+width: auto;
+}
+.carousel-control.left, .carousel-control.right {   
+background-image:none !important;
+}
+.carousel-control { 
+color:rgb(201, 37, 37); 
+top:40%;    
+color:#428BCA;  
+bottom:auto;    
+padding-top:4px;    
+width:30px; 
+height:30px;    
+text-shadow:none;   
+opacity:1;
+}
+.carousel-control:hover {   
+color: #d9534f;
+}
+.carousel-control.left, .carousel-control.right {   
+background-image:none !important;
+}
+.carousel-control.right {   
+left:auto;  
+right:-32px;
+}
+.carousel-control.left {    
+right:auto; 
+left:-32px;
+}
+.carousel-indicators {  
+bottom:-30px;
+}
+.carousel-indicators li {   
+border-radius:0;    
+width:10px; 
+height:10px;    
+background:#ccc;    
+border:1px solid #ccc;
+}
+.carousel-indicators .active {  
+width:12px; 
+height:12px;    
+background:#3276b1; 
+border-color:#3276b1;
+}
+						</style>
+    <div class="container" style="margin: 0 auto;">
+        <div class="sp" style="width: 100%">
+            <p style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">CHI TIẾT SẢN PHẨM</p>
+        </div>
+		
+		 {{#each products}}
+        <div class="chitietsp" style="padding-top: 70px; margin: 0 auto; width:80%">
+			<div class="d-flex justify-content-between" style=""> 
+				<div>
+        			<img class="anh mb-2" src="/{{this.anh_sanpham}}" style="width:432px; height: 540px" />
+					<div class="d-flex justify-content-between">
+						<img class="anh" src="/{{this.anh_sanpham}}" style="width:140px; height: 140px" />
+						<img class="anh" src="/{{this.anh_sanpham}}" style="width:140px; height: 140px" />
+						<img class="anh" src="/{{this.anh_sanpham}}" style="width:140px; height: 140px" />
+					</div>
+				</div>
+				<div class="ml-5">
+       				<div class="chitiet">
+           				<p style="font-size:20px;font-weight: bold;">{{this.ten_sanpham}}</p>           	
+            			<hr>           	
+            			<p style="color:#EE0000;font-size:18px">GIÁ: {{this.gia}}</p><br>
+					</div>
+					<div class="muahang">	
+                		<a href="" >
+                    		<p align="center" style="color:#FFFFFF; padding: 10px; font-weight: bold; background-color:#f93;">Thêm vào giỏ hàng</p>
+                		</a>
+            		</div>
+            		<div class="thongtinsp">
+                    	<legend class="t">MÔ TẢ</legend>
+                   		<div class="des">{{this.mo_ta}}</div>
+						   <script>
+							   var des = document.querySelector(".des").innerText;
+							   document.querySelector(".des").innerHTML=des;
+						   </script>
+           			 </div>
+						<p style="font-weight: bold;">Từ chất liệu da lộn (suede) quen thuộc, đặt nhẹ nhàng lên "nền tảng" cao su màu Gum nguyên khối, đem đến sự khác biệt mà vẫn hợp lý trên tổng thể. Tất cả chi tiết tạo nên một phiên bản Track 6 Utility Gum Sole cổ điển, đơn giản tiện dụng mà vẫn thu hút đối với những tín đồ thời trang khó tính nhất.</p>
+						<div class="luu_y">
+                <p style="font-size: 12px;">
+                    <strong class="t">LƯU Ý : </strong>
+                    Sản phẩm thật có thể chênh lệch màu sắc khoảng 10% so với hình ảnh trên deal do sự khác nhau về độ phân giải của từng loại màn hình.
+                </p>
+            </div>
+			<div style="">
+            <p style="font-size:15px; background-color:antiquewhite" class="p-2 mb-1"><img style="width: 20px; height: 20px; float: left" src="/images/images_html/mpvc.png" alt="freeship">&nbsp;Miễn phí vận chuyển</p>
+            <p style="font-size:15px; background-color:antiquewhite" class="p-2 mb-1"><img style="width: 20px; height: 20px; float: left" src="/images/images_html/giatot.png" alt="freeship">&nbsp;Giá tốt nhất thị trường</p>
+            <p style="font-size:15px; background-color:antiquewhite" class="p-2 mb-0"><img style="width: 20px; height: 20px; float: left" src="/images/images_html/bh.png" alt="freeship">&nbsp;Chính sách bảo hành uy tín</p>
+			</div>
+				</div>
+			</div>
+            
+			
+            
+            <br>
+        	</div>
+			<br>
+    	
+        {{/each}}
+       
+
+	   <div class="sp" style="width: 100%">
+            <p style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM LIÊN QUAN</p>
+        </div>
+      
+<div class="container"> 
+ <div class="row"> 
+  <div class="well"> 
+   <div id="myCarousel" class="carousel slide" data-ride="carousel" style="width: 100%;"> 
+	  
+    <div class="carousel-inner"> 
+		<div class="d-flex">
+		{{#each product_lienquan}}
+		
+     <div class="carousel-item"> 
+       <div class="col-md-3"> 
+        <div class="thumbnail"> <img src="/{{this.anh_sanpham}}" alt="Sản phẩm 1" width="250"> 
+         <div class="caption"> 
+          <h3>Sản phẩm 1</h3> 
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p> 
+          <p><a href="http://hocwebgiare.com/" class="btn btn-primary" role="button">200.000 đ</a> <a href="http://hocwebgiare.com/" class="btn btn-default" role="button">Đặt hàng</a>
+          </p> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-md-3"> 
+        <div class="thumbnail"> <img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/product/images/2.jpg" alt="Sản phẩm 2" width="250">  
+         <div class="caption"> 
+          <h3>Sản phẩm 2</h3> 
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p> 
+          <p><a href="http://hocwebgiare.com/" class="btn btn-primary" role="button">200.000 đ</a> <a href="http://hocwebgiare.com/" class="btn btn-default" role="button">Đặt hàng</a>
+          </p> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-md-3"> 
+        <div class="thumbnail"> <img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/product/images/3.jpg" alt="Sản phẩm 3" width="250"> 
+         <div class="caption"> 
+          <h3>Sản phẩm 3</h3> 
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p> 
+          <p><a href="http://hocwebgiare.com/" class="btn btn-primary" role="button">200.000 đ</a> <a href="http://hocwebgiare.com/" class="btn btn-default" role="button">Đặt hàng</a>
+          </p> 
+         </div> 
+        </div> 
+       </div> 
+       <div class="col-md-3"> 
+        <div class="thumbnail"> <img src="http://hocwebgiare.com/thiet_ke_web_chuan_demo/product/images/4.jpg" alt="Sản phẩm 4" width="250"> 
+         <div class="caption"> 
+          <h3>Sản phẩm 4</h3> 
+          <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor</p> 
+          <p><a href="http://hocwebgiare.com/" class="btn btn-primary" role="button">200.000 đ</a> <a href="http://hocwebgiare.com/" class="btn btn-default" role="button">Đặt hàng</a>
+          </p> 
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+	 
+	  {{/each}}
+	   </div>
+	  <script>
+		  document.querySelector('.carousel-item').classList.add('active')
+	  </script>
+     <a class="left carousel-control-prev" href="#myCarousel" data-slide="prev"><i class="fa fa-chevron-left fa-2x"></i></a>
+	<a class="right carousel-control-next" href="#myCarousel" data-slide="next"><i class="fa fa-chevron-right fa-2x"></i></a> 
+    <ol class="carousel-indicators"> 
+     <li data-target="#myCarousel" data-slide-to="0" class="active"></li> 
+     <li data-target="#myCarousel" data-slide-to="1"></li> 
+     <li data-target="#myCarousel" data-slide-to="2"></li> 
+    </ol> 
+   </div> 
+   
+  </div> 
+ </div>
+</div>
+
+<script>   
+$('#myCarousel').carousel({ 
+    interval:   4000    
+});
+</script>
+
+
+        <div style="padding-left: 210px">
+            <div class="box_sp">
+                <a href=""><img src="<img class="anh" src="" style="width:432px; height: 540px" />" style=" width:173px; height:216px;">
+                    <p style="text-align:center;padding-top: 10px;padding-right: 30px; height:15px">
+                        <?php echo $value["ten_sanpham"]; ?>
+                    </p>
+                </a>
+                <br/>
+                <p style="color:#F00; text-align:center">Giá:<span style="font-weight:bold">1000000000VND</span></p>
+                <div class="dathang">
+                    <a href="">
+                        <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
+                    </a>
+                </div>
+            </div>
+    </div>
+    
+    <div class="box2">
+		
+        </div>
+
+
+
+    </div>

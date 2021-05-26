@@ -6,13 +6,11 @@ const homeController = require('../app/controllers/HomeController');
 //router.get('/:slug', homeController.show);
 //router.get('/hello', homeController.index);
 
-router.get('/register',homeController.dangky)
-router.post('/register',homeController.register)
-router.get('/login',homeController.dangnhap)
-router.post('/login',homeController.login)
-router.get('/logout',homeController.logout)
-
-router.get('/product/:id',homeController.product)
+router.get('/register', homeController.dangky)
+router.post('/register', homeController.register)
+router.get('/login', homeController.dangnhap)
+router.post('/login', homeController.login)
+router.get('/logout', homeController.logout)
 
 ///router.delete('/')
 

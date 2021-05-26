@@ -1,5 +1,5 @@
 {{>slide}}
-{{>left}}
+
 
 <script type="text/javascript">
   (function ($) {
@@ -12,9 +12,10 @@
   })(jQuery);
 </script>
 
-
+<div class="d-flex container justify-content-between" style="margin: 0 auto; position: relative; left: -15px">
+  {{>left}}
 <!-- giao diện center -->
-<div class="center">
+<div class="center column-6 ">
   <div class="phukien" align="center">
     <!-- Box thời trang nổi bật -->
     <div class="spnoibat">
@@ -25,7 +26,7 @@
      
     {{#each products_hot}}
     <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
-      <a href="">
+      <a href="/products/{{this._id}}">
         <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
         <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
       </a>
@@ -51,7 +52,7 @@
     </div>
     {{#each products_new}}
     <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
-      <a href="">
+      <a href="/products/{{this._id}}">
         <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
         <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
       </a>
@@ -111,7 +112,7 @@
 <!-- The End Center -->
 
 
-<div class="right">
+<div class="right column-3">
   <!-- Sản Phẩm bán chạy -->
   <div class="spbc">
     <h1>SẢN PHẨM BÁN CHẠY</h1>
@@ -120,8 +121,9 @@
 
   <div class="slideshow" align="center">
 
-    <div class="box"><a href=""><img src="../images/images_sp/ambush-jacket-Sm3NKC.jpg"
-          style="width:216px;height:270px;"></a>
+    <div class="box"><
+      a href=""><img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/14/banner-fashion_113854663.jpg"
+          style="width:216px;height:270px;"> </a>
       <br />
       <br />
       <p style="text-align:center;font-weight:bold"></p><br />
@@ -209,3 +211,4 @@
 {{renderUserEmail user}}
 {{renderUserSDT user}}
 {{renderUserDiaChi user}}
+</div>

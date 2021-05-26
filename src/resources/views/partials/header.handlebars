@@ -1,5 +1,5 @@
-
-<div class="dn">
+<div class="container" style="position: relative; left: -15px">
+<div class="dn d-flex container justify-content-around">
 	<div class="user">  <!--Box chức năng đăng ký / đăng nhập  -->
 		<ul>
 			<li>
@@ -29,16 +29,17 @@
 		</form>
 		
 	</div>
-	<div class="cart">  <!-- box giỏ hàng  -->
-		<a href="gio-hang.html">
+	<div class="cart d-flex">  <!-- box giỏ hàng  -->
+		<a href="gio-hang.html" class="d-flex">
 			<div id="shopping-cart">
 				<i title="Click để xem giở hàng" class="fas fa-shopping-cart"></i>
 			</div>
 			<div id="thongbao">
-		<span  style="text-align:center; line-height:30px; color:#FFF; margin-left:10px;" class="tb">Có <strong style="color:#006633">
-			
-		</strong> sản phẩm</span>
+				<span  style="text-align:center; line-height:30px; color:#FFF; margin-left:10px;" class="tb">Có 
+					<strong style="color:#006633">0			
+				</strong> sản phẩm</span>
 			</div>
+		</a>
 	</div> 
 	
 </div>
@@ -52,7 +53,13 @@
 <!-- Footer -->
 	
 	<!-- Nút lên đầu trang-->
-	<a class="btn-top" href="javascript:void(0);" title="Top" style="display: inline;"><img style="width: 30px" src="https://1.bp.blogspot.com/-KzRQvTg-RsY/VVru5Zsk6kI/AAAAAAAARQA/om7gk_vC_8I/s300/up-arrow-icon.png"></a>
+	<script>
+		$("a[href='#top']").click(function() {
+  $("html, body").animate({ scrollTop: 0 }, "slow");
+  return false;
+});
+	</script>
+	<a class="btn-top" href="#top" title="Top" style="display: inline;"><img style="width: 30px" src="https://1.bp.blogspot.com/-KzRQvTg-RsY/VVru5Zsk6kI/AAAAAAAARQA/om7gk_vC_8I/s300/up-arrow-icon.png"></a>
 	<!--chatbox-->
 	<button class="nut-mo-chatbox" onclick="moForm()"><img style="width: 40px" src="https://www.flaticon.com/svg/static/icons/svg/3814/3814507.svg"></button>
 	 <div class="Chatbox" id="myForm">
@@ -71,9 +78,9 @@
 <!-- Menu Top Sản phẩm -->	
 <link rel="stylesheet" href="../css/style.css">
 
-<div class="menu_top">
+<div class="menu_top" style=" background-color:#FFF;">
     <div class="logo">  <!-- ảnh logo shop  -->
-    <div class="anh_logo"><a href="/"><img src="../images/images_html/Capture.png" style="height:60px; border-bottom-left-radius: 5px;"></a></div>
+    <div class="anh_logo mt-1"><a href="/"><img src="../images/images_html/Capture.png" style="height:50px; border-bottom-left-radius: 5px;"></a></div>
     </div>
     <ul>
         <li><a href="/">Trang Chủ</a></li>
@@ -95,5 +102,6 @@
 
 </script>
 
+</div>
 </div>
 

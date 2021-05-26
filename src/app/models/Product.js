@@ -22,9 +22,9 @@ const Product = new Schema({
     });
     */
     //tra ve url cho product
-Product
-    .virtual('url')
-    .get(function() {
-        return '/category/product/_id=' + this._id;
-    });
+    // Product
+    //     .virtual('url')
+    //     .get(function() {
+    //         return '/category/product/_id=' + this._id;
+    //     });
 module.exports = mongoose.model('Product', Product);
