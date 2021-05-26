@@ -1,60 +1,3 @@
-    {{!-- <style type="text/css">
-        .t {
-            font-size: 18px;
-            text-align: center;
-            color: #FF9933;
-        }
-        
-        .anh {
-            float: left;
-            width: 400px;
-            margin-left: 10px
-        }
-        
-        .chitiet {
-            float: left;
-            padding-left: 100px;
-            width: 450px;
-        }
-        
-        .luu_y {
-            padding: 0px;
-        }
-        
-        .muahang {
-            border: 1px solid #f93;
-            height: 40px;
-            text-align: center;
-            border-radius: 2px;
-            width: 200px;
-            float: right;
-            background-color: #FF9933;
-        }
-        
-        .muahang a:hover {
-            background-color: #FFFFFF;
-            color: #000000;
-        }
-        
-        .thongtinsp {
-            margin-top: 20px;
-            line-height: 1.7;
-        }
-        
-        .box1 {
-            width: 960px;
-            padding-top: 0px;
-            padding-left: 340px;
-        }
-        
-        .box2 {
-            padding-top: 630px;
-            width: 1200px;
-            height: auto;
-            padding-left: 100px;
-        }
-    </style> --}}
-
 
 <style>
 a:hover{
@@ -111,7 +54,10 @@ background:#3276b1;
 border-color:#3276b1;
 }
 						</style>
-    <div class="container" style="margin: 0 auto;">
+    <div class="container" style="margin: 0 auto; position: relative; top:120px">
+        <div class="mb-3">
+            <img src="http://socconshop.vn/wp-content/uploads/2014/03/banner-center.png" alt="" height="200">
+        </div>
         <div class="sp" style="width: 100%">
             <p style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">CHI TIẾT SẢN PHẨM</p>
         </div>
@@ -183,7 +129,7 @@ border-color:#3276b1;
 		<div class="d-flex">
 		{{#each product_lienquan}}
 		
-     <div class="carousel-item"> 
+     {{!-- <div class="carousel-item"> 
        <div class="col-md-3"> 
         <div class="thumbnail"> <img src="/{{this.anh_sanpham}}" alt="Sản phẩm 1" width="250"> 
          <div class="caption"> 
@@ -224,7 +170,7 @@ border-color:#3276b1;
          </div> 
         </div> 
        </div> 
-      </div> 
+      </div>  --}}
 	 
 	  {{/each}}
 	   </div>
@@ -274,4 +220,5 @@ $('#myCarousel').carousel({
 
 
 
+    </div>
     </div>

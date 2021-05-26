@@ -8,19 +8,20 @@ class HomeController {
         const user = res.locals.user;
 
         //Load sản phẩm hot và mới nhất
+        Promise.deleteO
         Promise.all([
-            Product.find({ sanpham_hot: 1 }),
-            Product.find({ ngaydang: "2020-12-17" })
-        ])
+                Product.find({ sanpham_hot: 1 }),
+                Product.find({ ngaydang: "2020-12-17" })
+            ])
             .then(([
-                products_hot, 
+                products_hot,
                 products_new
             ]) => {
                 products_hot = products_hot.map(product_hot => product_hot.toObject());
                 products_new = products_new.map(product_new => product_new.toObject());
                 res.render('HomeView', {
                     products_hot,
-                    products_new, 
+                    products_new,
                     user
                 });
             })
@@ -68,7 +69,7 @@ class HomeController {
             .then(user => {
                 if (user) {
                     console.log("Username has already existed" + user.username)
-                    res.render('Dangky', {message: 'Tên đăng nhập đã tồn tại'})
+                    res.render('Dangky', { message: 'Tên đăng nhập đã tồn tại' })
                 } else {
                     const user = new User({
                         _id: Math.random(),
@@ -88,7 +89,7 @@ class HomeController {
             })
             .catch(next)
     }
-    
+
     //[GET]: /login - di chuyển tới form đăng nhập
     dangnhap(req, res, next) {
         res.render('Dangnhap')
