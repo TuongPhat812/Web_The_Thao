@@ -1,0 +1,85 @@
+<style>
+  .box_spnb{ 
+    transition-duration: 0.4s;
+  }
+  .box_spnb:hover{
+    transform: scale(1.1);
+    box-shadow: #000000;
+  }
+</style>
+<div class="container pt-5 d-flex">
+<div class="col-3 mt-5">
+    {{>left}}
+</div>
+<div class="col-9 mt-5 d-flex flex-column align-items-center">
+    <div class="mt-5 spnoibat" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">TẤT CẢ SẢN PHẨM</p>
+      </a>
+    </div>
+
+    <div id="content">
+    {{#each allproducts}}
+    <div class="box_spnb mb-5  mt-3 ml-4 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
+      </a>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+</div>
+    
+<div class="mt-5">
+    <ul class="pagination">
+  <li class="page-item" onclick="pre()"><a class="page-link" href="#">Previous</a></li>
+  <div class="des">
+      {{fors tongSoPage}}
+  </div>
+
+  <li class="page-item" onclick="next()"><a class="page-link" href="#">Next</a></li>
+            <script>
+              var des = document.querySelector(".des").innerText;
+              document.querySelector(".des").innerHTML=des;
+            </script>
+            <script>
+                 var a=new URLSearchParams(window.location.search).get('page'); 
+                    var lists=document.querySelectorAll('.page-item');
+                    
+                    lists.forEach(list=>{
+                        if(list.innerText==a) list.classList.add("disabled")
+                        else
+                        list.classList.remove("disabled")
+                        if (a==9){
+                            if (list.innerText=="Next") list.classList.add("disabled")
+                        }else
+                        if (a==1){
+                            if (list.innerText=="Previous") list.classList.add("disabled")
+                        }
+                    })
+
+                     
+            </script>
+            <script>
+                function pre(){
+                    var a=new URLSearchParams(window.location.search).get('page');
+                    document.location.search="?page="+(parseInt(a)-1)
+                }
+                 function next(){
+                    var a=new URLSearchParams(window.location.search).get('page');
+                    document.location.search="?page="+(parseInt(a)+1)
+                }
+            </script>
+
+   
+
+</ul>
+</div>
+</div>
+</div>

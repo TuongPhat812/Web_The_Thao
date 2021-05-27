@@ -254,13 +254,13 @@ li {
 /* Menu Danh Mục Sản Phẩm */
 
 .dmsp {
-    width: 250px;
+    /* width: 250px; */
     line-height: 35px;
     background-color: #3366cc;
 }
 
 .menu_pk {
-    width: 250px;
+    /* width: 250px; */
     min-height: 500px;
     border: 1px solid #dddddd;
     border-top: 0px;
@@ -268,7 +268,7 @@ li {
 }
 
 .pk {
-    min-width: 250px;
+    /* min-width: 250px; */
     min-height: 500px;
     margin-left: 0px;
     margin-right: 5px;
@@ -297,7 +297,7 @@ li {
 }
 
 .dm {
-    min-width: 200px;
+    /* min-width: 200px; */
     min-height: 100px;
     margin-left: 0px;
     list-style: none;
@@ -319,7 +319,7 @@ li {
 }
 
 .dm>li {
-    width: 200px;
+    /* width: 200px; */
     height: 30px;
     /*background-color: #EEEEEE;*/
 }

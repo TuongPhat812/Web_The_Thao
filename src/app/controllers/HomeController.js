@@ -104,11 +104,12 @@ class HomeController {
     dangky(req, res, next) {
         res.render('Dangky')
     }
-    product(req, res, next) {
-        const idProduct = req.params['id']
-        console.log(idProduct)
-        res.render('HomeView')
-    }
+
+    // products(req, res, next) {
+    //     // const idProduct = req.params['id']
+    //     // console.log(idProduct)
+    //     res.render('HomeView')
+    // }
 }
 
 module.exports = new HomeController();
