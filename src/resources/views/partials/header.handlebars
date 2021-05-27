@@ -1,5 +1,10 @@
+<style>
+	input:focus, button:focus{
+		outline:none;
+	}
+</style>
 <div class="" style="position: relative; left: -15px;">
-<div class="dn d-flex flex-column" style="width:100%">
+<div class="dn d-flex flex-column ml-4" style="">
 	<div class="container d-flex justify-content-between">
 	      <div class="user">  <!--Box chức năng đăng ký / đăng nhập  -->
 	      	<ul>
@@ -8,7 +13,7 @@
 	      			<a href="khach-hang.html"><i class="fas fa-user"></i></a>
                       <a href="#"> Chào {{user.userName}}</a>
 	      			
-                      <a href="/logout">/Đăng xuất</a>
+                      <a href="/logout"> / Đăng xuất</a>
 	      			{{else}}
                       <a href="/login">Đăng nhập</a> /
                       <a href="/register">Đăng ký</a>
@@ -16,13 +21,13 @@
                       </a> </li>
 	      	</ul>
 	      </div>
-	      <div class="search">
+	      <div class="search" style="width:50%">
 	      	<form method="GET">
-	      		<div class="search-box" style="">
-	      			<input name="ten_sp"  style="border:0px;  text-align:left; line-height:30px;"type="text" placeholder="Nhập từ khóa tìm kiếm" />
-	      			<a href="">
-	      			<input class="search_btn" type="submit" value="search" style="height: 28px; width: 55px">
-	      			</a>
+	      		<div class="search-box" style="position: relative;">
+	      			<input name="ten_sp"  style="border:0px;  text-align:left; line-height:30px; width: 100%; padding: 2px 15px; font-size:13px;" type="text" placeholder="Nhập từ khóa tìm kiếm" />
+	      			
+	      			<button class="search_btn" type="submit" style="color: white;height: 25px; width: 50px; font-size:13px; position:absolute; top: 2px; right: 4px; background-color: #FF9933;"><i class="fas fa-search"></i></button>
+	      			
 	      		</div> 
 	      		<input type="hidden" name="controller" value="search">
 	      	</form>
@@ -32,6 +37,7 @@
 	      	<a href="gio-hang.html" class="d-flex">
 	      		<div id="shopping-cart">
 	      			<i title="Click để xem giở hàng" class="fas fa-shopping-cart"></i>
+					  
 	      		</div>
 	      		<div id="thongbao">
 	      			<span  style="text-align:center; line-height:30px; color:#FFF; margin-left:10px;" class="tb">Có 
@@ -76,7 +82,7 @@
  	 	return false;
 		});
 	</script>
-	<a class="btn-top" href="#top" title="Top" style="display: inline;"><img style="width: 30px" src="https://1.bp.blogspot.com/-KzRQvTg-RsY/VVru5Zsk6kI/AAAAAAAARQA/om7gk_vC_8I/s300/up-arrow-icon.png"></a>
+	<a class="btn-top" href="#top" title="Top" style="display: inline;"><i class="fas fa-angle-up" style="font-size:50px"></i></a>
 <!-- Menu Top Sản phẩm -->
 
 </div>

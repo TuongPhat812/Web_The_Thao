@@ -12,6 +12,7 @@ class ProductsController {
                 Product.find({ id_danhmuc: products[0].id_danhmuc })
                     .then(a => {
                         var product_lienquan = a.map(a => a.toObject());
+                        console.log(product_lienquan)
                         res.render('ProductDetailView', { user, products, product_lienquan })
                     })
             })

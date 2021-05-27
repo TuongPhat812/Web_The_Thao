@@ -494,20 +494,22 @@ li {
 /* Sản phẩm bán chạy */
 
 .spbc {
-    width: 250px;
+    /* width: 250px; */
     line-height: 35px;
     background-color: #FFFFFF;
     border: 1px solid #FF9933;
+    padding-left: 10px;
+    height: 35px;
 }
 
 
 /* line show sản phẩm mới */
 
 .slideshow {
-    width: 250px;
+    width: 100%;
     margin-top: 10px;
     border: 1px solid #dddddd;
-    display: inline-block;
+    display: block;
 }
 
 .box {
@@ -520,7 +522,7 @@ li {
 /*line show tin tức  */
 
 .tintuc {
-    width: 250px;
+    /* width: 250px; */
     line-height: 35px;
     border-left: 8px solid #000;
     background-color: #3366cc;
@@ -528,14 +530,14 @@ li {
 }
 
 .show {
-    width: 250px;
+    /* width: 250px; */
     border: 1px solid #dddddd;
     border-top: 0px;
     float: left;
 }
 
 .anh_tin {
-    width: 250px;
+    /* width: 250px; */
     margin: 10px 5px 5px 2px;
 }
 
@@ -663,7 +665,7 @@ li {
 /* nút lên đầu trang*/
 
 .btn-top {
-    background-color: #DBD8D8;
+    /* background-color: #DBD8D8; */
     background-repeat: no-repeat;
     border: medium none;
     bottom: 20px;

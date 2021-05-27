@@ -1,5 +1,13 @@
-
-<div style="position: relative; top:120px">
+<style>
+  .box_spnb{ 
+    transition-duration: 0.4s;
+  }
+  .box_spnb:hover{
+    transform: scale(1.1);
+    box-shadow: #000000;
+  }
+</style>
+<div class="container" style="position: relative; top:120px">
 {{>slide}}
 <script type="text/javascript">
   (function ($) {
@@ -14,95 +22,87 @@
 
 <div class="d-flex container justify-content-between" style="margin: 0 auto; position: relative; left: -15px">
   
-  {{>left}}
+  {{!-- {{>left}} --}}
 <!-- giao diện center -->
-<div class="center column-6 ">
+<div class="center col-9">
   <div class="phukien" align="center">
     <!-- Box thời trang nổi bật -->
-    <div class="spnoibat">
+    <div class="spnoibat" style="width:100%">
       <a href="#">
         <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">SẢN PHẨM HOT</p>
       </a>
     </div>
-     
+     <div class="" style="width:100%">
     {{#each products_hot}}
-    <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
+    <div class="box_spnb mb-5  mt-3 ml-3 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
       <a href="/products/{{this._id}}">
-        <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
-        <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
       </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
-      <div class="dathang">
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <div class="dathang" style="margin-left:10px">
         <a href="">
-          <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
         </a>
       </div>
-      <br>
     </div>
     {{/each}}
- 
+ </div>
     </div>
 
   <!-- Sản phẩm bán chạy -->
   <div class="phukien">
-    <div class="spnoibat">
+    <div class="spnoibat mt-3" style="width:100%">
       <a href="#">
         <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM MỚI NHẤT</p>
       </a>
     </div>
+    <div class="">
     {{#each products_new}}
-    <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
+    <div class="box_spnb mb-5  mt-3 ml-3 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
       <a href="/products/{{this._id}}">
-        <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
-        <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
       </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
-      <div class="dathang">
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <div class="dathang" style="margin-left:10px">
         <a href="">
-          <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
         </a>
       </div>
-      <br>
     </div>
     {{/each}}
+    </div>
 
   </div>
   <!-- Sản phẩm khuyến mãi -->
   <div class="phukien">
-    <div class="spnoibat"><a href="#">
-        <p style="color:#000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;"> SẢN PHẨM KHUYẾN
-          MÃI </p>
-      </a></div>
-
-    <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-duffel-bag-RcF1FP.jpg"
-          style="width:280px; height:320px;">
-        <p style="text-align:center; margin-top:5px;height:20px"></p>
+     <div class="spnoibat mt-3" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM KHUYẾN MÃI</p>
       </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,019,000VND</span></p>
-      <div class="dathang"><a href="">
-          <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
-        </a></div>
-      <br>
-      <br>
-      <br>
-      <br>
     </div>
-    <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-backpack-5ptm3R.jpg"
-          style="width:280px; height:320px;">
-        <p style="text-align:center; margin-top:5px;height:20px"></p>
+
+    <div class="">
+    {{#each products_km}}
+    <div class="box_spnb mb-5  mt-3 ml-3 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
       </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,149,000VND</span></p>
-      <div class="dathang"><a href="">
-          <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
-        </a></div>
-      <br>
-      <br>
-      <br>
-      <br>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px; text-decoration: line-through;">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+       
+        <p style="color:#CC0000; text-align:center; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia_km}}</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+        </a>
+      </div>
+    </div>
+    {{/each}}
     </div>
 
 
@@ -113,31 +113,50 @@
 <!-- The End Center -->
 
 
-<div class="right column-3">
+<div class="right col-3 ml-3" >
   <!-- Sản Phẩm bán chạy -->
   <div class="spbc">
-    <h1>SẢN PHẨM BÁN CHẠY</h1>
+    <p><strong>SẢN PHẨM BÁN CHẠY</strong></p>
   </div>
   <!-- slide show sản phẩm bán chạy -->
-
-  <div class="slideshow" align="center">
-
-    <div class="box"><
-      a href=""><img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/14/banner-fashion_113854663.jpg"
-          style="width:216px;height:270px;"> </a>
-      <br />
-      <br />
-      <p style="text-align:center;font-weight:bold"></p><br />
-      <p style="text-align:center;color:#CC0000">VND</p>
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 270px;
+  }
+  </style>
+ 
+  <div id="demo" class="carousel slide mt-4 mb-4" data-ride="carousel" style="height:270px">
+  
+  <div class="carousel-inner">
+    {{#each products_km}}
+    <div class="carousel-item">
+      <a href="/products/{{this._id}}">
+      <img src="/{{this.anh_sanpham}}" alt="Los Angeles" width="" height="270">
+      <div class="carousel-caption">
+        <h3 style="color: #FF9933">{{this.ten_sanpham}}</h3>
+        <p>{{this.gia_km}}</p>
+      </div>   
+      </a>
     </div>
-    <div class="line1"></div>
-
+    {{/each}}
   </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<script>
+            document.querySelector('.carousel-item').classList.add('active');
+          </script>
 
   <!-- query cho tin tức mới -->
 
   <div class="spbc">
-    <h1>TIN TỨC MỚI</h1>
+    <p><strong>TIN TỨC MỚI</strong></p>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script type="text/javascript" src="../js/jquery.vticker.js"></script>
@@ -167,8 +186,8 @@
   </div>
   <div style="padding-top: 300px; padding-bottom: 20px">
     <div class="spbc">
-      <h1>QUẢNG CÁO</h1>
-    </div>
+    <p><strong>QUẢNG CÁO</strong></p>
+  </div>
     <div class="box_qc" style="float:left; margin-top:10px;"><a
         href="https://kenh14.vn/nike-chinh-thuc-cong-bo-thiet-ke-peaceminusone-x-af1-cua-g-dragon-para-noise-20-20201107092422125.chn"><img
           src="../images/img_qc/qc.png" height="250" width="250"></a></div>

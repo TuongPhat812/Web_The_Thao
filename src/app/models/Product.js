@@ -12,7 +12,9 @@ const Product = new Schema({
         anh_sanpham: { type: String },
         ngaydang: { type: String },
         mo_ta: { type: String },
-        sanpham_hot: { type: Number, enum: [0, 1], default: 0 }
+        sanpham_hot: { type: Number, enum: [0, 1], default: 0 },
+        gia: { type: Number },
+        gia_km: { type: Number }
     })
     /*
     mongoose.plugin(slug);

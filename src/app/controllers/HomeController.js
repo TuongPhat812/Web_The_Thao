@@ -10,18 +10,23 @@ class HomeController {
         //Load sản phẩm hot và mới nhất
         Promise.deleteO
         Promise.all([
+                // 
                 Product.find({ sanpham_hot: 1 }),
-                Product.find({ ngaydang: "2020-12-17" })
+                Product.find({ ngaydang: "2020-12-17" }),
+                Product.find({ gia_km: { $exists: true } }),
             ])
             .then(([
                 products_hot,
-                products_new
+                products_new,
+                products_km,
             ]) => {
                 products_hot = products_hot.map(product_hot => product_hot.toObject());
                 products_new = products_new.map(product_new => product_new.toObject());
+                products_km = products_km.map(products_km => products_km.toObject());
                 res.render('HomeView', {
                     products_hot,
                     products_new,
+                    products_km,
                     user
                 });
             })
