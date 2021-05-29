@@ -1,0 +1,206 @@
+<style>
+  .box_spnb{ 
+    transition-duration: 0.4s;
+  }
+  .box_spnb:hover{
+    transform: scale(1.1);
+    box-shadow: #000000;
+  }
+</style>
+<div class="container pt-5 d-flex">
+<div class="col-3 mt-5">
+    <div class="left mt-5" style="margin-top: 500px">
+    <div class="spbc" >
+        <p style="align-item: center">DANH MỤC SẢN PHẨM</p>
+    </div> <!-- Danh mục sản phẩm cột left  -->
+    <div class="menu_pk">
+        <div class="pk" align="center">
+            <ul>
+                <!--Thời Trang nữ  -->
+                {{#each productGroups}}
+                <li style="margin-top:15px;">
+                    <a href="/products/group={{this._id}}">
+                        {{this.ten_nhomsp}} </a>
+                    <div class="line"></div>
+                    <ul class="dm">
+                      {{#each categorys}}
+                      {{#if categorys.id_nhomsp={{this._id}}}}
+                        <li>
+                            <a href="-AO-1.html"><span>
+                                    {{this.ten_danhmuc}}</span></a>
+                        </li>
+
+                        {{!-- <div class="line1"></div>
+                        <li>
+                            <a href="-QUAN-VAY-33.html"><span>
+                                    QUẦN, VÁY</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-GIAY-34.html"><span>
+                                    GIÀY</span></a>
+                        </li>
+
+                        <div class="line1"></div> --}}
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                    </li>
+                    {{/each}}
+                    {{!-- <a href="index.php?controller=list_sp&id_nhomsp=2">
+                        PHỤ KIỆN NỮ </a>
+                    <div class="line"></div>
+
+                    <ul class="dm">
+                        <li>
+                            <a href="-NON-7.html"><span>
+                                    NÓN</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-BALO-TUI-11.html"><span>
+                                    BALO, TÚI</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-KHAC-12.html"><span>
+                                    KHÁC</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                    </ul>
+                    <a href="index.php?controller=list_sp&id_nhomsp=4">
+                        THỜI TRANG NAM </a>
+                    <div class="line"></div>
+
+                    <ul class="dm">
+                        <li>
+                            <a href="-AO-19.html"><span>
+                                    ÁO</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-QUAN-20.html"><span>
+                                    QUẦN</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-GIAY-21.html"><span>
+                                    GIÀY</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                    </ul>
+                    <a href="index.php?controller=list_sp&id_nhomsp=5">
+                        PHỤ KIỆN NAM </a>
+                    <div class="line"></div>
+
+                    <ul class="dm">
+                        <li>
+                            <a href="-NON-23.html"><span>
+                                    NÓN</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-BALO-CAP-24.html"><span>
+                                    BALO, CẶP</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                        <li>
+                            <a href="-KHAC-25.html"><span>
+                                    KHÁC</span></a>
+                        </li>
+
+                        <div class="line1"></div>
+                    </ul>
+                 --}}
+            </ul>
+        </div>
+    </div>
+
+</div>
+</div>
+<div class="col-9 mt-5 d-flex flex-column align-items-center">
+    <div class="mt-5 spnoibat" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">TẤT CẢ SẢN PHẨM</p>
+      </a>
+    </div>
+
+    <div id="content">
+    {{#each allproducts}}
+    <div class="box_spnb mb-5  mt-3 ml-4 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
+      </a>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+</div>
+    
+<div class="mt-5">
+    <ul class="pagination">
+  <li class="page-item" onclick="pre()"><a class="page-link" href="#">Previous</a></li>
+  <div class="des">
+      {{fors tongSoPage}}
+  </div>
+
+  <li class="page-item" onclick="next()"><a class="page-link" href="#">Next</a></li>
+            <script>
+              var des = document.querySelector(".des").innerText;
+              document.querySelector(".des").innerHTML=des;
+            </script>
+            <script>
+                 var a=new URLSearchParams(window.location.search).get('page'); 
+                    var lists=document.querySelectorAll('.page-item');
+                    
+                    lists.forEach(list=>{
+                      if(a){
+                        if(list.innerText==a) list.classList.add("disabled")
+                        else
+                        list.classList.remove("disabled")
+                        if (a==9){
+                            if (list.innerText=="Next") list.classList.add("disabled")
+                        }else
+                        if (a==1){
+                            if (list.innerText=="Previous") list.classList.add("disabled")
+                        }
+                      }else{
+                        if (list.innerText=="Previous"||list.innerText=="1") list.classList.add("disabled")
+
+                      }
+                    })
+
+                     
+            </script>
+            <script>
+                function pre(){
+                    var a=new URLSearchParams(window.location.search).get('page');
+                    document.location.search="?page="+(parseInt(a)-1)
+                }
+                 function next(){
+                    var a=new URLSearchParams(window.location.search).get('page');
+                    document.location.search="?page="+(parseInt(a)+1)
+                }
+            </script>
+
+   
+
+</ul>
+</div>
+</div>
+</div>
