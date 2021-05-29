@@ -1,6 +1,14 @@
+<style>
+  .box_spnb{ 
+    transition-duration: 0.4s;
+  }
+  .box_spnb:hover{
+    transform: scale(1.1);
+    box-shadow: #000000;
+  }
+</style>
+<div class="container" style="position: relative; top:120px">
 {{>slide}}
-
-
 <script type="text/javascript">
   (function ($) {
     $(function () {
@@ -13,6 +21,7 @@
 </script>
 
 <div class="d-flex container justify-content-between" style="margin: 0 auto; position: relative; left: -15px">
+<<<<<<< HEAD
   {{>left}}
   <!-- giao diện center -->
   <div class="center column-6 ">
@@ -31,6 +40,57 @@
         <a href="/products/{{this._id}}">
           <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
           <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
+=======
+  
+  {{!-- {{>left}} --}}
+<!-- giao diện center -->
+<div class="center col-9">
+  <div class="phukien" align="center">
+    <!-- Box thời trang nổi bật -->
+    <div class="spnoibat" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">SẢN PHẨM HOT</p>
+      </a>
+    </div>
+     <div class="" style="width:100%">
+    {{#each products_hot}}
+    <div class="box_spnb mb-5  mt-3 ml-3 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
+      </a>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+ </div>
+    </div>
+
+  <!-- Sản phẩm bán chạy -->
+  <div class="phukien">
+    <div class="spnoibat mt-3" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM MỚI NHẤT</p>
+      </a>
+    </div>
+    <div class="">
+    {{#each products_new}}
+    <div class="box_spnb mb-5  mt-3 ml-3 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
+      </a>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+>>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
         </a>
         <br />
         <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
@@ -41,6 +101,7 @@
         </div>
         <br>
       </div>
+<<<<<<< HEAD
       {{/each}}
 
     </div>
@@ -78,6 +139,40 @@
             KHUYẾN
             MÃI </p>
         </a></div>
+=======
+    </div>
+    {{/each}}
+    </div>
+
+  </div>
+  <!-- Sản phẩm khuyến mãi -->
+  <div class="phukien">
+     <div class="spnoibat mt-3" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM KHUYẾN MÃI</p>
+      </a>
+    </div>
+
+    <div class="">
+    {{#each products_km}}
+    <div class="box_spnb mb-5  mt-3 ml-3 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
+      </a>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px; text-decoration: line-through;">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+       
+        <p style="color:#CC0000; text-align:center; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia_km}}</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+    </div>
+>>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
 
       <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-duffel-bag-RcF1FP.jpg"
             style="width:280px; height:320px;">
@@ -112,6 +207,7 @@
     </div>
 
 
+<<<<<<< HEAD
   </div>
   <!-- The End Center -->
 
@@ -134,9 +230,51 @@
           <p style="text-align:center;color:#CC0000">VND</p>
       </div>
       <div class="line1"></div>
+=======
+<div class="right col-3 ml-3" >
+  <!-- Sản Phẩm bán chạy -->
+  <div class="spbc">
+    <p><strong>SẢN PHẨM BÁN CHẠY</strong></p>
+  </div>
+  <!-- slide show sản phẩm bán chạy -->
+<style>
+  /* Make the image fully responsive */
+  .carousel-inner img {
+    width: 100%;
+    height: 270px;
+  }
+  </style>
+ 
+  <div id="demo" class="carousel slide mt-4 mb-4" data-ride="carousel" style="height:270px">
+  
+  <div class="carousel-inner">
+    {{#each products_km}}
+    <div class="carousel-item">
+      <a href="/products/{{this._id}}">
+      <img src="/{{this.anh_sanpham}}" alt="Los Angeles" width="" height="270">
+      <div class="carousel-caption">
+        <h3 style="color: #FF9933">{{this.ten_sanpham}}</h3>
+        <p>{{this.gia_km}}</p>
+      </div>   
+      </a>
+    </div>
+    {{/each}}
+  </div>
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+</div>
+<script>
+            document.querySelector('.carousel-item').classList.add('active');
+          </script>
+>>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
 
     </div>
 
+<<<<<<< HEAD
     <!-- query cho tin tức mới -->
 
     <div class="spbc">
@@ -153,6 +291,21 @@
           mousePause: true,
           showItems: 3
         });
+=======
+  <div class="spbc">
+    <p><strong>TIN TỨC MỚI</strong></p>
+  </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <script type="text/javascript" src="../js/jquery.vticker.js"></script>
+  <script type="text/javascript">
+    $(function () {
+      $('.show').vTicker({
+        speed: 500,
+        pause: 3000,
+        animation: 'fade',
+        mousePause: true,
+        showItems: 3
+>>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
       });
     </script>
 
@@ -166,6 +319,7 @@
           </div>
         </li>
 
+<<<<<<< HEAD
       </ul>
     </div>
     <div style="padding-top: 300px; padding-bottom: 20px">
@@ -179,6 +333,21 @@
           href="https://kenh14.vn/sau-26-nam-troi-adidas-vua-hoi-sinh-lai-doi-giay-huyen-thoai-da-tung-thay-doi-ca-the-gioi-thoi-trang-20170301112441518.chn"><img
             src="../images/img_qc/qc1.jpg" height="250" width="250"></a></div>
     </div>
+=======
+    </ul>
+  </div>
+  <div style="padding-top: 300px; padding-bottom: 20px">
+    <div class="spbc">
+    <p><strong>QUẢNG CÁO</strong></p>
+  </div>
+    <div class="box_qc" style="float:left; margin-top:10px;"><a
+        href="https://kenh14.vn/nike-chinh-thuc-cong-bo-thiet-ke-peaceminusone-x-af1-cua-g-dragon-para-noise-20-20201107092422125.chn"><img
+          src="../images/img_qc/qc.png" height="250" width="250"></a></div>
+    <div class="box_qc" style="float:left; margin-top:10px;"><a
+        href="https://kenh14.vn/sau-26-nam-troi-adidas-vua-hoi-sinh-lai-doi-giay-huyen-thoai-da-tung-thay-doi-ca-the-gioi-thoi-trang-20170301112441518.chn"><img
+          src="../images/img_qc/qc1.jpg" height="250" width="250"></a></div>
+  </div>
+>>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
 
   </div>
 
@@ -211,8 +380,16 @@
   <input type="submit"> 
 </form> --}}
 
+<<<<<<< HEAD
   {{renderUserName user user2}}
   {{renderUserEmail user}}
   {{renderUserSDT user}}
   {{renderUserDiaChi user}}
+=======
+{{renderUserName user user2}}
+{{renderUserEmail user}}
+{{renderUserSDT user}}
+{{renderUserDiaChi user}}
+</div>
+>>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
 </div>

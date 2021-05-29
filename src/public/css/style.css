@@ -57,7 +57,7 @@ li {
 /* menu danh mục cố định  */
 
 .dn {
-    /* width: 100%; */
+    width: 100%;
     height: 50px;
     position: fixed;
     margin-top: 0px;
@@ -236,7 +236,7 @@ li {
 .main {
     /* clear: both; */
     /* width: 1366px; */
-    margin-top: 70px;
+    /* margin-top: 70px; */
 }
 
 
@@ -254,13 +254,13 @@ li {
 /* Menu Danh Mục Sản Phẩm */
 
 .dmsp {
-    width: 250px;
+    /* width: 250px; */
     line-height: 35px;
     background-color: #3366cc;
 }
 
 .menu_pk {
-    width: 250px;
+    /* width: 250px; */
     min-height: 500px;
     border: 1px solid #dddddd;
     border-top: 0px;
@@ -268,7 +268,7 @@ li {
 }
 
 .pk {
-    min-width: 250px;
+    /* min-width: 250px; */
     min-height: 500px;
     margin-left: 0px;
     margin-right: 5px;
@@ -297,7 +297,7 @@ li {
 }
 
 .dm {
-    min-width: 200px;
+    /* min-width: 200px; */
     min-height: 100px;
     margin-left: 0px;
     list-style: none;
@@ -319,7 +319,7 @@ li {
 }
 
 .dm>li {
-    width: 200px;
+    /* width: 200px; */
     height: 30px;
     /*background-color: #EEEEEE;*/
 }
@@ -494,20 +494,22 @@ li {
 /* Sản phẩm bán chạy */
 
 .spbc {
-    width: 250px;
+    /* width: 250px; */
     line-height: 35px;
     background-color: #FFFFFF;
     border: 1px solid #FF9933;
+    padding-left: 10px;
+    height: 35px;
 }
 
 
 /* line show sản phẩm mới */
 
 .slideshow {
-    width: 250px;
+    width: 100%;
     margin-top: 10px;
     border: 1px solid #dddddd;
-    display: inline-block;
+    display: block;
 }
 
 .box {
@@ -520,7 +522,7 @@ li {
 /*line show tin tức  */
 
 .tintuc {
-    width: 250px;
+    /* width: 250px; */
     line-height: 35px;
     border-left: 8px solid #000;
     background-color: #3366cc;
@@ -528,14 +530,14 @@ li {
 }
 
 .show {
-    width: 250px;
+    /* width: 250px; */
     border: 1px solid #dddddd;
     border-top: 0px;
     float: left;
 }
 
 .anh_tin {
-    width: 250px;
+    /* width: 250px; */
     margin: 10px 5px 5px 2px;
 }
 
@@ -622,10 +624,10 @@ li {
 }
 
 .tt {
-    width: 23%;
+    /* width: 23%; */
     min-height: 160px;
     float: left;
-    margin-left: 20px;
+    /* margin-left: 20px; */
     color: #FFF;
     line-height: 1.7;
 }
@@ -650,7 +652,7 @@ li {
 }
 
 .copyright {
-    width: 100%;
+    /* width: 100%; */
     height: 20px;
     color: #ffffff;
     text-align: center;
@@ -663,7 +665,7 @@ li {
 /* nút lên đầu trang*/
 
 .btn-top {
-    background-color: #DBD8D8;
+    /* background-color: #DBD8D8; */
     background-repeat: no-repeat;
     border: medium none;
     bottom: 20px;

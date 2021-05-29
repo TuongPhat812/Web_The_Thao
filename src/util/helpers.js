@@ -1,6 +1,3 @@
-
-
-
 //const js = require('../resources/js/script.js');
 
 
@@ -12,11 +9,16 @@ const renderUserName = (user) => getSessionUser(user) ? user.userName : undefine
 const renderUserEmail = (user) => getSessionUser(user) ? user.email : undefined
 const renderUserSDT = (user) => getSessionUser(user) ? user.sdt : undefined
 const renderUserDiaChi = (user) => getSessionUser(user) ? user.diaChi : undefined
-
+const fors = (total) => {
+    var pag = ""
+    for (var i = 1; i <= total; i++) {
+        pag += '<li class="page-item" oncick="page(this)"><a class="page-link" href="/products?page=' + i + '" >' + i + '</a></li>'
+    }
+    return pag;
+    // 
+}
 
 const sum = (arr) => {
-    
-
     const sum = 0
     return sum;
 }
@@ -28,5 +30,6 @@ module.exports = {
     renderUserName,
     renderUserEmail,
     renderUserSDT,
-    renderUserDiaChi
+    renderUserDiaChi,
+    fors
 }

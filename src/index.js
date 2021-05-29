@@ -24,12 +24,13 @@ app.use(methodOverride('_method'));
 
 //Template engine
 app.engine('handlebars', handlebars({
-    helpers: require('./util/helpers')
+    helpers: require('./util/helpers'),
+    // fors: require('./util/for')
 }));
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 20000 }}));
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 20000 } }));
 app.use(authentication)
 
 
