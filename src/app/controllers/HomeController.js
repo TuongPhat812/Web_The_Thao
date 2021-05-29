@@ -43,8 +43,8 @@ class HomeController {
                     res.redirect('/')
                 } else {
                     req.session.userName = undefined
-                    res.redirect('/login')
 
+                    res.render('Dangnhap',{message: 'Not found'})
                 }
             })
             .catch(next)
@@ -62,6 +62,7 @@ class HomeController {
 
     //[POST]: /register
     register(req, res, next) {
+        
         User.findOne({
                 username: req.body.username,
             })

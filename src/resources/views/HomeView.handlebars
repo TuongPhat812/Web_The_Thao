@@ -14,174 +14,178 @@
 
 <div class="d-flex container justify-content-between" style="margin: 0 auto; position: relative; left: -15px">
   {{>left}}
-<!-- giao diện center -->
-<div class="center column-6 ">
-  <div class="phukien" align="center">
-    <!-- Box thời trang nổi bật -->
-    <div class="spnoibat">
-      <a href="#">
-        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">SẢN PHẨM HOT</p>
-      </a>
-    </div>
-     
-    {{#each products_hot}}
-    <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
-      <a href="/products/{{this._id}}">
-        <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
-        <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
-      </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
-      <div class="dathang">
-        <a href="">
-          <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
+  <!-- giao diện center -->
+  <div class="center column-6 ">
+    <div class="phukien" align="center">
+      <!-- Box thời trang nổi bật -->
+      <div class="spnoibat">
+        <a href="#">
+          <p
+            style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">
+            SẢN PHẨM HOT</p>
         </a>
       </div>
-      <br>
-    </div>
-    {{/each}}
- 
-    </div>
 
-  <!-- Sản phẩm bán chạy -->
-  <div class="phukien">
-    <div class="spnoibat">
-      <a href="#">
-        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM MỚI NHẤT</p>
-      </a>
-    </div>
-    {{#each products_new}}
-    <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
-      <a href="/products/{{this._id}}">
-        <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
-        <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
-      </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
-      <div class="dathang">
-        <a href="">
-          <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
+      {{#each products_hot}}
+      <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
+        <a href="/products/{{this._id}}">
+          <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
+          <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
         </a>
-      </div>
-      <br>
-    </div>
-    {{/each}}
-
-  </div>
-  <!-- Sản phẩm khuyến mãi -->
-  <div class="phukien">
-    <div class="spnoibat"><a href="#">
-        <p style="color:#000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;"> SẢN PHẨM KHUYẾN
-          MÃI </p>
-      </a></div>
-
-    <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-duffel-bag-RcF1FP.jpg"
-          style="width:280px; height:320px;">
-        <p style="text-align:center; margin-top:5px;height:20px"></p>
-      </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,019,000VND</span></p>
-      <div class="dathang"><a href="">
-          <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
-        </a></div>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
-    <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-backpack-5ptm3R.jpg"
-          style="width:280px; height:320px;">
-        <p style="text-align:center; margin-top:5px;height:20px"></p>
-      </a>
-      <br />
-      <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,149,000VND</span></p>
-      <div class="dathang"><a href="">
-          <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
-        </a></div>
-      <br>
-      <br>
-      <br>
-      <br>
-    </div>
-
-
-  </div>
-
-
-</div>
-<!-- The End Center -->
-
-
-<div class="right column-3">
-  <!-- Sản Phẩm bán chạy -->
-  <div class="spbc">
-    <h1>SẢN PHẨM BÁN CHẠY</h1>
-  </div>
-  <!-- slide show sản phẩm bán chạy -->
-
-  <div class="slideshow" align="center">
-
-    <div class="box"><
-      a href=""><img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/14/banner-fashion_113854663.jpg"
-          style="width:216px;height:270px;"> </a>
-      <br />
-      <br />
-      <p style="text-align:center;font-weight:bold"></p><br />
-      <p style="text-align:center;color:#CC0000">VND</p>
-    </div>
-    <div class="line1"></div>
-
-  </div>
-
-  <!-- query cho tin tức mới -->
-
-  <div class="spbc">
-    <h1>TIN TỨC MỚI</h1>
-  </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script type="text/javascript" src="../js/jquery.vticker.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $('.show').vTicker({
-        speed: 500,
-        pause: 3000,
-        animation: 'fade',
-        mousePause: true,
-        showItems: 3
-      });
-    });
-  </script>
-
-  <div class="show">
-    <ul>
-
-      <li>
-        <div class="anh_tin">
-          <img src="../images/images_sp/ambush-jacket-Sm3NKC.jpg" height="80px;" width="80px">
-          <a href=""></a>
+        <br />
+        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+        <div class="dathang">
+          <a href="">
+            <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
+          </a>
         </div>
-      </li>
+        <br>
+      </div>
+      {{/each}}
 
-    </ul>
-  </div>
-  <div style="padding-top: 300px; padding-bottom: 20px">
-    <div class="spbc">
-      <h1>QUẢNG CÁO</h1>
     </div>
-    <div class="box_qc" style="float:left; margin-top:10px;"><a
-        href="https://kenh14.vn/nike-chinh-thuc-cong-bo-thiet-ke-peaceminusone-x-af1-cua-g-dragon-para-noise-20-20201107092422125.chn"><img
-          src="../images/img_qc/qc.png" height="250" width="250"></a></div>
-    <div class="box_qc" style="float:left; margin-top:10px;"><a
-        href="https://kenh14.vn/sau-26-nam-troi-adidas-vua-hoi-sinh-lai-doi-giay-huyen-thoai-da-tung-thay-doi-ca-the-gioi-thoi-trang-20170301112441518.chn"><img
-          src="../images/img_qc/qc1.jpg" height="250" width="250"></a></div>
+
+    <!-- Sản phẩm bán chạy -->
+    <div class="phukien">
+      <div class="spnoibat">
+        <a href="#">
+          <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM MỚI
+            NHẤT</p>
+        </a>
+      </div>
+      {{#each products_new}}
+      <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
+        <a href="/products/{{this._id}}">
+          <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
+          <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
+        </a>
+        <br />
+        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+        <div class="dathang">
+          <a href="">
+            <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
+          </a>
+        </div>
+        <br>
+      </div>
+      {{/each}}
+
+    </div>
+    <!-- Sản phẩm khuyến mãi -->
+    <div class="phukien">
+      <div class="spnoibat"><a href="#">
+          <p style="color:#000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;"> SẢN PHẨM
+            KHUYẾN
+            MÃI </p>
+        </a></div>
+
+      <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-duffel-bag-RcF1FP.jpg"
+            style="width:280px; height:320px;">
+          <p style="text-align:center; margin-top:5px;height:20px"></p>
+        </a>
+        <br />
+        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,019,000VND</span></p>
+        <div class="dathang"><a href="">
+            <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
+          </a></div>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-backpack-5ptm3R.jpg"
+            style="width:280px; height:320px;">
+          <p style="text-align:center; margin-top:5px;height:20px"></p>
+        </a>
+        <br />
+        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,149,000VND</span></p>
+        <div class="dathang"><a href="">
+            <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
+          </a></div>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+
+
+    </div>
+
+
+  </div>
+  <!-- The End Center -->
+
+
+  <div class="right column-3">
+    <!-- Sản Phẩm bán chạy -->
+    <div class="spbc">
+      <h1>SẢN PHẨM BÁN CHẠY</h1>
+    </div>
+    <!-- slide show sản phẩm bán chạy -->
+
+    <div class="slideshow" align="center">
+
+      <div class="box">
+        < a href=""><img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/14/banner-fashion_113854663.jpg"
+            style="width:216px;height:270px;"> </a>
+          <br />
+          <br />
+          <p style="text-align:center;font-weight:bold"></p><br />
+          <p style="text-align:center;color:#CC0000">VND</p>
+      </div>
+      <div class="line1"></div>
+
+    </div>
+
+    <!-- query cho tin tức mới -->
+
+    <div class="spbc">
+      <h1>TIN TỨC MỚI</h1>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.vticker.js"></script>
+    <script type="text/javascript">
+      $(function () {
+        $('.show').vTicker({
+          speed: 500,
+          pause: 3000,
+          animation: 'fade',
+          mousePause: true,
+          showItems: 3
+        });
+      });
+    </script>
+
+    <div class="show">
+      <ul>
+
+        <li>
+          <div class="anh_tin">
+            <img src="../images/images_sp/ambush-jacket-Sm3NKC.jpg" height="80px;" width="80px">
+            <a href=""></a>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+    <div style="padding-top: 300px; padding-bottom: 20px">
+      <div class="spbc">
+        <h1>QUẢNG CÁO</h1>
+      </div>
+      <div class="box_qc" style="float:left; margin-top:10px;"><a
+          href="https://kenh14.vn/nike-chinh-thuc-cong-bo-thiet-ke-peaceminusone-x-af1-cua-g-dragon-para-noise-20-20201107092422125.chn"><img
+            src="../images/img_qc/qc.png" height="250" width="250"></a></div>
+      <div class="box_qc" style="float:left; margin-top:10px;"><a
+          href="https://kenh14.vn/sau-26-nam-troi-adidas-vua-hoi-sinh-lai-doi-giay-huyen-thoai-da-tung-thay-doi-ca-the-gioi-thoi-trang-20170301112441518.chn"><img
+            src="../images/img_qc/qc1.jpg" height="250" width="250"></a></div>
+    </div>
+
   </div>
 
-</div>
 
 
 
-
-{{!-- 
+  {{!-- 
 <form action="/register" method="POST">
   <label for="username">username:</label><br>
   <input type="text" id="username" name="username"><br>
@@ -207,8 +211,8 @@
   <input type="submit"> 
 </form> --}}
 
-{{renderUserName user user2}}
-{{renderUserEmail user}}
-{{renderUserSDT user}}
-{{renderUserDiaChi user}}
+  {{renderUserName user user2}}
+  {{renderUserEmail user}}
+  {{renderUserSDT user}}
+  {{renderUserDiaChi user}}
 </div>

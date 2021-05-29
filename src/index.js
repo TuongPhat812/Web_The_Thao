@@ -7,7 +7,7 @@ const authentication = require('./app/middlewares/authentication')
 const session = require('express-session');
 
 const app = express();
-const port = 3000;
+const port = 3001;
 const route = require('./routes/');
 const db = require('./config/db/index') //chứa hàm connect()
 db.connect();
