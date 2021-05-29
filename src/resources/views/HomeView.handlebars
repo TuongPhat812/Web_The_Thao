@@ -7,7 +7,6 @@
     box-shadow: #000000;
   }
 </style>
-
 <div class="container" style="position: relative; top:120px">
 {{>slide}}
 <script type="text/javascript">
@@ -202,6 +201,33 @@
 
 
 
+{{!-- 
+<form action="/register" method="POST">
+  <label for="username">username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">password:</label><br>
+  <input type="password" id="password" name="password"><br>
+  <label for="email">email:</label><br>
+  <input type="text" id="email" name="email"><br>
+  <label for="fullname">fullname:</label><br>
+  <input type="text" id="fullname" name="fullname"><br>
+  <label for="diachi">diachi:</label><br>
+  <input type="text" id="diachi" name="diachi"><br>
+  <label for="sdt">sdt:</label><br>
+  <input type="text" id="sdt" name="sdt"><br>
+  <input type="submit">    
+</form>
+<form action="/login" method="POST">
+  <label for="username">username:</label><br>
+  <input type="text" id="username" name="username"><br>
+  <label for="password">password:</label><br>
+  <input type="password" id="password" name="password"><br>
+  <input type="submit"> 
+</form> --}}
 
+{{renderUserName user user2}}
+{{renderUserEmail user}}
+{{renderUserSDT user}}
+{{renderUserDiaChi user}}
 </div>
 </div>
