@@ -5,7 +5,8 @@ module.exports = function(req,res,next){
         email: req.session.email,
         fullname: req.session.fullname,
         diaChi: req.session.diaChi,
-        sdt: req.session.sdt
+        sdt: req.session.sdt,
+        role: req.session.role
     }
     
     next()

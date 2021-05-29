@@ -7,6 +7,7 @@
     box-shadow: #000000;
   }
 </style>
+
 <div class="container" style="position: relative; top:120px">
 {{>slide}}
 <script type="text/javascript">
@@ -21,26 +22,6 @@
 </script>
 
 <div class="d-flex container justify-content-between" style="margin: 0 auto; position: relative; left: -15px">
-<<<<<<< HEAD
-  {{>left}}
-  <!-- giao diện center -->
-  <div class="center column-6 ">
-    <div class="phukien" align="center">
-      <!-- Box thời trang nổi bật -->
-      <div class="spnoibat">
-        <a href="#">
-          <p
-            style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">
-            SẢN PHẨM HOT</p>
-        </a>
-      </div>
-
-      {{#each products_hot}}
-      <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
-        <a href="/products/{{this._id}}">
-          <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
-          <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
-=======
   
   {{!-- {{>left}} --}}
 <!-- giao diện center -->
@@ -90,56 +71,8 @@
       <div class="dathang" style="margin-left:10px">
         <a href="">
           <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
->>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
-        </a>
-        <br />
-        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
-        <div class="dathang">
-          <a href="">
-            <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
-          </a>
-        </div>
-        <br>
-      </div>
-<<<<<<< HEAD
-      {{/each}}
-
-    </div>
-
-    <!-- Sản phẩm bán chạy -->
-    <div class="phukien">
-      <div class="spnoibat">
-        <a href="#">
-          <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM MỚI
-            NHẤT</p>
         </a>
       </div>
-      {{#each products_new}}
-      <div class="box_spnb" style=" width:188px; height:260px; margin-left: 10px">
-        <a href="/products/{{this._id}}">
-          <img src="{{this.anh_sanpham}}" style=" width:188px; height:260px;">
-          <p style="text-align:center; margin-top:5px;height:20px">{{this.ten_sanpham}}</p>
-        </a>
-        <br />
-        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
-        <div class="dathang">
-          <a href="">
-            <p style="color:#FFF;">Thêm Vào Giỏ Hàng</p>
-          </a>
-        </div>
-        <br>
-      </div>
-      {{/each}}
-
-    </div>
-    <!-- Sản phẩm khuyến mãi -->
-    <div class="phukien">
-      <div class="spnoibat"><a href="#">
-          <p style="color:#000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;"> SẢN PHẨM
-            KHUYẾN
-            MÃI </p>
-        </a></div>
-=======
     </div>
     {{/each}}
     </div>
@@ -172,65 +105,15 @@
     </div>
     {{/each}}
     </div>
->>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
-
-      <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-duffel-bag-RcF1FP.jpg"
-            style="width:280px; height:320px;">
-          <p style="text-align:center; margin-top:5px;height:20px"></p>
-        </a>
-        <br />
-        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,019,000VND</span></p>
-        <div class="dathang"><a href="">
-            <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
-          </a></div>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
-      <div class="box_spnb"><a href=""><img src="../images/images_sp/brasilia-training-backpack-5ptm3R.jpg"
-            style="width:280px; height:320px;">
-          <p style="text-align:center; margin-top:5px;height:20px"></p>
-        </a>
-        <br />
-        <p style="color:#CC0000; text-align:center">Giá:<span style="font-weight:bold">1,149,000VND</span></p>
-        <div class="dathang"><a href="">
-            <p style="color:#FFF; font-weight:bold">Thêm Vào Giỏ Hàng</p>
-          </a></div>
-        <br>
-        <br>
-        <br>
-        <br>
-      </div>
 
 
-    </div>
-
-
-<<<<<<< HEAD
   </div>
-  <!-- The End Center -->
 
 
-  <div class="right column-3">
-    <!-- Sản Phẩm bán chạy -->
-    <div class="spbc">
-      <h1>SẢN PHẨM BÁN CHẠY</h1>
-    </div>
-    <!-- slide show sản phẩm bán chạy -->
+</div>
+<!-- The End Center -->
 
-    <div class="slideshow" align="center">
 
-      <div class="box">
-        < a href=""><img src="https://img3.thuthuatphanmem.vn/uploads/2019/10/14/banner-fashion_113854663.jpg"
-            style="width:216px;height:270px;"> </a>
-          <br />
-          <br />
-          <p style="text-align:center;font-weight:bold"></p><br />
-          <p style="text-align:center;color:#CC0000">VND</p>
-      </div>
-      <div class="line1"></div>
-=======
 <div class="right col-3 ml-3" >
   <!-- Sản Phẩm bán chạy -->
   <div class="spbc">
@@ -270,28 +153,9 @@
 <script>
             document.querySelector('.carousel-item').classList.add('active');
           </script>
->>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
 
-    </div>
+  <!-- query cho tin tức mới -->
 
-<<<<<<< HEAD
-    <!-- query cho tin tức mới -->
-
-    <div class="spbc">
-      <h1>TIN TỨC MỚI</h1>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script type="text/javascript" src="../js/jquery.vticker.js"></script>
-    <script type="text/javascript">
-      $(function () {
-        $('.show').vTicker({
-          speed: 500,
-          pause: 3000,
-          animation: 'fade',
-          mousePause: true,
-          showItems: 3
-        });
-=======
   <div class="spbc">
     <p><strong>TIN TỨC MỚI</strong></p>
   </div>
@@ -305,35 +169,20 @@
         animation: 'fade',
         mousePause: true,
         showItems: 3
->>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
       });
-    </script>
+    });
+  </script>
 
-    <div class="show">
-      <ul>
+  <div class="show">
+    <ul>
 
-        <li>
-          <div class="anh_tin">
-            <img src="../images/images_sp/ambush-jacket-Sm3NKC.jpg" height="80px;" width="80px">
-            <a href=""></a>
-          </div>
-        </li>
+      <li>
+        <div class="anh_tin">
+          <img src="../images/images_sp/ambush-jacket-Sm3NKC.jpg" height="80px;" width="80px">
+          <a href=""></a>
+        </div>
+      </li>
 
-<<<<<<< HEAD
-      </ul>
-    </div>
-    <div style="padding-top: 300px; padding-bottom: 20px">
-      <div class="spbc">
-        <h1>QUẢNG CÁO</h1>
-      </div>
-      <div class="box_qc" style="float:left; margin-top:10px;"><a
-          href="https://kenh14.vn/nike-chinh-thuc-cong-bo-thiet-ke-peaceminusone-x-af1-cua-g-dragon-para-noise-20-20201107092422125.chn"><img
-            src="../images/img_qc/qc.png" height="250" width="250"></a></div>
-      <div class="box_qc" style="float:left; margin-top:10px;"><a
-          href="https://kenh14.vn/sau-26-nam-troi-adidas-vua-hoi-sinh-lai-doi-giay-huyen-thoai-da-tung-thay-doi-ca-the-gioi-thoi-trang-20170301112441518.chn"><img
-            src="../images/img_qc/qc1.jpg" height="250" width="250"></a></div>
-    </div>
-=======
     </ul>
   </div>
   <div style="padding-top: 300px; padding-bottom: 20px">
@@ -347,49 +196,12 @@
         href="https://kenh14.vn/sau-26-nam-troi-adidas-vua-hoi-sinh-lai-doi-giay-huyen-thoai-da-tung-thay-doi-ca-the-gioi-thoi-trang-20170301112441518.chn"><img
           src="../images/img_qc/qc1.jpg" height="250" width="250"></a></div>
   </div>
->>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
 
-  </div>
-
-
-
-
-  {{!-- 
-<form action="/register" method="POST">
-  <label for="username">username:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="password">password:</label><br>
-  <input type="password" id="password" name="password"><br>
-  <label for="email">email:</label><br>
-  <input type="text" id="email" name="email"><br>
-  <label for="fullname">fullname:</label><br>
-  <input type="text" id="fullname" name="fullname"><br>
-  <label for="diachi">diachi:</label><br>
-  <input type="text" id="diachi" name="diachi"><br>
-  <label for="sdt">sdt:</label><br>
-  <input type="text" id="sdt" name="sdt"><br>
-  <input type="submit">    
-</form>
-
-
-<form action="/login" method="POST">
-  <label for="username">username:</label><br>
-  <input type="text" id="username" name="username"><br>
-  <label for="password">password:</label><br>
-  <input type="password" id="password" name="password"><br>
-  <input type="submit"> 
-</form> --}}
-
-<<<<<<< HEAD
-  {{renderUserName user user2}}
-  {{renderUserEmail user}}
-  {{renderUserSDT user}}
-  {{renderUserDiaChi user}}
-=======
-{{renderUserName user user2}}
-{{renderUserEmail user}}
-{{renderUserSDT user}}
-{{renderUserDiaChi user}}
 </div>
->>>>>>> 14bcbd2e98f1ac42b3aad405501a4a2d69052c01
+
+
+
+
+
+</div>
 </div>

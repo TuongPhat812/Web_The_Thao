@@ -7,7 +7,7 @@ const authentication = require('./app/middlewares/authentication')
 const session = require('express-session');
 
 const app = express();
-const port = 3001;
+const port = 3000;
 const route = require('./routes/');
 const db = require('./config/db/index') //chứa hàm connect()
 db.connect();
@@ -30,7 +30,7 @@ app.engine('handlebars', handlebars({
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 20000 } }));
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 200000 } }));
 app.use(authentication)
 
 

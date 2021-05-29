@@ -8,7 +8,6 @@ class HomeController {
         const user = res.locals.user;
 
         //Load sản phẩm hot và mới nhất
-        Promise.deleteO
         Promise.all([
                 // 
                 Product.find({ sanpham_hot: 1 }),
@@ -23,6 +22,7 @@ class HomeController {
                 products_hot = products_hot.map(product_hot => product_hot.toObject());
                 products_new = products_new.map(product_new => product_new.toObject());
                 products_km = products_km.map(products_km => products_km.toObject());
+                
                 res.render('HomeView', {
                     products_hot,
                     products_new,
@@ -46,6 +46,7 @@ class HomeController {
                     req.session.fullname = user.fullname;
                     req.session.sdt = user.sdt;
                     req.session.diaChi = user.diachi;
+                    req.session.role = user.isadmin;
                     res.redirect('/')
                 } else {
                     req.session.userName = undefined
