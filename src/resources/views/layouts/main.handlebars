@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <title>Document</title>
+    
     <Style>
         body{
             margin: 0;
@@ -24,8 +24,22 @@
 
 <body class="" style="margin:0 auto;">
 
-    {{>header}}
+    {{#if (isAdmin user)}}
     
+    
+
+
+    <div class="position:top:60px">
+        {{{body}}}
+    </div>
+    
+
+
+    
+   
+    {{else}}
+    {{>header}}
+
     <div class="position:top:60px">
         {{{body}}}
     </div>
@@ -33,9 +47,7 @@
 
 
     {{>footer}}
-   
-    
-
+    {{/if}}
     <script type="text/javascript" src="/js/jquery-1.7.2.min.js"><{{!}}/script>
     <script type="text/javascript" src="/js/jquery.simplyscroll.js"><{{!}}/script>
     <script type="text/javascript" src="/js/jquery.cycle.all.js"><{{!}}/script>

@@ -64,6 +64,7 @@ class HomeController {
         req.session.fullname = undefined
         req.session.sdt = undefined
         req.session.diaChi = undefined
+        req.session.role = undefined
         res.redirect('/')
     }
 

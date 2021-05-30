@@ -22,7 +22,7 @@ class HomeController {
                     products = products.map(product => product.toObject())
                     users = users.map(user => user.toObject())
 
-                    res.render('admin/AdminView', {products, users})
+                    res.render('admin/admin_user', {products, users})
                 }
             )
             

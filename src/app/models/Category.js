@@ -6,7 +6,7 @@ const Schema = mongoose.Schema;
 
 const Category = new Schema({
         _id: { type: Number },
-        id_nhomsp: { type: Number, ref: 'productgroups', required: true },
+        id_nhomsp: { type: Number, required: true },
         ten_danhmuc: { type: String, max: 100 },
     })
     /*

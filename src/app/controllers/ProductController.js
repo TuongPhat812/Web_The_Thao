@@ -19,7 +19,7 @@ class ProductsController {
                 products = products.map((product) => product.toObject());
                 Product.find({ id_danhmuc: products[0].id_danhmuc }).then((a) => {
                     var product_lienquan = a.map((a) => a.toObject());
-                    console.log(product_lienquan);
+                    // console.log(product_lienquan);
                     res.render("ProductDetailView", { user, products, product_lienquan });
                 });
             })
@@ -29,8 +29,11 @@ class ProductsController {
     }
     trangsanpham(req, res, next) {
         var page = req.query.page;
+        
         if (page) {
             page = parseInt(page);
+        }else{
+            // page=1;
         }
         var pageSize = 12;
         var soLuongBoQua = (page - 1) * pageSize;
@@ -38,7 +41,9 @@ class ProductsController {
                 Product.find({})
                 .skip(soLuongBoQua)
                 .limit(pageSize),
+
                 ProductGroup.find({}),
+
                 Category.find({}),
             ])
             .then(([
@@ -47,6 +52,8 @@ class ProductsController {
                 categorys
             ]) => {
                 productGroups = productGroups.map(productgroup => productgroup.toObject());
+                // console.log("category" + categorys)
+                
                 categorys = categorys.map(category => category.toObject());
                 Product.countDocuments({}).then((total) => {
                     var tongSoPage = Math.ceil(total / pageSize);

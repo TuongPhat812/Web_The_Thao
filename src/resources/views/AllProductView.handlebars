@@ -11,39 +11,28 @@
 <div class="col-3 mt-5">
     <div class="left mt-5" style="margin-top: 500px">
     <div class="spbc" >
-        <p style="align-item: center">DANH MỤC SẢN PHẨM</p>
+        <center style="font-weight :bold">DANH MỤC SẢN PHẨM</center>
     </div> <!-- Danh mục sản phẩm cột left  -->
     <div class="menu_pk">
         <div class="pk" align="center">
             <ul>
+             
+
                 <!--Thời Trang nữ  -->
-                {{#each productGroups}}
+               {{#each productGroups as |pg|}}
                 <li style="margin-top:15px;">
-                    <a href="/products/group={{this._id}}">
-                        {{this.ten_nhomsp}} </a>
+                    <a href="/products/group={{pg._id}}">
+                        {{pg.ten_nhomsp}} </a>
                     <div class="line"></div>
-                    <ul class="dm">
-                      {{#each categorys}}
-                      {{#if categorys.id_nhomsp={{this._id}}}}
-                        <li>
-                            <a href="-AO-1.html"><span>
-                                    {{this.ten_danhmuc}}</span></a>
-                        </li>
-
-                        {{!-- <div class="line1"></div>
-                        <li>
-                            <a href="-QUAN-VAY-33.html"><span>
-                                    QUẦN, VÁY</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-GIAY-34.html"><span>
-                                    GIÀY</span></a>
-                        </li>
-
-                        <div class="line1"></div> --}}
+                    <ul class="dm d-flex flex-column">
+                      {{#each ../categorys as |cate|}}
+                     
+                         {{#if (isCategory cate pg) }}                      
+                            <li> <a href="/products?id_dangmuc={{cate._id}}"> {{cate.ten_danhmuc}}</a>  </li>
+                                                
                         {{/if}}
+                      
+                     
                         {{/each}}
                     </ul>
                     </li>
@@ -166,6 +155,11 @@
             </script>
             <script>
                  var a=new URLSearchParams(window.location.search).get('page'); 
+                 if(a==null) {
+                   a=1;
+                   document.location.search="?page="+(parseInt(a));
+                 }
+                 
                     var lists=document.querySelectorAll('.page-item');
                     
                     lists.forEach(list=>{
@@ -180,6 +174,7 @@
                             if (list.innerText=="Previous") list.classList.add("disabled")
                         }
                       }else{
+
                         if (list.innerText=="Previous"||list.innerText=="1") list.classList.add("disabled")
 
                       }
