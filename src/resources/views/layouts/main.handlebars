@@ -13,25 +13,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     
-    <Style>
+    <style>
         body{
-            margin: 0;
-            padding: 0;
-            width: 100vw;
+            margin: 0.01px;
+            padding: 0.01px;
+            width: 100%;
         }
-    </Style>
+    </style>
 </head>
 
-<body class="" style="margin:0 auto;">
+<body class="" style="margin:0.01;">
 
     {{#if (isAdmin user)}}
     
     
 
 
-    <div class="position:top:60px">
+    
         {{{body}}}
-    </div>
+    
     
 
 
@@ -40,9 +40,9 @@
     {{else}}
     {{>header}}
 
-    <div class="position:top:60px">
+   
         {{{body}}}
-    </div>
+    
     
 
 

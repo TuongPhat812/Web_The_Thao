@@ -21,11 +21,9 @@ class HomeController {
             .then(([products, users]) => {
                     products = products.map(product => product.toObject())
                     users = users.map(user => user.toObject())
-
                     res.render('admin/admin_user', {products, users})
                 }
             )
-            
             .catch(next)
             
         }
