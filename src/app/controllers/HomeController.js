@@ -79,8 +79,12 @@ class HomeController {
                     console.log("Username has already existed" + user.username)
                     res.render('Dangky', { message: 'Tên đăng nhập đã tồn tại' })
                 } else {
+                    let countUser = Math.random();
+                    while (User.findOne({_id: countUser})){
+                        countUser = Math.ceil(Math.random()*1000);
+                    }
                     const user = new User({
-                        _id: Math.random(),
+                        _id: countUser,
                         username: req.body.username,
                         password: req.body.password,
                         diachi: req.body.diachi,
@@ -100,6 +104,7 @@ class HomeController {
 
     //[GET]: /login - di chuyển tới form đăng nhập
     getLogin(req, res, next) {
+
         res.render('Dangnhap')
     }
 
