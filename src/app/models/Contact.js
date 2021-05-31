@@ -9,7 +9,7 @@ const Product = new Schema({
     ten_khachhang: { type: String, required: true, max: 100 },
     email: { type: String, required: true },
     message: { type: String, max: 500 },
-    tinh_trang: { type: Number, required: true, enum: [0, 1], defaul: 0 },
+    tinh_trang: { type: Number, required: true, enum: [0, 1], default: 0 },
     ngaydang: { type: Date, default: Date.now }
 })
 module.exports = mongoose.model('product', Product);

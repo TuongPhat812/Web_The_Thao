@@ -1,11 +1,11 @@
 const Product = require('../models/Product')
 const User = require('../models/User')
 class HomeController {
-    //[GET]: /
+    //[GET]: / - Di chuyển đến trang chủ
     index(req, res, next) {
 
-        //Lấy ra user nếu đã đăng nhập thành công
-        const user = res.locals.user;
+        // User đã đăng nhập là Authentication User
+        const authUser = res.locals.user;
 
         //Load sản phẩm hot và mới nhất
         Promise.all([
@@ -27,14 +27,14 @@ class HomeController {
                     products_hot,
                     products_new,
                     products_km,
-                    user
+                    authUser
                 });
             })
             .catch(next)
     }
 
-    //[POST]: /login
-    login(req, res, next) {
+    //[POST]: /login - Thực hiện chức năng đăng nhập
+    postLogin(req, res, next) {
         User.findOne({
                 username: req.body.username,
                 password: req.body.password
@@ -42,6 +42,7 @@ class HomeController {
             .then(user => {
                 if (user) {
                     req.session.userName = user.username;
+                    req.session.password = user.password;
                     req.session.email = user.email;
                     req.session.fullname = user.fullname;
                     req.session.sdt = user.sdt;
@@ -49,16 +50,15 @@ class HomeController {
                     req.session.role = user.isadmin;
                     res.redirect('/')
                 } else {
-                    req.session.userName = undefined
 
-                    res.render('Dangnhap',{message: 'Not found'})
+                    res.render('Dangnhap',{message: 'User not found'})
                 }
             })
             .catch(next)
     }
 
-    //[POST]: /logout
-    logout(req, res, next) {
+    //[GET]: /logout - Đăng xuất | di chuyển về trang chủ
+    getLogout(req, res, next) {
         req.session.userName = undefined
         req.session.email = undefined
         req.session.fullname = undefined
@@ -68,8 +68,8 @@ class HomeController {
         res.redirect('/')
     }
 
-    //[POST]: /register
-    register(req, res, next) {
+    //[POST]: /register - Thực hiện chức năng đăng ký
+    postRegister(req, res, next) {
         
         User.findOne({
                 username: req.body.username,
@@ -99,12 +99,12 @@ class HomeController {
     }
 
     //[GET]: /login - di chuyển tới form đăng nhập
-    dangnhap(req, res, next) {
+    getLogin(req, res, next) {
         res.render('Dangnhap')
     }
 
     //[GET]: /register - di chuyển tới form đăng ký
-    dangky(req, res, next) {
+    getRegister(req, res, next) {
         res.render('Dangky')
     }
 

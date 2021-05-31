@@ -1,6 +1,3 @@
-//const js = require('../resources/js/script.js');
-
-
 
 
 
@@ -20,12 +17,8 @@ const fors = (total) => {
 
 const isAdmin = (user) => user.role == 1 ? true : false
 
-const isCategory = (categorys, productGroup) =>{
-    
-    console.log(categorys.id_nhomsp)
-    console.log(productGroup._id)
-    return categorys.id_nhomsp == productGroup._id
-} 
+const isCategory = (categorys, productGroup) => categorys.id_nhomsp == productGroup._id
+
 
 const sum = (arr) => {
     const sum = 0

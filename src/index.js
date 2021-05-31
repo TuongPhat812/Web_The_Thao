@@ -30,7 +30,7 @@ app.engine('handlebars', handlebars({
 app.set('view engine', 'handlebars');
 app.set('views', path.join(__dirname, 'resources', 'views'));
 
-app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 200000 } }));
+app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 1000 * 60 * 60 } }));
 app.use(authentication)
 
 

@@ -9,9 +9,9 @@
 	      <div class="user">  <!--Box chức năng đăng ký / đăng nhập  -->
 	      	<ul>
 	      		<li>
-	      			{{#if user.userName}}
+	      			{{#if authUser.userName}}
 	      			<a href="khach-hang.html"><i class="fas fa-user"></i></a>
-                      <a href="#"> Chào {{user.userName}}</a>
+                      <a href="#"> Chào {{authUser.userName}}</a>
 	      			
                       <a href="/logout"> / Đăng xuất</a>
 	      			{{else}}

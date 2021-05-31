@@ -1,34 +1,34 @@
 const Product = require('../models/Product')
 const User = require('../models/User')
 class HomeController {
-    //[GET]: /
+    //[GET]: /admin - Hiển thị giao diện trang admin
     index(req, res, next) {
-
         //Lấy ra user nếu đã đăng nhập thành công
-        const user = res.locals.user;
-        
-        
-        
-            
-        //Load sản phẩm hot và mới nhất
-        if(user.role)
-        {
-            Promise.all([
-                // 
-                Product.find({}),
-                User.find({})
-            ])
-            .then(([products, users]) => {
-                    products = products.map(product => product.toObject())
-                    users = users.map(user => user.toObject())
-                    res.render('admin/admin_user', {products, users})
-                }
-            )
-            .catch(next)
-            
+        const authUser = res.locals.user;
+        console.log(authUser)
+        if(authUser.role)
+        { 
+            res.render('admins/admin_product', {authUser})
         }
         else
             res.redirect('/')
+    }
+
+    //[GET]: /admin/users - Hiển thị toàn bộ user
+    getUsers(req,res,next){
+        // const authUser = res.locals.user;
+        // if(authUser.role){
+        //     User.find({})
+        //     .then(users => {
+        //         users = users.map(user => user.toObject())
+                
+        //         res.render("admins/Admin_UserView", { authUser, users})
+        //     })
+        //     .catch(next)
+        // }
+        // else
+        //     res.redirect('/')
+        res.render('admins/Admin_UserView')
 
     }
 }
