@@ -4,7 +4,7 @@ const mongooseDelete = require('mongoose-delete');
 const slug = require('mongoose-slug-generator');
 
 const Schema = mongoose.Schema;
-const Product = new Schema({
+const Contact = new Schema({
     _id: { type: Number },
     ten_khachhang: { type: String, required: true, max: 100 },
     email: { type: String, required: true },
@@ -12,4 +12,4 @@ const Product = new Schema({
     tinh_trang: { type: Number, required: true, enum: [0, 1], default: 0 },
     ngaydang: { type: Date, default: Date.now }
 })
-module.exports = mongoose.model('product', Product);
+module.exports = mongoose.model('contact', Contact);

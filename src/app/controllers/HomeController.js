@@ -104,13 +104,14 @@ class HomeController {
 
     //[GET]: /login - di chuyển tới form đăng nhập
     getLogin(req, res, next) {
-
+        const authUser = res.locals.user;
         res.render('Dangnhap')
     }
 
     //[GET]: /register - di chuyển tới form đăng ký
     getRegister(req, res, next) {
-        res.render('Dangky')
+        const authUser = res.locals.user;
+        res.render('Dangky', authUser)
     }
 
     // products(req, res, next) {

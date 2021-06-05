@@ -5,6 +5,7 @@ const methodOverride = require('method-override');
 const handlebars = require('express-handlebars');
 const authentication = require('./app/middlewares/authentication')
 const session = require('express-session');
+const axios = require('axios')
 
 const app = express();
 const port = 3000;

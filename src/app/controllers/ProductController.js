@@ -31,8 +31,9 @@ class ProductsController {
     }
     getAllProducts(req, res, next) {
         const authUser = res.locals.user;
-        const page = req.query.page != undefined ? parseInt(req.query.page) : 1;
-
+        //const page = req.query.page != undefined ? parseInt(req.query.page) : 1;
+        const page = parseInt(req.query.page) ?? 1;
+        
         const pageSize = 12;
         const soLuongBoQua = (page - 1) * pageSize;
         Promise.all([

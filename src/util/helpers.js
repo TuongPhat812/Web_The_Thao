@@ -1,11 +1,6 @@
 
 
 
-const getSessionUser = (user) => user ? user : undefined
-const renderUserName = (user) => getSessionUser(user) ? user.userName : undefined
-const renderUserEmail = (user) => getSessionUser(user) ? user.email : undefined
-const renderUserSDT = (user) => getSessionUser(user) ? user.sdt : undefined
-const renderUserDiaChi = (user) => getSessionUser(user) ? user.diaChi : undefined
 const fors = (total) => {
     var pag = ""
     for (var i = 1; i <= total; i++) {
@@ -19,6 +14,11 @@ const isAdmin = (user) => user.role == 1 ? true : false
 
 const isCategory = (categorys, productGroup) => categorys.id_nhomsp == productGroup._id
 
+const searchUser = () => {
+    const keyword = document.getElementById('inputUser').value.toLowerCase();
+    console.log(keyword);
+}
+
 
 const sum = (arr) => {
     const sum = 0
@@ -27,13 +27,9 @@ const sum = (arr) => {
 
 
 module.exports = {
-
-    getSessionUser,
-    renderUserName,
-    renderUserEmail,
-    renderUserSDT,
-    renderUserDiaChi,
     fors,
     isAdmin,
-    isCategory
+    isCategory,
+    searchUser
+
 }

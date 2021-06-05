@@ -9,7 +9,7 @@ router.post('/register', homeController.postRegister)
 router.get('/login', homeController.getLogin)
 router.post('/login', homeController.postLogin)
 router.get('/logout', homeController.getLogout)
-router.get('/', homeController.index);
+router.get('/', homeController.index)
 
 
 module.exports = router;
