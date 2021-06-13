@@ -203,7 +203,6 @@ input[type=submit] {
     //fetch('http://localhost:3000/data')
     //.then(response => response.json())
     //.then(json => json.forEach(x => console.log(x)))
-    
 
     function autocomplete(inp, arr) {
         
@@ -242,7 +241,9 @@ input[type=submit] {
                     });
                     a.appendChild(b);
                 }
+                
             }
+            console.log(inp)
         });
         /*execute a function presses a key on the keyboard:*/
         inp.addEventListener("keydown", function (e) {
@@ -306,12 +307,15 @@ input[type=submit] {
     
     let dataUsers = [];
 
-         axios.get('http://localhost:3000/data/users')
+         axios.get('http://localhost:3000/api/users')
         .then(function (response){
             var data = [];
             
             response.data.forEach(
-                (x,i) => {data[i] = x}
+                (x,i) => {
+                    data[i] = x
+                    console.log(x)
+                    }
             )
             dataUsers = data[0]
             
