@@ -14,10 +14,7 @@ const isAdmin = (user) => user.role == 1 ? true : false
 
 const isCategory = (categorys, productGroup) => categorys.id_nhomsp == productGroup._id
 
-const searchUser = () => {
-    const keyword = document.getElementById('inputUser').value.toLowerCase();
-    console.log(keyword);
-}
+
 
 
 const sum = (arr) => {
@@ -30,6 +27,6 @@ module.exports = {
     fors,
     isAdmin,
     isCategory,
-    searchUser
+    
 
 }
