@@ -3,7 +3,10 @@ const router = express.Router();
 
 const homeController = require('../app/controllers/HomeController');
 
-
+router.get('/contact', (req, res, next) => {
+    const authUser = res.locals.user;
+    res.render('Contact', { authUser })
+})
 router.get('/register', homeController.getRegister)
 router.post('/register', homeController.postRegister)
 router.get('/login', homeController.getLogin)

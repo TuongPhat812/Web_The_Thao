@@ -1,6 +1,3 @@
-
-
-
 const fors = (total) => {
     var pag = ""
     for (var i = 1; i <= total; i++) {
@@ -13,7 +10,8 @@ const fors = (total) => {
 const isAdmin = (user) => user.role == 1 ? true : false
 
 const isCategory = (categorys, productGroup) => categorys.id_nhomsp == productGroup._id
-
+const isNumbers = (a, b) => a == b
+const isgtNumbers = (a, b) => a > b
 
 
 
@@ -27,6 +25,7 @@ module.exports = {
     fors,
     isAdmin,
     isCategory,
-    
+    isNumbers,
+    isgtNumbers,
 
 }
