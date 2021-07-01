@@ -21,95 +21,18 @@
                 <!--Thời Trang nữ  -->
                {{#each productGroups as |pg|}}
                 <li style="margin-top:15px;">
-                    <a href="/products/group={{pg._id}}">
+                    <a href="/products?id_nhomsp={{pg._id}}">
                         {{pg.ten_nhomsp}} </a>
                     <div class="line"></div>
                     <ul class="dm d-flex flex-column">
-                      {{#each ../categorys as |cate|}}
-                     
+                      {{#each ../categorys as |cate|}}                     
                          {{#if (isCategory cate pg) }}                      
-                            <li> <a href="/products?id_dangmuc={{cate._id}}"> {{cate.ten_danhmuc}}</a>  </li>
-                                                
-                        {{/if}}
-                      
-                     
+                            <li> <a href="/products?id_danhmuc={{cate._id}}&id_nhomsp={{pg._id}}"> {{cate.ten_danhmuc}}</a>  </li>                                               
+                        {{/if}}                                      
                         {{/each}}
                     </ul>
                     </li>
-                    {{/each}}
-                    {{!-- <a href="index.php?controller=list_sp&id_nhomsp=2">
-                        PHỤ KIỆN NỮ </a>
-                    <div class="line"></div>
-
-                    <ul class="dm">
-                        <li>
-                            <a href="-NON-7.html"><span>
-                                    NÓN</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-BALO-TUI-11.html"><span>
-                                    BALO, TÚI</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-KHAC-12.html"><span>
-                                    KHÁC</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                    </ul>
-                    <a href="index.php?controller=list_sp&id_nhomsp=4">
-                        THỜI TRANG NAM </a>
-                    <div class="line"></div>
-
-                    <ul class="dm">
-                        <li>
-                            <a href="-AO-19.html"><span>
-                                    ÁO</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-QUAN-20.html"><span>
-                                    QUẦN</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-GIAY-21.html"><span>
-                                    GIÀY</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                    </ul>
-                    <a href="index.php?controller=list_sp&id_nhomsp=5">
-                        PHỤ KIỆN NAM </a>
-                    <div class="line"></div>
-
-                    <ul class="dm">
-                        <li>
-                            <a href="-NON-23.html"><span>
-                                    NÓN</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-BALO-CAP-24.html"><span>
-                                    BALO, CẶP</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                        <li>
-                            <a href="-KHAC-25.html"><span>
-                                    KHÁC</span></a>
-                        </li>
-
-                        <div class="line1"></div>
-                    </ul>
-                 --}}
+                    {{/each}}                   
             </ul>
         </div>
     </div>
@@ -142,6 +65,8 @@
 </div>
     
 <div class="mt-5">
+  
+{{#if (isgtNumbers tongSoPage 1)}}
     <ul class="pagination">
   <li class="page-item" onclick="pre()"><a class="page-link" href="#">Previous</a></li>
   <div class="des">
@@ -149,15 +74,22 @@
   </div>
 
   <li class="page-item" onclick="next()"><a class="page-link" href="#">Next</a></li>
+  </ul>
+  {{/if}}
             <script>
               var des = document.querySelector(".des").innerText;
               document.querySelector(".des").innerHTML=des;
             </script>
             <script>
+                var id_danhmuc=new URLSearchParams(window.location.search).get('id_danhmuc');
+                if (id_danhmuc==undefined) id_danhmuc=NaN;
+
+                var id_nhomsp=new URLSearchParams(window.location.search).get('id_nhomsp');
+                if (id_nhomsp==undefined) id_nhomsp=NaN;
                  var a=new URLSearchParams(window.location.search).get('page'); 
                  if(a==null) {
                    a=1;
-                   document.location.search="?page="+(parseInt(a));
+                   document.location.search="?page="+(parseInt(a))+"&id_danhmuc="+(parseInt(id_danhmuc))+"&id_nhomsp=" +(parseInt(id_nhomsp));
                  }
                  
                     var lists=document.querySelectorAll('.page-item');
@@ -192,10 +124,28 @@
                     document.location.search="?page="+(parseInt(a)+1)
                 }
             </script>
+{{#if (isNumbers tongSoPage 1)}}
+  <ul class="pagination">
+  <li class="page-item disabled" onclick="pre()"><a class="page-link" href="#"  >Previous</a></li>
+  <div class="des">
+      <li class="page-item disabled" oncick="page(this)"><a class="page-link" > 1 </a></li>
+  </div>
+  <li class="page-item disabled" onclick="next()"><a class="page-link" href="#"  >Next</a></li>    
+</ul>
+  {{/if}}
 
+   {{#if (isNumbers tongSoPage 0)}}
+  <ul class="pagination">
+  <li class="page-item disabled" onclick="pre()"><a class="page-link" href="#"  >Previous</a></li>
+  <div class="des">
+     <li class="page-item disabled" ><a class="page-link" >1</a></li>
+  </div>
+  <li class="page-item disabled" onclick="next()"><a class="page-link" href="#" >Next</a></li>    
+</ul>
+  {{/if}}
    
 
-</ul>
+
 </div>
 </div>
 </div>

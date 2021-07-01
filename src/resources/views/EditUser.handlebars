@@ -1,9 +1,8 @@
 {{>left}}
 <style type="text/css">
- #form-wrapper
+#form-wrapper
 { 
-    margin-left: 400px;
-    width: 700px;
+    
     height:370px;
     padding: 20px;    
     position: relative;
@@ -11,55 +10,22 @@
     
     background-color: #fff;
 }
-#form-wrapper1
+.form-wrapper1
 { 
-    width: 700px;
     height: 370px;
     padding: 20px;    
-    position: relative;
+    
     border: 1px solid #0000; 
     border-color: #f93;
     background-color: #fff;
 }
-#form-wrapper:before, #form-wrapper:after
-{
-    z-index: -1;
-    position: absolute;
-    content: "";
-    bottom: 15px;
-    left: 10px;
-    width: 50%;
-    top: 80%;
-    max-width:300px;  
 
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    -o-transform: rotate(-3deg);
-    -ms-transform: rotate(-3deg);
-    transform: rotate(-3deg);
-}
-
-
-#form-wrapper form
-{
-    background: #fff;
-    height: 270px;
-}
-
-#form-wrapper #form-inner
-{
-    margin: 0 auto;
-    padding: 35px ;
-    width: 545px;
-}
-    
 #form-wrapper label
 {
     font: bold 18px/25px Corbel, Arial, Helvetica; 
-    
     float: left; 
     margin-right: 10px; 
-    width: 120px; 
+    width: 30%; 
 }
 
 #form-wrapper .input
@@ -68,7 +34,7 @@
     padding: 5px;
     margin: 0 0 20px 0;
     border: 1px solid #b9bdc1; 
-    width: 400px; 
+    width: 60%; 
     color: #000000;   
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
@@ -82,10 +48,6 @@
     outline: 0;
 }
 
-#form-wrapper .textarea
-{
-    height:150px;   
-}
 
 #form-wrapper .button
 {
@@ -119,7 +81,6 @@
     top: 2px;
     
 }
-	
 	#h1{
     text-align: center;
 	padding: 10px;
@@ -130,27 +91,34 @@
 	color: #F93;
 }
 </style>
-<body>
-<div id="form-wrapper">
-	<div id="form-wrapper1" style="margin-top: 125px;">
-		<h1 id="h1" >SỬA THÔNG TIN</h1>
-        <div class="form-inner" style="margin-top: 30px;">
-            <form method="post" action="">
-            	<label for="name">Họ tên:</label>
-                <input type="text" class="input" name="fullname" required>	
-
-                <label for="mail">Email:</label>
-                <input type="text" class="input" name="email" required>
-
-                <label for="sdt">Số điện thoại:</label>
-                <input type="text" class="input" name="sdt" required>
-
-                <label for="diachi">Địa chỉ:</label>
-                <input type="text" class="input" name="diachi" required>
-
-                <input class="button" type="submit" value="LƯU THÔNG TIN">
-</form>
+<div class="container" style="height: 450px;">
+    <div class="d-flex">
+    <div id="form-wrapper" style="margin-top: 155px; width: 75%; margin-right:10px">
+    	<div class="form-wrapper1" >
+    		<h1 id="h1" >SỬA THÔNG TIN</h1>
+            <div class="form-inner" style="margin-top: 30px;">
+                <form method="post" action="">
+                	<label for="name">Họ tên:</label>
+                    <input type="text" class="input" name="fullname" required value="{{authUser.fullname}}">	
+    
+                    <label for="mail">Email:</label>
+                    <input type="text" class="input" name="email" required value="{{authUser.email}}">
+    
+                    <label for="sdt">Số điện thoại:</label>
+                    <input type="text" class="input" name="sdt" required value="{{authUser.sdt}}">
+    
+                    <label for="diachi">Địa chỉ:</label>
+                    <input type="text" class="input" name="diachi" required value="{{authUser.diaChi}}">
+    
+                    <input class="button" type="submit" value="LƯU THÔNG TIN">
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="form-wrapper1" style="margin-top: 175px; width:25%">
+        <p><i class="fas fa-history mr-3 pr-1" style="color: #f93;"></i><a href="/user/purchase-history">Lịch sử mua hàng</a></p>
+        <p><i class="fas fa-user-edit mr-3" style="color: #f93;"></i><a href="/user/change-pass">Thay đổi mật khẩu</a></p>
+    </div>
+    </div>
 </div>
-</div>
-</div>
-</body>
+

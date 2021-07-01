@@ -24,14 +24,106 @@ tr{
 	height: 30px;
 }	
 
+#form-wrapper
+{ 
+    
+    height:370px;
+    padding: 20px;    
+    position: relative;
+    border: 1px solid #0000; 
+    
+    background-color: #fff;
+}
+.form-wrapper1
+{ 
+    height: 370px;
+    padding: 20px;    
+    
+    border: 1px solid #0000; 
+    border-color: #f93;
+    background-color: #fff;
+}
 
+#form-wrapper label
+{
+    font: bold 18px/25px Corbel, Arial, Helvetica; 
+    float: left; 
+    margin-right: 10px; 
+    width: 30%; 
+}
+
+#form-wrapper .input
+{
+    font: 15px Arial, Helvetica; 
+    padding: 5px;
+    margin: 0 0 20px 0;
+    border: 1px solid #b9bdc1; 
+    width: 60%; 
+    color: #000000;   
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+}
+
+#form-wrapper .input:focus
+{
+    background-color: #E7E8E7;
+    outline: 0;
+}
+
+
+#form-wrapper .button
+{
+    float: right;
+    margin: 10px 0 0 0;
+    padding: 7px 15px;
+    cursor: pointer;   
+    color: #fff;
+    font: bold 13px Tahoma, Verdana, Arial;
+    text-transform: uppercase;
+    overflow: visible; /* IE6/7 fix */
+    border: 0;      
+
+    background-color: #f93;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    
+    
+}
+
+#form-wrapper .button:hover
+{
+    background-color: #F7AE3F;
+    
+}
+
+#form-wrapper .button:active
+{
+    background: #f93;
+    position: relative;
+    top: 2px;
+    
+}
+	#h1{
+    text-align: center;
+	padding: 10px;
+	margin: 0px auto;
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 24px;
+	color: #F93;
+}
 </style>
-<div class="khachhang">
-	<div class="chaouser">LỊCH SỬ MUA HÀNG</div>
-	<br>
-	<table cellpadding="15" cellspacing="15" border="1" style="border-collapse: collapse; color:#000000;
+
+<div class="container" style="height: 450px;">
+    <div class="d-flex">
+    <div id="form-wrapper" style="margin-top: 155px; width: 75%; margin-right:10px">
+    	<div class="form-wrapper1" >
+    		<h1 id="h1" >LỊCH SỬ MUA HÀNG</h1>
+            <table cellpadding="15" cellspacing="15" border="1" style="border-collapse: collapse; color:#000000;
 	border-color:#BEBEBE" >
-		<div class="chaouser" style="margin-top: 70px;margin-bottom:50px;">LỊCH SỬ MUA HÀNG</div>
+		
 		<tr>
 			<th style="width:100px; text-align:center; font-size: 16px">STT</th>
 			<th style="width:250px; text-align:center">ID ĐƠN HÀNG</th>
@@ -46,5 +138,11 @@ tr{
 
 			</tr>
 	</table>
-
+        </div>
+    </div>
+    <div class="form-wrapper1" style="margin-top: 175px; width:25%">
+        <p><i class="fas fa-info mr-3 pl-1 pr-2" style="color: #f93;"></i><a href="/user/editUser">Thông tin tài khoản</a></p>
+        <p><i class="fas fa-user-edit mr-3" style="color: #f93;"></i><a href="/user/change-pass">Thay đổi mật khẩu</a></p>
+    </div>
+    </div>
 </div>

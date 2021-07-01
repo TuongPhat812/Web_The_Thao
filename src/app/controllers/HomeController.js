@@ -22,7 +22,7 @@ class HomeController {
                 products_hot = products_hot.map(product_hot => product_hot.toObject());
                 products_new = products_new.map(product_new => product_new.toObject());
                 products_km = products_km.map(products_km => products_km.toObject());
-                
+
                 res.render('HomeView', {
                     products_hot,
                     products_new,
@@ -51,7 +51,7 @@ class HomeController {
                     res.redirect('/')
                 } else {
 
-                    res.render('Dangnhap',{message: 'User not found'})
+                    res.render('Dangnhap', { message: 'User not found' })
                 }
             })
             .catch(next)
@@ -70,7 +70,7 @@ class HomeController {
 
     //[POST]: /register - Thực hiện chức năng đăng ký
     postRegister(req, res, next) {
-        
+
         User.findOne({
                 username: req.body.username,
             })
@@ -79,11 +79,11 @@ class HomeController {
                     console.log("Username has already existed" + user.username)
                     res.render('Dangky', { message: 'Tên đăng nhập đã tồn tại' })
                 } else {
-                    let countUser = Math.random()*1000000;
+                    let countUser = Math.random() * 1000000;
                     console.log(countUser)
-                    while (!User.findOne({_id: countUser})){
-                        countUser = Math.ceil(Math.random()*1000000);
-                        
+                    while (!User.findOne({ _id: countUser })) {
+                        countUser = Math.ceil(Math.random() * 1000000);
+
 
                     }
                     const user = new User({
@@ -117,11 +117,8 @@ class HomeController {
         res.render('Dangky', authUser)
     }
 
-    // products(req, res, next) {
-    //     // const idProduct = req.params['id']
-    //     // console.log(idProduct)
-    //     res.render('HomeView')
-    // }
+
+
 }
 
 module.exports = new HomeController();

@@ -7,17 +7,15 @@ class AdminController {
     getInfo(req, res, next) {
         //Lấy ra user nếu đã đăng nhập thành công
         const authUser = res.locals.user;
-        
-        
+
+
 
         if (authUser.userName) {
             console.log(authUser)
             res.render('User', {
                 authUser
             })
-        }
-        else
-        {
+        } else {
             res.redirect('/')
         }
     }
@@ -26,19 +24,19 @@ class AdminController {
     getUsers(req, res, next) {
         const authUser = res.locals.user;
         //if(authUser.role){
-            User.find({})
+        User.find({})
             .then(users => {
                 users = users.map(user => user.toObject())
 
-                res.render("admins/Admin_UserView", { authUser, users})
+                res.render("admins/Admin_UserView", { authUser, users })
             })
             .catch(next)
-        //}
-        // else
-        //     res.redirect('/')
-        
+            //}
+            // else
+            //     res.redirect('/')
+
     }
-    
+
     getUser(req, res, next) {
         const authUser = res.local.user
         User.find({
@@ -52,8 +50,22 @@ class AdminController {
                 })
             })
             .catch(next)
+    }
 
-
+    editUser(req, res, next) {
+        const authUser = res.locals.user;
+        // if (authUser.userName == undefined) res.send('No permission')
+        res.render('EditUser', { authUser })
+    }
+    getPurchaseHistory(req, res, next) {
+        const authUser = res.locals.user;
+        // if (authUser.userName == undefined) res.send('No permission')
+        res.render('History', { authUser })
+    }
+    changePass(req, res, next) {
+        const authUser = res.locals.user;
+        // if (authUser.userName == undefined) res.send('No permission')
+        res.render('Change_password', { authUser })
     }
 }
 
