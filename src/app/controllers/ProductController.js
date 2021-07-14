@@ -9,7 +9,7 @@ class ProductsController {
     index(req, res, next) {
         const authUser = res.locals.user;
         let id = req.params.id;
-        id = parseInt(id);
+        id = isNaN(id) ? '' : parseInt(id);
         // console.log(id)
 
         Promise.all([
@@ -19,15 +19,12 @@ class ProductsController {
                 products,
             ]) => {
                 products = products.map((product) => product.toObject());
-                Product.find({ id_danhmuc: products[0].id_danhmuc }).then((a) => {
+                Product.find({ id_danhmuc: products[0] != undefined ? products[0].id_danhmuc : '' }).then((a) => {
                     var product_lienquan = a.map((a) => a.toObject());
-                    // console.log(product_lienquan);
                     res.render("ProductDetailView", { authUser, products, product_lienquan });
                 });
             })
             .catch(next);
-
-
     }
     getAllProducts(req, res, next) {
         const authUser = res.locals.user;

@@ -1,0 +1,104 @@
+<title>Giỏ hàng</title>
+
+<style>
+    a:hover{
+        text-decoration: none;
+    }
+ a:hover i{
+    color:rgb(122, 121, 121);
+}
+    th, td {
+  padding: 5px 15px;
+
+}
+th{
+    color: #8a8787;
+    font-weight: 400;
+}
+tr, table{
+    width: 100%;
+}
+td p{
+    padding: 5px;
+      display: inline-block;
+}
+.cartsum{
+    border: none;
+    text-align: end;
+    padding-right: 5px;
+    width: 80%;
+    font-weight: 500;
+}
+input{
+    width: 100%;
+}
+</style>
+
+{{!-- Nếu giỏ hàng không có sp thì sẽ hiển thị như này --}}
+<div class="container text-center" style="padding-top: 220px;">
+    <h5 style="margin-bottom: 20px; color:rgb(122, 121, 121)">Chưa có sản phẩm nào trong giỏ hàng</h5>
+    <p style="background-color: #ff9933; display: inline-block; padding: 5px 15px"><a href="/home" style="color: white; font-weight: bolder" >QUAY TRỞ LẠI CỬA HÀNG</a></p>
+</div>
+{{!-- Nếu có sản phẩm sẽ hiện thị như này --}}
+<div class="container d-flex justify-content-between" style="padding-top: 150px; min-height: 400px;">
+    <div class="product" style="width: 62%;">
+        <table class="mt-2">
+            <tr style="border-bottom: 2px solid #bbbbbb; padding: 5px; font-weight: bolder;">
+                <th style="width:300px ;color:#6d6b6b; font-weight: 500;">SẢN PHẨM</th>
+                <th style="color:#6d6b6b; font-weight: 500;">GIÁ</th>
+                <th style="color:#6d6b6b; font-weight: 500;">SỐ LƯỢNG</th>
+                <th style="color:#6d6b6b; font-weight: 500;">THÀNH TIỀN</th>
+            </tr>
+
+            {{!-- Một sản phẩm --}}
+            <tr style="border-bottom: 0.5px solid #d4d2d2;">
+                <td class="d-flex align-items-center">
+                    <p><a href="api/delete"><i class="far fa-times-circle" style="color: #ff9933;"></i></a></p>
+                    <p><img src="data:image/jpeg;base64,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" 
+                    alt="Hình sp" style="width: 75px; height:75px"></p>
+                    <p>Áo Adidas Aeroready Glam On SportOra1970s - Limited</p>
+                </td>
+                <td style="font-weight: 500;">1000 <span>VNĐ</span></td>
+                <td class="=d-flex" >
+                    <div style="border: 1px solid #bbbbbb; width: 100px; ">
+                        <button style="width: 30%; margin:0; border: none; background-color: rgba(0,0,0,0);">-</button>
+                        <input type="text" value="1" style="width:30%;margin:0; border: none; text-align: center;">
+                        <button style="width: 30%; margin:0; border: none; background-color: rgba(0,0,0,0);">+</button>
+                    </div>                   
+                </td>
+                <td style="font-weight: 500;">1000 <span>VNĐ</span></td>
+            </tr>
+          {{!-- Hết một sản phẩm --}}
+        </table>
+        <div class="mt-3 d-flex justify-content-between">
+            <a href=""><p style="margin-top:20px; border:2px solid #ff9933;text-align:center; padding: 5px 15px ; color: #ff9933;">TIẾP TỤC XEM SẢN PHẨM</p></a>
+            <a href=""><p style="margin-top:20px; background-color: #ff9933; border:2px solid #ff9933;text-align:center; padding: 5px 15px; color: white;">CẬP NHẬT GIỎ HÀNG</p></a>
+        </div>
+     
+    </div>
+    <div class="cart" style="width:35%">
+        <p style="border-bottom: 2px solid #bbbbbb; padding: 5px; font-weight: bolder; color:#6d6b6b">CỘNG GIỎ HÀNG</p>
+         <form action="" method="POST">
+        <table >
+            <tr style="border-bottom: 1px solid #bbbbbb; padding: 5px">
+                <th>Tạm tính</th>
+                <td ><input type="text" name="tamtinh" readonly="readonly" value="1000" class="cartsum">VNĐ</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #bbbbbb; padding: 5px">
+                <th>Tổng</th>
+                 <td><input type="text" name="tong" readonly="readonly" value="1000" class="cartsum">VNĐ</td>
+            </tr>
+            
+        </table>
+        <a href="/cart/thanhtoan" style="width: 100%; "><p style="margin-top:20px; background-color: #ff9933;text-align:center; padding: 5px; color: white;">TIẾN HÀNH THANH TOÁN</p></a>
+        </form>
+
+        <div>
+            <p style="border-bottom: 2px solid #bbbbbb; padding: 5px; font-weight: bolder; color:#6d6b6b"><i class="fas fa-tags"></i> Mã khuyến mãi</p>
+            <input type="text" placeholder="Mã khuyến mãi" style="border: #bbbbbb 1px solid; width:100%; margin-top:10px; color:#6d6b6b; padding: 5px">
+            <button style="border: #bbbbbb 1px solid; width:100%; margin-top:10px; color:#6d6b6b; padding: 5px">Áp dụng</button>
+        </div>
+    </div>
+</div>
+
+

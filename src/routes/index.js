@@ -3,14 +3,16 @@ const productRouter = require('./product');
 const adminRouter = require('./admin')
 const dataRouter = require('./data')
 const userRouter = require('./user')
+const cartRouter = require('./cart')
+
 function route(app) {
 
     //app.use('/home', homeRouter);
     //app.use('/news', homeRouter);
 
-
+    app.use('/cart', cartRouter)
     app.use('/api', dataRouter)
-    app.use('/user',userRouter)
+    app.use('/user', userRouter)
     app.use('/products', productRouter)
     app.use('/admin', adminRouter)
     app.use('/', homeRouter);
