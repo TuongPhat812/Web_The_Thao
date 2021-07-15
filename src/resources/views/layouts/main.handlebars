@@ -36,7 +36,20 @@
 
 
     {{>footer}}
+    <script>
+                        var prevScrollpos = window.pageYOffset;
+                        
+                        window.onscroll = function() {
+                            var currentScrollPos = window.pageYOffset;
+                            if (prevScrollpos > currentScrollPos) {
+                                document.getElementById("navbar").style.top = "0";
+                            } else {
+                                document.getElementById("navbar").style.top = "-51px";
 
+                            }
+                            prevScrollpos = currentScrollPos;
+                        }
+                    </script>
     <script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
     <script type= "text/javascript"src="/js/jquery.simplyscroll.js"></script>
     <script type = "text/javascript" src = "/js/jquery.cycle.all.js"></script>

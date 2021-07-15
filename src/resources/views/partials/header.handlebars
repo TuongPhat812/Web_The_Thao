@@ -3,7 +3,7 @@
 		outline:none;
 	}
 </style>
-<div class="" style="position: relative; left: -15px;">
+<div id="navbar" style="position: relative; left: -15px;">
 <div class="dn d-flex flex-column" style="margin-left: 0.95rem !important">
 	<div class="container d-flex justify-content-between">
 	      <div class="user">  <!--Box chức năng đăng ký / đăng nhập  -->
@@ -35,7 +35,7 @@
 	      </div>
 	      <div class="cart d-flex">  <!-- box giỏ hàng  -->
 	      	<a href="/cart" class="d-flex">
-	      		<div id="shopping-cart">
+	      		<div id="shopping-cart" style="background-color: #FF9933;">
 	      			<i title="Click để xem giở hàng" class="fas fa-shopping-cart"></i>
 					  
 	      		</div>
@@ -52,14 +52,14 @@
         <div class="container"> 
              <div class="anh_logo mt-1 column-3"><a href="/"><img src="../images/images_html/Capture.png" style="height:50px; border-bottom-left-radius: 5px;"></a></div>
              
-             <ul class="d-flex justify-content-between" >
-                 <li><a style="color: #FF9933; line-height:50px;" href="/">Trang Chủ</a></li>
-                 <li><a style="color: #FF9933;line-height:50px;" href="/products">Sản Phẩm</a></li>
-                 <li><a style="color: #FF9933;line-height:50px;" href="tin-tuc.html">Tin Tức</a></li>
-                 <li><a style="color: #FF9933;line-height:50px;" href="gioi-thieu.html">Giới Thiệu</a></li>
-                 <li><a style="color: #FF9933;line-height:50px;" href="/contact">Liên Hệ</a></li>
+             <ul class="d-flex" style="position: relative;right:-150px" >
+                 <li><a style="color: #FF9933;line-height:50px;text-align: end; margin-left: 50px" href="/">Trang Chủ</a></li>
+                 <li><a style="color: #FF9933;line-height:50px;text-align: end; margin-left: 50px" href="/products">Sản Phẩm</a></li>
+                 <li><a style="color: #FF9933;line-height:50px;text-align: end; margin-left: 50px" href="/blog">Blog</a></li>
+                 <li><a style="color: #FF9933;line-height:50px;text-align: end; margin-left: 50px" href="/contact">Liên Hệ</a></li>
+                 {{!-- <li><a style="color: #FF9933;line-height:50px;" href="/contact"></a></li>
                  <li><a style="color: #FF9933;line-height:50px;" href="ban-do.html">Bản Đồ</a></li>
-                 <li><a style="color: #FF9933;line-height:50px;" href="huong-dan-mua-hang.html">Mua Hàng</a></li>
+                 <li><a style="color: #FF9933;line-height:50px;" href="huong-dan-mua-hang.html">Mua Hàng</a></li> --}}
              </ul>
 	         	<script type="text/javascript">
 	         	    $(document).ready(function(){
@@ -74,6 +74,7 @@
 </div>
 	
 </div>
+
 <!--menu-->
 	<!-- Nút lên đầu trang-->
 	<script>
@@ -82,7 +83,7 @@
  	 	return false;
 		});
 	</script>
-	<a class="btn-top" href="#top" title="Top" style="display: inline;"><i class="fas fa-angle-up" style="font-size:50px"></i></a>
+	<a class="btn-top" href="#top" title="Top"><i class="fas fa-angle-up" style="font-size:50px; color:#FF9933"></i></a>
 <!-- Menu Top Sản phẩm -->
 
 </div>

@@ -32,7 +32,8 @@
     "mongoose-delete": "^0.5.3",
     "mongoose-slug-generator": "^1.0.4",
     "morgan": "^1.10.0",
-    "node-sass": "^5.0.0"
+    "node-sass": "^5.0.0",
+    "nodemailer": "^6.6.3"
   },
   "devDependencies": {
     "mongodb": "^3.6.6",

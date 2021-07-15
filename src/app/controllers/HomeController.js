@@ -1,5 +1,6 @@
 const Product = require('../models/Product')
 const User = require('../models/User')
+const News = require('../models/News')
 class HomeController {
     //[GET]: / - Di chuyển đến trang chủ
     index(req, res, next) {
@@ -9,25 +10,27 @@ class HomeController {
 
         //Load sản phẩm hot và mới nhất
         Promise.all([
-                // 
                 Product.find({ sanpham_hot: 1 }),
                 Product.find({ ngaydang: "2020-12-17" }),
                 Product.find({ gia_km: { $exists: true } }),
+                News.find({ hot: 1 }),
             ])
             .then(([
                 products_hot,
                 products_new,
                 products_km,
+                news,
             ]) => {
                 products_hot = products_hot.map(product_hot => product_hot.toObject());
                 products_new = products_new.map(product_new => product_new.toObject());
                 products_km = products_km.map(products_km => products_km.toObject());
-
+                news = news.map(news => news.toObject());
                 res.render('HomeView', {
                     products_hot,
                     products_new,
                     products_km,
-                    authUser
+                    authUser,
+                    news,
                 });
             })
             .catch(next)

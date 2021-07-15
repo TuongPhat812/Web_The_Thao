@@ -6,6 +6,9 @@
     transform: scale(1.1);
     box-shadow: #000000;
   }
+  a:hover{
+    text-decoration: none;
+  }
 </style>
 <div class="container pt-5 d-flex">
 <div class="col-3 mt-5">
@@ -52,12 +55,12 @@
       {{!--  margin-left: 10px --}}
       <a href="/products/{{this._id}}">
         <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
-        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px">{{this.ten_sanpham}}</p>
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px; color: #000000">{{this.ten_sanpham}}</p>
       </a>
-      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}</span></p>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}đ</span></p>
       <div class="dathang" style="margin-left:10px">
         <a href="">
-          <p style="color:#FFF; margin-left:20px">Thêm Vào Giỏ Hàng</p>
+          <p style="color:#FFF; padding: 5px">Thêm Vào Giỏ Hàng <i class="fas fa-shopping-cart"></i></p>
         </a>
       </div>
     </div>
@@ -135,6 +138,7 @@
   {{/if}}
 
    {{#if (isNumbers tongSoPage 0)}}
+   <p class="d-flex align-items-center" style="height:400px; color:#bbbbbb;">Chưa có sản phẩm phù hợp</p>
   <ul class="pagination">
   <li class="page-item disabled" onclick="pre()"><a class="page-link" href="#"  >Previous</a></li>
   <div class="des">

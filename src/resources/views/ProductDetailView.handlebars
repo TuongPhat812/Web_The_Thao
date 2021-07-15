@@ -1,249 +1,258 @@
 <style>
-  .thumbnail { overflow: hidden; border: 1px solid #e5e5e5; } .thumbnail img {
-  width: 100%; height: 100%; transition-duration: 0.5s; -ms-transition-duration:
-  0.5s; } .thumbnail img:hover { transform: scale(1.2); -ms-transform:
-  scale(1.2); cursor: pointer; } a:hover{ text-decoration: none; }
-  .carousel-multi-item.v-2.product-carousel .carousel-inner
-  .carousel-item.active, .carousel-multi-item.v-2.product-carousel
-  .carousel-item-next, .carousel-multi-item.v-2.product-carousel
-  .carousel-item-prev { display: -webkit-box; display: -webkit-flex; display:
-  -ms-flexbox; display: flex; } .carousel-multi-item.v-2.product-carousel
-  .carousel-item-right.active, .carousel-multi-item.v-2.product-carousel
-  .carousel-item-next { -webkit-transform: translateX(20%); -ms-transform:
-  translateX(20%); transform: translateX(20%); }
-  .carousel-multi-item.v-2.product-carousel .carousel-item-left.active,
-  .carousel-multi-item.v-2.product-carousel .carousel-item-prev {
-  -webkit-transform: translateX(-20%); -ms-transform: translateX(-20%);
-  transform: translateX(-20%); } .carousel-multi-item.v-2.product-carousel
-  .carousel-item-right, .carousel-multi-item.v-2.product-carousel
-  .carousel-item-left { -webkit-transform: translateX(0); -ms-transform:
-  translateX(0); transform: translateX(0); }
-  .carousel-multi-item.v-2.product-carousel *,
-  .carousel-multi-item.v-2.product-carousel ::after,
-  .carousel-multi-item.v-2.product-carousel ::before { -webkit-box-sizing:
-  content-box; box-sizing: content-box; } .fuchsia-rose-text { color: #f93; }
-  .aqua-sky-text { color: #5cc6c3; } .mimosa-text { color: #F0C05A; }
-  .list-inline-item .fas, .list-inline-item .far { font-size: .8rem; }
-  .chili-pepper-text { color: red; } .carousel-multi-item .controls-top
-  .btn-floating { background: #F8CDCD; } .carousel-multi-item
-  .carousel-indicators li { height: .75rem; width: .75rem; max-width: .75rem;
-  background-color: #5cc6c3; } .carousel-multi-item .carousel-indicators .active
-  { height: 1rem; width: 1rem; max-width: 1rem; background-color: #5cc6c3; }
-  .carousel-multi-item .carousel-indicators { margin-bottom: -1rem; }
+    .thumbnail {
+        overflow: hidden;
+        border: 1px solid #e5e5e5;
+    }
+    
+    .thumbnail img {
+        width: 100%;
+        height: 100%;
+        transition-duration: 0.5s;
+        -ms-transition-duration: 0.5s;
+    }
+    
+    .thumbnail img:hover {
+        transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        cursor: pointer;
+    }
+    
+    a:hover {
+        text-decoration: none;
+    }
+    
+    .carousel-multi-item.v-2.product-carousel .carousel-inner .carousel-item.active,
+    .carousel-multi-item.v-2.product-carousel .carousel-item-next,
+    .carousel-multi-item.v-2.product-carousel .carousel-item-prev {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+    }
+    
+    .carousel-multi-item.v-2.product-carousel .carousel-item-right.active,
+    .carousel-multi-item.v-2.product-carousel .carousel-item-next {
+        -webkit-transform: translateX(20%);
+        -ms-transform: translateX(20%);
+        transform: translateX(20%);
+    }
+    
+    .carousel-multi-item.v-2.product-carousel .carousel-item-left.active,
+    .carousel-multi-item.v-2.product-carousel .carousel-item-prev {
+        -webkit-transform: translateX(-20%);
+        -ms-transform: translateX(-20%);
+        transform: translateX(-20%);
+    }
+    
+    .carousel-multi-item.v-2.product-carousel .carousel-item-right,
+    .carousel-multi-item.v-2.product-carousel .carousel-item-left {
+        -webkit-transform: translateX(0);
+        -ms-transform: translateX(0);
+        transform: translateX(0);
+    }
+    
+    .carousel-multi-item.v-2.product-carousel *,
+    .carousel-multi-item.v-2.product-carousel ::after,
+    .carousel-multi-item.v-2.product-carousel ::before {
+        -webkit-box-sizing: content-box;
+        box-sizing: content-box;
+    }
+    
+    .fuchsia-rose-text {
+        color: #f93;
+    }
+    
+    .aqua-sky-text {
+        color: #5cc6c3;
+    }
+    
+    .mimosa-text {
+        color: #F0C05A;
+    }
+    
+    .list-inline-item .fas,
+    .list-inline-item .far {
+        font-size: .8rem;
+    }
+    
+    .chili-pepper-text {
+        color: red;
+    }
+    
+    .carousel-multi-item .controls-top .btn-floating {
+        background: #F8CDCD;
+    }
+    
+    .carousel-multi-item .carousel-indicators li {
+        height: .75rem;
+        width: .75rem;
+        max-width: .75rem;
+        background-color: #5cc6c3;
+    }
+    
+    .carousel-multi-item .carousel-indicators .active {
+        height: 1rem;
+        width: 1rem;
+        max-width: 1rem;
+        background-color: #5cc6c3;
+    }
+    
+    .carousel-multi-item .carousel-indicators {
+        margin-bottom: -1rem;
+    }
 </style>
 <div class="container" style="margin: 0 auto; position: relative; top:120px">
-  <div class="mb-3">
-    <img
-      src="http://socconshop.vn/wp-content/uploads/2014/03/banner-center.png"
-      alt=""
-      height="200"
-    />
-  </div>
-  <div class="sp" style="width: 100%">
-    <p
-      style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;"
-    >CHI TIẾT SẢN PHẨM</p>
-  </div>
-
-  {{#each products}}
-    <div class="chitietsp" style="padding-top: 70px; margin: 0 auto; width:80%">
-      <div class="d-flex justify-content-between" style="">
-        <div>
-          <div class="thumbnail" >
-            <img
-              class="anh mb-2"
-              src="/{{this.anh_sanpham}}"
-              style="width:432px; height: 540px"
-
-              onclick="xem(this, '/{{this.anh_sanpham}}')"
-            />
-          </div>
-
-          <div class="d-flex justify-content-between thumbnail">
-            <img
-              class="anh"
-              src="/{{this.anh_sanpham}}"
-              style="width:140px; height: 140px"
-              onclick="xem(this,'/{{this.anh_sanpham}}')"
-            />
-            <img
-              class="anh"
-              src="/{{this.anh_sanpham}}"
-              style="width:140px; height: 140px"
-              onclick="xem(this, '/{{this.anh_sanpham}}')"
-            />
-            <img
-              class="anh"
-              src="/{{this.anh_sanpham}}"
-              style="width:140px; height: 140px"
-              onclick="xem(this, '/{{this.anh_sanpham}}')"
-            />
-          </div>
-        </div>
-        <div class="ml-5">
-          <div class="chitiet">
-            <p
-              style="font-size:20px;font-weight: bold;"
-            >{{this.ten_sanpham}}</p>
-            <hr />
-            <p style="color:#EE0000;font-size:18px">GIÁ: {{this.gia}}</p><br />
-          </div>
-          <div class="muahang">
-            <a href="">
-              <p
-                align="center"
-                style="color:#FFFFFF; padding: 10px; font-weight: bold; background-color:#f93;"
-              >Thêm vào giỏ hàng</p>
-            </a>
-          </div>
-          <div class="thongtinsp">
-            <legend class="t">MÔ TẢ</legend>
-            <div class="des">{{this.mo_ta}}</div>
-            <script>
-              var des = document.querySelector(".des").innerText;
-              document.querySelector(".des").innerHTML=des;
-            </script>
-          </div>
-          <p style="font-weight: bold;">Từ chất liệu da lộn (suede) quen thuộc,
-            đặt nhẹ nhàng lên "nền tảng" cao su màu Gum nguyên khối, đem đến sự
-            khác biệt mà vẫn hợp lý trên tổng thể. Tất cả chi tiết tạo nên một
-            phiên bản Track 6 Utility Gum Sole cổ điển, đơn giản tiện dụng mà
-            vẫn thu hút đối với những tín đồ thời trang khó tính nhất.</p>
-          <div class="luu_y">
-            <p style="font-size: 12px;">
-              <strong class="t">LƯU Ý : </strong>
-              Sản phẩm thật có thể chênh lệch màu sắc khoảng 10% so với hình ảnh
-              trên deal do sự khác nhau về độ phân giải của từng loại màn hình.
-            </p>
-          </div>
-          <div style="">
-            <p
-              style="font-size:15px; background-color:antiquewhite"
-              class="p-2 mb-1"
-            ><img
-                style="width: 20px; height: 20px; float: left"
-                src="/images/images_html/mpvc.png"
-                alt="freeship"
-              />&nbsp;Miễn phí vận chuyển</p>
-            <p
-              style="font-size:15px; background-color:antiquewhite"
-              class="p-2 mb-1"
-            ><img
-                style="width: 20px; height: 20px; float: left"
-                src="/images/images_html/giatot.png"
-                alt="freeship"
-              />&nbsp;Giá tốt nhất thị trường</p>
-            <p
-              style="font-size:15px; background-color:antiquewhite"
-              class="p-2 mb-0"
-            ><img
-                style="width: 20px; height: 20px; float: left"
-                src="/images/images_html/bh.png"
-                alt="freeship"
-              />&nbsp;Chính sách bảo hành uy tín</p>
-          </div>
-        </div>
-      </div>
-
-      <br />
+    <div class="mb-3">
+        <img src="http://socconshop.vn/wp-content/uploads/2014/03/banner-center.png" alt="" height="200" />
     </div>
-    <br />
+    <div class="sp" style="width: 100%">
+        <p style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">CHI TIẾT SẢN PHẨM</p>
+    </div>
 
-  {{/each}}
+    {{#each products}}
+    <div class="chitietsp" style="padding-top: 70px; margin: 0 auto; width:80%">
+        <div class="d-flex justify-content-between" style="">
+            <div>
+                <div class="thumbnail">
+                    <img class="anh mb-2" src="/{{this.anh_sanpham}}" style="width:432px; height: 540px" onclick="xem(this, '/{{this.anh_sanpham}}')" />
+                </div>
 
-  <div class="sp " style="width: 100%">
-    <p
-      style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;"
-    >SẢN PHẨM LIÊN QUAN</p>
-  </div>
-
-  {{! san pham lien quan }}
-  <div class="container my-4 mb-5 pb-5 mt-3 pt-3">
-    <section>
-      <div
-        id="carousel-example-multi"
-        class="carousel slide carousel-multi-item v-2 product-carousel"
-        data-ride="carousel"
-      >
-
-        <!--Controls-->
-        <div class="controls-top my-3">
-          <a
-            class="btn-floating btn-sm"
-            href="#carousel-example-multi"
-            data-slide="prev"
-          ><i class="fas fa-chevron-left"></i></a>
-          <a
-            class="btn-floating btn-sm"
-            href="#carousel-example-multi"
-            data-slide="next"
-          ><i class="fas fa-chevron-right"></i></a>
-        </div>
-        <!--/.Controls-->
-
-        <div class="carousel-inner" role="listbox">
-
-          {{#product_lienquan}}
-            <div class="carousel-item">
-              <div class="col-12 col-md-4 col-lg-2 mx-auto">
-                <a href="/products/{{_id}}">
-                  <div class="mask rgba-white-slight">
-                    <div class="card mb-2">
-                      <div class="view overlay">
-                        <img
-                          class="card-img-top"
-                          src="/{{anh_sanpham}}"
-                          alt="Card image cap" width="150" height="180"
-                        />
-
-                      </div>
-                      <div class="card-body p-3">
-                        <h5
-                          class="card-title font-weight-bold fuchsia-rose-text mb-0"
-                        >{{ten_sanpham}}</h5>
-                        <p class="aqua-sky-text mb-0"></p>
-                        <p class="chili-pepper-text mb-0">9,99 $</p>
-                      </div>
-                    </div>
-                  </div>
-                </a>
-              </div>
+                <div class="d-flex justify-content-between thumbnail">
+                    <img class="anh" src="/{{this.anh_sanpham}}" style="width:140px; height: 140px" onclick="xem(this,'/{{this.anh_sanpham}}')" />
+                    <img class="anh" src="/{{this.anh_sanpham}}" style="width:140px; height: 140px" onclick="xem(this, '/{{this.anh_sanpham}}')" />
+                    <img class="anh" src="/{{this.anh_sanpham}}" style="width:140px; height: 140px" onclick="xem(this, '/{{this.anh_sanpham}}')" />
+                </div>
             </div>
-          {{/product_lienquan}}
-          <script>
-            document.querySelector('.carousel-item').classList.add('active');
-            document.querySelector('.carousel-item').classList.add('mx-auto');
-          </script>
-
+            <div class="ml-5">
+                <div class="chitiet">
+                    <p style="font-size:25px;font-weight: bold;">{{this.ten_sanpham}}</p>
+                    <hr />
+                    <p style="color:#EE0000;font-size:20px; font-weight: 700">GIÁ: {{this.gia}} VNĐ</p><br />
+                </div>
+                <div class="muahang">
+                    <a href="">
+                        <p align="center" style="color:#FFFFFF; padding: 10px; font-weight: bold; background-color:#f93;">Thêm vào giỏ hàng</p>
+                    </a>
+                </div>
+                <div class="thongtinsp">
+                    <legend class="t">MÔ TẢ</legend>
+                    <div class="des">{{this.mo_ta}}</div>
+                    <script>
+                        var des = document.querySelector(".des").innerText;
+                        document.querySelector(".des").innerHTML = des;
+                    </script>
+                </div>
+                <p style="font-weight: bold;">Từ chất liệu da lộn (suede) quen thuộc, đặt nhẹ nhàng lên "nền tảng" cao su màu Gum nguyên khối, đem đến sự khác biệt mà vẫn hợp lý trên tổng thể. Tất cả chi tiết tạo nên một phiên bản Track 6 Utility Gum Sole cổ điển, đơn giản tiện dụng
+                    mà vẫn thu hút đối với những tín đồ thời trang khó tính nhất.</p>
+                <div class="luu_y">
+                    <p style="font-size: 12px;">
+                        <strong class="t">LƯU Ý : </strong> Sản phẩm thật có thể chênh lệch màu sắc khoảng 10% so với hình ảnh trên deal do sự khác nhau về độ phân giải của từng loại màn hình.
+                    </p>
+                </div>
+                <div style="">
+                    <p style="font-size:15px; background-color:antiquewhite" class="p-2 mb-1"><img style="width: 20px; height: 20px; float: left" src="/images/images_html/mpvc.png" alt="freeship" />&nbsp;Miễn phí vận chuyển</p>
+                    <p style="font-size:15px; background-color:antiquewhite" class="p-2 mb-1"><img style="width: 20px; height: 20px; float: left" src="/images/images_html/giatot.png" alt="freeship" />&nbsp;Giá tốt nhất thị trường</p>
+                    <p style="font-size:15px; background-color:antiquewhite" class="p-2 mb-0"><img style="width: 20px; height: 20px; float: left" src="/images/images_html/bh.png" alt="freeship" />&nbsp;Chính sách bảo hành uy tín</p>
+                </div>
+            </div>
         </div>
 
-      </div>
-    </section>
+        <br />
+    </div>
+    <br /> {{/each}}
 
-  </div>
+    <div class="sp " style="width: 100%">
+        <p style="color:#FF9933; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;">SẢN PHẨM LIÊN QUAN</p>
+    </div>
 
-  <script>
-    $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function() { var
-    next = $(this).next(); if (!next.length) { next =
-    $(this).siblings(':first'); }
-    next.children(':first-child').clone().appendTo($(this)); for (var i = 0; i <
-    3; i++) { next = next.next(); if (!next.length) { next =
-    $(this).siblings(':first'); }
-    next.children(':first-child').clone().appendTo($(this)); } });
-  </script>
+    {{! san pham lien quan }}
+    <div class="container my-4 mb-5 pb-5 mt-3 pt-3">
+        <section>
+            <div id="carousel-example-multi" class="carousel slide carousel-multi-item v-2 product-carousel" data-ride="carousel">
+
+                <!--Controls-->
+                <div class="controls-top my-3">
+                    <a class="btn-floating btn-sm" href="#carousel-example-multi" data-slide="prev" style="background-color: #FF9933; color:white"><i class="fas fa-chevron-left" ></i></a>
+                    <a class="btn-floating btn-sm" href="#carousel-example-multi" data-slide="next" style="background-color: #FF9933; color:white"><i class="fas fa-chevron-right"></i></a>
+                </div>
+                <!--/.Controls-->
+
+                <div class="carousel-inner" role="listbox">
+
+                    {{#product_lienquan}}
+                    <div class="carousel-item">
+                        <div class="col-12 col-md-4 col-lg-2 mx-auto">
+                            <a href="/products/{{_id}}">
+                                <div class="mask rgba-white-slight">
+                                    <div class="card mb-2">
+                                        <div class="view overlay">
+                                            <img class="card-img-top" src="/{{anh_sanpham}}" alt="Card image cap" width="150" height="180" />
+
+                                        </div>
+                                        <div class="" style="height: 135px;">
+                                            <h5 class="fuchsia-rose-text mb-0" style="font-size: 18px; width: 80%;height:45px; margin: 5px auto; text-align:center">{{ten_sanpham}}</h5>
+
+                                            <div>
+                                                <p class="chili-pepper-text mb-0" style="font-weight: 600; text-align:center">Giá: {{gia}}</p>
+                                                <div class="dathang" style="position: relative;">
+                                                    <a href="">
+                                                        <p style="color:#FFF; padding: 5px">Thêm Vào Giỏ Hàng <i class="fas fa-shopping-cart"></i></p>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    {{/product_lienquan}}
+                    <script>
+                        document.querySelector('.carousel-item').classList.add('active');
+                        document.querySelector('.carousel-item').classList.add('mx-auto');
+                    </script>
+
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <script>
+        $('.carousel.carousel-multi-item.v-2 .carousel-item').each(function() {
+            var
+                next = $(this).next();
+            if (!next.length) {
+                next =
+                    $(this).siblings(':first');
+            }
+            next.children(':first-child').clone().appendTo($(this));
+            for (var i = 0; i <
+                3; i++) {
+                next = next.next();
+                if (!next.length) {
+                    next =
+                        $(this).siblings(':first');
+                }
+                next.children(':first-child').clone().appendTo($(this));
+            }
+        });
+    </script>
 </div>
 
-  <div class="xemanh" style="display:none; background-color:rgba(0, 0, 0, 0.5); position:fixed; top:0; right:0; z-index:999999;width:100%; height:100%; ">
+<div class="xemanh" style="display:none; background-color:rgba(0, 0, 0, 0.5); position:fixed; top:0; right:0; z-index:999999;width:100%; height:100%; ">
     <button style="position:fixed; top: 10px; right:50%; z-index:9999999; font-size:30px; color: white; border-radius: 5px; background-color: rgba(0, 0, 0, 0.6); padding:0 5px;" onclick="exit(this)">x</button>
-  </div>
-  <script>
-    function xem(e,b){
+</div>
+<script>
+    function xem(e, b) {
         console.log(e)
-        document.querySelector(".xemanh").style.display="block";
-        document.querySelector(".xemanh").innerHTML += '<div class="anh" style=" z-index:9999999; width:500px; margin: 30px auto"><img src="'+b+'" alt="" style="width:500px; height:auto; "></div>';
+        document.querySelector(".xemanh").style.display = "block";
+        document.querySelector(".xemanh").innerHTML += '<div class="anh" style=" z-index:9999999; width:500px; margin: 30px auto"><img src="' + b + '" alt="" style="width:500px; height:auto; "></div>';
         console.log(document.querySelector(".xemanh").innerHTML);
     }
-    function exit(e){
-         document.querySelector(".xemanh").style.display="none";
+
+    function exit(e) {
+        document.querySelector(".xemanh").style.display = "none";
     }
 </script>

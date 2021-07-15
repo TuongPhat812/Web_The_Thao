@@ -8,7 +8,7 @@ const News = new Schema({
     tieude: { type: String, required: true, max: 200 },
     noidung: { type: String },
     hinhanh: { type: String },
-    ngaydang: { type: Date, default: Date.now },
+    ngaydang: { type: String, default: Date.now },
     hot: { type: Number, enum: [0, 1], default: 0 }
 });
 module.exports = mongoose.model('news', News);

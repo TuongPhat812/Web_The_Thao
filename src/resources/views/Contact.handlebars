@@ -1,171 +1,122 @@
-{{>left}}
+
 <style type="text/css">
-#form-wrapper
-{ 
-    width: 700px;
-    margin-left: 400px;
-    height: 650px;
-    padding: 20px;    
-    position: relative;
-    border: 1px solid #0000; 
-    
-    background-color: #fff;
-}
-#form-wrapper1
-{ 
-    width: 700px;
-    height: 650px;
-    padding: 20px;    
-    position: relative;
-    border: 1px solid #0000; 
-    border-color: #f93;
-    background-color: #fff;
-}
-#form-wrapper:before, #form-wrapper:after
-{
-    z-index: -1;
-    position: absolute;
-    content: "";
-    bottom: 15px;
-    left: 10px;
-    width: 50%;
-    top: 80%;
-    max-width:300px;  
 
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
-    -o-transform: rotate(-3deg);
-    -ms-transform: rotate(-3deg);
-    transform: rotate(-3deg);
+   a:hover{
+        text-decoration: none;
+    }
+ a:hover i{
+    color:rgb(122, 121, 121);
 }
+    th, td {
+  padding: 5px 15px;
 
-
-#form-wrapper form
-{
-    background: #fff;
-    height: 500px;
 }
-
-#form-wrapper #form-inner
-{
-    margin: 0 auto;
-    padding: 35px ;
-    width: 545px;
+th{
+    color: #8a8787;
+    font-weight: 400;
 }
-    
-#form-wrapper label
-{
-    font: bold 18px/25px Corbel, Arial, Helvetica; 
-    
-    float: left; 
-    margin-right: 10px; 
-    width: 120px; 
+tr, table{
+    width: 100%;
 }
-
-#form-wrapper .input
-{
-    font: 15px Arial, Helvetica; 
+td p{
     padding: 5px;
-    margin: 0 0 20px 0;
-    border: 1px solid #b9bdc1; 
-    width: 400px; 
-    color: #000000;   
-    -moz-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    
+      display: inline-block;
 }
-
-#form-wrapper .input:focus
-{
-    background-color: #E7E8E7;
-    outline: 0;
+.cartsum{
+    border: none;
+    text-align: end;
+    padding-right: 5px;
+    width: 80%;
+    font-weight: 500;
 }
-
-#form-wrapper .textarea
-{
-    height:150px;   
+input{
+    width: 100%;
 }
-
-#form-wrapper .button
-{
-    float: right;
-    margin: 10px 0 0 0;
-    padding: 7px 15px;
-    cursor: pointer;   
-    color: #fff;
-    font: bold 13px Tahoma, Verdana, Arial;
-    text-transform: uppercase;
-    overflow: visible; /* IE6/7 fix */
-    border: 0;      
-
-    
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    
-    
+input, textarea{
+    width: 100%;
+    border: 1.5px solid #bbbbbb;
+    padding: 5px;
 }
-
-#form-wrapper .button:hover
-{
-    background-color: #F7AE3F;
-    
+label{
+    font-weight: bolder;
+    margin-top: 15px;
 }
+</style>
 
-#form-wrapper .button:active
-{
-    background: #f93;
-    position: relative;
-    top: 2px;
-    
-}
-.button {
-    width: 23%;
-    text-align: center;
-    float: right;
-    font-size: 17px;
-    font-weight: 600;
-    padding: 10px;
-    background-color: #f93;
-    margin-bottom: 20px;
-  
-}
-#h1{
-    text-align: center;
-	padding: 10px;
-	margin: 0px auto;
-	font-size: 24px;
-	font-weight: bold;
-	line-height: 24px;
-	color: #F93;
-}
+<title>Liên hệ</title>
 
-    </style>
-
-<body >
-
-<div id="form-wrapper" class="lienhe">
-    <div id="form-wrapper1" class="lienhe" style="margin-top: 125px;">
-        <h1 id="h1">LIÊN HỆ VỚI CHÚNG TÔI</h1>
-    <form method="post" action="">
-        <div id="form-inner">
-
-            <label for="name">Họ, tên:</label>
-            <input type="text" class="input" value="" name="name" required>
-        
-            <label for="email">Email:</label>
-            <input type="email" class="input" value="" name="email" required>
-
-            <label for="sdt">Số điện thoại:</label>
-            <input type="text" class="input" name="sdt">
-        
-            <label for="message">Lời nhắn:</label>
-            <textarea class="input textarea" name="message" required></textarea>  
-
-             <input type="submit" class="button" value="Gửi">
-
+<div class="container" style="padding-top: 125px; height: 2200px;">
+    <div style="position: relative; z-index: 1">
+        <div style="position: absolute; top: 200px; left : 400px; padding: 30px; background-color: rgba(0,0,0,0.7);">
+            <p style="color: #ff9933; font-size: 50px; font-weight: 700;">SPORT.VN</p>
+            <p style="color:white; font-size: 21px; font-weight:600">Hãy liên hệ với chúng tôi</p>
         </div>
-    </form>
+        <img src="https://sport1970s.com/wp-content/uploads/2021/04/contact-page-for-flatsome-wordpress-theme-pointed-hero.jpg" alt="" width="1110" height="600">
+        <div class="d-flex justify-content-around" style="position: relative; top:-100px; height: 220px;">
+            <div class="d-flex flex-column align-items-center" style="width: 500px; height: 325px; background-color: white;" >
+                <p class="mt-5"><img src="https://sport1970s.com/wp-content/uploads/2021/04/contact-page-for-flatsome-wordpress-theme-pointed-icon-phone-300x300.png" width="60px"></p>
+                <p style="font-size: 22px; font-weight: 500;">Gọi cho chúng tôi</p>
+                <p>Hãy gọi ngay khi bạn cần được tư vấn.</p>
+                <p style="font-size: 22px; font-weight: 500; background-color: black; color: white; padding:5px 10px">0123456789</p>
+            </div>
+            <div class="d-flex flex-column align-items-center" style="width: 500px; height: 325px; background-color: white;" >
+                <p class="mt-5"><img src="https://sport1970s.com/wp-content/uploads/2021/04/contact-page-for-flatsome-wordpress-theme-pointed-icon-chat-300x300.png" width="60px"></p>
+                <p style="font-size: 22px; font-weight: 500;">Hỗ trợ</p>
+                <p>Đừng ngần ngại khi cần hỗ trợ trợ từ chúng tôi.</p>
+                <a href="#lienhe"><p style="font-size: 22px; font-weight: 500; background-color: black; color: white; padding:5px 10px">LIÊN HỆ</p></a>
+            </div>
+        </div>
+    </div>
+    <div style="background-color: #f4f4f4; position: relative; top: -350px; z-index: 0; padding: 50px 0">
+        <p style="padding-top: 330px;"></p>
+        <div id="lienhe" style="background-color: white; width: 94%; margin: 0 auto; padding: 40px 200px">
+            <form method="post" action="/contact/sendContact" >
+            <p style="text-align: center; color:#8a8787">Nếu bạn có thắc mắc</p>
+            <h3 style="text-align: center; color:rgb(88, 87, 87)">LIÊN HỆ VỚI CHÚNG TÔI</h3>           
+            <div >
+                <label for="name">Họ, tên:</label>
+                <input type="text" name="name" >
+            </div>
+            <div >
+                <label for="email">Email:</label>
+                <input type="email" value="" name="email" >
+            </div>
+            <div>
+                <label for="title">Tiêu đề:</label>
+                <input type="text " value="" name="title" >
+            </div>
+            <div>
+                <label for="sdt">Số điện thoại:</label>
+                <input type="text"  name="sdt">
+            </div>
+            <div>
+                <label for="message">Lời nhắn:</label>
+                <textarea  name="message" rows="5" ></textarea>  
+            </div>
+                <input type="submit" class="button" value="Gửi" style="width: 100px; color:white; font-weight: 600; background-color: #ff9933;">
+            
+        </form>
+        </div>
+    
+    </div>
+
+    <div style="background-color: #f4f4f4; position: relative; top: -400px; z-index: 0; padding: 50px 0">  
+        
+        <div class="d-flex justify-content-between align-items-end" style="background-color: white; width: 94%; margin: 0 auto; padding: 40px 40px">
+            <div>
+                <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1fiyrpSGapNn8IbAZi33FpMSjfL3o9w-W" width="600" height="400"></iframe>
+            </div>
+            <div class="pb-2">
+                <p style="font-size: 22px; font-weight: 500;">Vị trí</p>
+                <p style=" color: #747272;">Khu phố 6, phường Linh Trung, quận Thủ Đức</p>
+                <a href="" style="color: white; background-color: #ff9933; padding: 5px 40px;">Tìm trên bản đồ <span><i class="fas fa-search-location"></i></span></a>
+            </div>
+        </div>
+    </div>
 </div>
+    </div>
 </div>
-</body>
+
+
+
+

@@ -1,0 +1,19 @@
+
+
+<div class="container" style="padding-top: 150px;">
+    {{#each news}}
+        <h2 style="margin-bottom:15px; text-align: center;">{{this.tieude}}</h2>
+        <p style="text-align: center;">
+            <i style="font-size: 14px; color: #b6b6b6;">Ngày đăng: {{this.ngaydang}}</i> <br>
+        <i style="font-size: 14px; color: #b6b6b6; ">Đăng bởi: mndt102</i>
+        </p>
+        <div class="des mt-3" style="">
+            {{this.noidung}}
+        </div>
+        
+        <script>
+              var des = document.querySelector(".des").innerText;
+              document.querySelector(".des").innerHTML=des;
+            </script>
+    {{/each}}
+</div>

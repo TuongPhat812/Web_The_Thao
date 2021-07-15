@@ -1,0 +1,32 @@
+<title>Blog</title>
+<style>
+    a{
+        text-decoration: none;
+    }
+    a:hover{
+        text-decoration: none;
+        color: #ff9933;
+    }
+</style>
+<div class="container" style="padding-top: 150px; height:900px">
+    <h4 style="width: 65%; margin: 0 auto; margin-bottom: 20px;color:#504e4e">TỔNG HỢP BLOG</h4>
+    {{#each news}}
+    <div class="d-flex align-items-center" style="width: 65%; margin: 0 auto;">
+         <div class="mr-5" style="position:relative">
+            <a href="/blog/{{this._id}}">
+                <img src="{{this.hinhanh}}" alt="" width="345" height="250" style="border: 1px solid #b6b6b6;">
+                
+                <p></p>
+             </a>
+             <p style="position: absolute; background-color: #ff9933; top:10px; padding: 5px 10px; color:white; font-weight: 700; left: -10px">{{this.ngaydang}}</p>
+         </div>
+         <div>
+             <a href="/blog/{{this._id}}">
+                <p style="font-size: 20px; font-weight: 600; color:#504e4e">{{this.tieude}}</p>
+                <i>Người đăng: mndt</i>
+                <p style="font-size: 16px; color:#858484">Đối với các loại giày, đặc biệt là các loại giày bata, giày thể thao [...]</p>
+             </a>
+         </div>
+    </div>
+    {{/each}}
+</div>
