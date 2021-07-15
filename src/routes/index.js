@@ -6,11 +6,12 @@ const userRouter = require('./user')
 const cartRouter = require('./cart')
 const newsRouter = require('./news')
 const contactRouter = require('./contact')
-
+const searchRouter =require('./search')
 function route(app) {
 
     //app.use('/home', homeRouter);
     //app.use('/news', homeRouter);
+    app.use('/search', searchRouter)
     app.use('/contact', contactRouter)
     app.use('/blog', newsRouter)
     app.use('/cart', cartRouter)

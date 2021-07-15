@@ -33,8 +33,9 @@ class AdminController {
         //if(authUser.role){
             User.find({})
             .then(users => {
+                let pathFolder = __dirname.slice(0, __dirname.indexOf("\\app\\controllers")) + "public\\images\\images_sp"
                 console.log("old: " + __dirname)
-                console.log("new: " + __dirname.slice(0, __dirname.indexOf("\\app\\controllers")))
+                console.log("path: " + pathFolder)
                 users = users.map(user => user.toObject())
 
                 res.render("admins/Admin_UserView", { authUser, users})

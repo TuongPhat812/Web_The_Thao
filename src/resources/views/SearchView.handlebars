@@ -1,0 +1,99 @@
+<style>
+  .box_spnb{ 
+    transition-duration: 0.4s;
+  }
+  .box_spnb:hover{
+    transform: scale(1.1);
+    box-shadow: #000000;
+  }
+  a:hover{
+    text-decoration: none;
+  }
+</style>
+<div class="container pt-5 d-flex">
+<div class="col-3 mt-5">
+    <div class="left mt-5" style="margin-top: 500px">
+    <div class="spbc" >
+        <center style="font-weight :bold">DANH MỤC SẢN PHẨM</center>
+    </div> <!-- Danh mục sản phẩm cột left  -->
+    <div class="menu_pk">
+        <div class="pk" align="center">
+            <ul>
+             
+
+                <!--Thời Trang nữ  -->
+               {{#each productGroups as |pg|}}
+                <li style="margin-top:15px;">
+                    <a href="/products?id_nhomsp={{pg._id}}">
+                        {{pg.ten_nhomsp}} </a>
+                    <div class="line"></div>
+                    <ul class="dm d-flex flex-column">
+                      {{#each ../categorys as |cate|}}                     
+                         {{#if (isCategory cate pg) }}                      
+                            <li> <a href="/products?id_danhmuc={{cate._id}}&id_nhomsp={{pg._id}}"> {{cate.ten_danhmuc}}</a>  </li>                                               
+                        {{/if}}                                      
+                        {{/each}}
+                    </ul>
+                    </li>
+                    {{/each}}                   
+            </ul>
+        </div>
+    </div>
+
+</div>
+</div>
+<div class="col-9 mt-5 d-flex flex-column align-items-center">
+    <div class="mt-5 spnoibat" style="width:100%">
+      <a href="#">
+        <p style="color:#000000; text-align:left; line-height:30px; font-weight:bold; padding-left:10px;font-size: 16px">TẤT CẢ SẢN PHẨM</p>
+      </a>
+    </div>
+
+    <div id="content">
+    {{#each products}}
+    <div class="box_spnb mb-5  mt-3 ml-4 " style="width:170px; height:250px;"> 
+      {{!--  margin-left: 10px --}}
+      <a href="/products/{{this._id}}">
+        <img src="{{this.anh_sanpham}}" style=" width:170px; height:250px;">
+        <p style="text-align:center; margin-top:5px;height:20px; margin-left:25px; color: #000000">{{this.ten_sanpham}}</p>
+      </a>
+      <p style="color:#CC0000; text-align:center; margin-top:60px; margin-left:20px">Giá:<span style="font-weight:bold">{{this.gia}}đ</span></p>
+      <div class="dathang" style="margin-left:10px">
+        <a href="">
+          <p style="color:#FFF; padding: 5px" onclick="saveCart({{this._id}})">Thêm Vào Giỏ Hàng <i class="fas fa-shopping-cart"></i></p>
+        </a>
+      </div>
+    </div>
+    {{/each}}
+</div>
+    
+<div class="mt-5">
+  
+
+            
+{{#if (isNumbers tongSoPage 1)}}
+  <ul class="pagination">
+  <li class="page-item disabled" onclick="pre()"><a class="page-link" href="#"  >Previous</a></li>
+  <div class="des">
+      <li class="page-item disabled" oncick="page(this)"><a class="page-link" > 1 </a></li>
+  </div>
+  <li class="page-item disabled" onclick="next()"><a class="page-link" href="#"  >Next</a></li>    
+</ul>
+  {{/if}}
+
+   {{#if (isNumbers tongSoPage 0)}}
+   <p class="d-flex align-items-center" style="height:400px; color:#bbbbbb;">Chưa có sản phẩm phù hợp</p>
+  <ul class="pagination">
+  <li class="page-item disabled" onclick="pre()"><a class="page-link" href="#"  >Previous</a></li>
+  <div class="des">
+     <li class="page-item disabled" ><a class="page-link" >1</a></li>
+  </div>
+  <li class="page-item disabled" onclick="next()"><a class="page-link" href="#" >Next</a></li>    
+</ul>
+  {{/if}}
+   
+
+
+</div>
+</div>
+</div>
