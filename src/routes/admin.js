@@ -10,14 +10,14 @@ const adminController = require('../app/controllers/AdminController');
 
 // [GET] /
 
-router.get('/users', adminController.getUsers);
-//router.get('/users/:username', adminController.getUser);
-//router.delete('/users/:username', adminController.delUser);
-//router.patch('/users/:username', adminController.updateUser);
 
-//router.get('/users/:idUser', adminController.showUser);
-//router.get('/products', adminController.showProducts);
-//router.get('/carts', adminController.showUsers);
+router.get('/users', adminController.getUsers);
+router.get('/edit-user', adminController.getEditUser);
+router.post('/edit-user', adminController.postEditUser);
+router.post('/delete-user', adminController.postDeleteUser);
+
+router.get('/products', adminController.getProducts)
+
 router.get('/', adminController.index);
 
 

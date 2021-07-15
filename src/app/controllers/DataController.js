@@ -18,8 +18,21 @@ class HomeController {
         Promise.all([
             Product.find({})
         ])
-        .then(products => 
-            {res.json(products)}
+        .then(products => {
+            let cloneProducts = []
+            let index = 0
+            products[0].forEach(product => {
+                cloneProducts[index] = {
+                    _id: product._id,
+                    ten_sanpham: product.ten_sanpham,
+                    anh_sanpham: product.anh_sanpham,
+                    gia: product.gia,
+                }
+                index++
+            })
+            res.json(cloneProducts)
+        }
+
         )
         .catch(next)
     }

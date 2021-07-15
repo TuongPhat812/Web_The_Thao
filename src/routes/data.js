@@ -12,7 +12,7 @@ const dataController = require('../app/controllers/DataController');
 
 
 router.get('/users', dataController.renderUsers);
-
+router.get('/products', dataController.renderProducts);
 
 module.exports = router;
 

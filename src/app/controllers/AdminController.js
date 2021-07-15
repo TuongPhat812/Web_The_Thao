@@ -33,6 +33,8 @@ class AdminController {
         //if(authUser.role){
             User.find({})
             .then(users => {
+                console.log("old: " + __dirname)
+                console.log("new: " + __dirname.slice(0, __dirname.indexOf("\\app\\controllers")))
                 users = users.map(user => user.toObject())
 
                 res.render("admins/Admin_UserView", { authUser, users})
@@ -50,6 +52,7 @@ class AdminController {
                 username: req.params.username
             })
             .then(user => {
+                
                 user = user.toObject()
                 res.render('/', {
                     authUser,
@@ -58,6 +61,70 @@ class AdminController {
             })
             .catch(next)
 
+
+    }
+    getEditUser(req,res,next){
+
+        const username = req.query.username
+        console.log(username)
+
+        User.findOne({username})
+        .then(user => {
+            console.log(user)
+            user = user.toObject()
+            res.render("admins/Admin_EditUserView", {user})
+        })
+        .catch(next)
+        
+
+    }
+    postEditUser(req,res,next){
+
+        const user = {
+            _id: Number(req.body.id),
+            username: req.body.username,
+            fullname: req.body.fullname,
+            email: req.body.email,
+            sdt: req.body.sdt,
+            diachi: req.body.diachi,
+            isadmin: Number(req.body.role),
+            }
+        console.log(user)
+
+        User.updateOne({_id: user._id,username: user.username}, {
+            fullname: user.fullname, 
+            email: user.email, 
+            sdt: user.sdt, 
+            diachi: user.diachi, 
+            isadmin:user.isadmin})
+        .then(() => {
+            
+            res.redirect('/admin/users')
+        })
+        .catch(next)
+        
+
+    }
+    postDeleteUser(req,res,next){
+
+        User.deleteOne({username: req.body.username})
+        .then(() => {
+            res.redirect('/admin/users')
+        })
+        .catch(next)
+        
+
+    }
+
+    getProducts(req,res,next){
+
+        Product.find({})
+        .then((products) => {
+            products = products.map(product => product.toObject())
+            res.render("admins/Admin_ProductsView")
+        })
+        .catch(next)
+        
 
     }
 }

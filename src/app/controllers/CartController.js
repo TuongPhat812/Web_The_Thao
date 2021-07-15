@@ -1,3 +1,6 @@
+
+const Product = require('../models/Product')
+
 class CartController {
     index(req, res, next) {
         const authUser = res.locals.user;

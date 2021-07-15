@@ -67,75 +67,72 @@ input[type=submit] {
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 mt-4 text-gray-800">LIST OF USERS</h1>
-    <p class="mb-4">The list of users you can Create - Read - Update - Detele.</p>
+    <h1 class="h3 mb-2 mt-4 text-gray-800">EDIT USER {{user.username}}</h1>
+    
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3 row flex-nowrap justify-content-between px-5" style="margin:0">
-            <h4 class="m-0 font-weight-bold text-primary">DataTables</h4>
-            <h6 class="m-0 font-weight-bold text-primary">
-                <form action="/register" method="GET">
-                    <input type="submit" value="Create User" class="btn btn-primary">
-                </form>
-            </h6>
-        </div>
+    <div class="col none-mp">
+                <div class="row none-mp">
+                    <!--Box Update Comics-->
+                    <div class="col box-update-tag">
+                        <form method="POST"  id="signupForm" action="/admin/edit-user">
+                            <div class="form-group input_group al-login" style="display:none">
+                                <label class="title-form" for="my-input">Id user</label>
+                                <input class="form-control" name="id" type="text" value="{{user._id}}" >
+                            </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Id user</label>
+                                <input  class="form-control" type="text" value="{{user._id}}" disabled>
+                            </div>
+                            
+                            <div class="form-group input_group al-login" style="display:none">
+                                <label class="title-form" for="my-input">Username</label>
+                                <input class="form-control" name="username" type="text" autocomplete="on" placeholder="{{user.username}}" value="{{user.username}}">
+                            </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Username</label>
+                                <input class="form-control" name="username" type="text" autocomplete="on" placeholder="{{user.username}}" value="{{user.username}}" disabled>
+                            </div>
 
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Fullname</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Role</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Username</th>
-                            <th>Password</th>
-                            <th>Fullname</th>
-                            <th>Email</th>
-                            <th>Address</th>
-                            <th>Role</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        {{#each users as |user|}}
-                        <tr>
-                            <td>{{user.username}}</td>
-                            <td>{{user.password}}</td>
-                            <td>{{user.fullname}}</td>
-                            <td>{{user.email}}</td>
-                            <td>{{user.diachi}}</td>
-                            <td>{{user.isadmin}}</td>
-                            <td>
-                                <form action="/admin/edit-user" method="GET">
-                                    <input style="display: none" type="text" name="username" value="{{user.username}}" class="btn btn-warning">
-                                    <input type="submit" value="Edit" class="btn btn-warning">
-                                </form>
-                            </td>
-                            <td>
-                                <form action="/admin/delete-user" method="POST">
-                                    <input style="display: none" type="text" name="username" value="{{user.username}}" class="btn btn-danger">
-                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                </form>
-                            </td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Họ và tên</label>
+                                <input class="form-control" name="fullname" type="text" autocomplete="on" placeholder="{{user.fullname}}" value="{{user.fullname}}">
+                            </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Email</label>
+                                <input class="form-control" name="email" type="text" autocomplete="on" placeholder="{{user.email}}" value="{{user.email}}"> 
+                            </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Số điện thoại</label>
+                                <input class="form-control" name="sdt" type="text" autocomplete="on" placeholder="{{user.sdt}}" value="{{user.sdt}}">
+                            </div>
+                                
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Địa chỉ</label>
+                                <input class="form-control" name="diachi" type="text" autocomplete="on" placeholder="{{user.diachi}}" value="{{user.diachi}}">
+                            </div>    
+                            <div class="col form-check pd-chk" >
+                                    <label class="title-form" for="my-input" style="margin-right:30px">Quyền truy cập người dùng</label>
+                                    <input class="form-check-input" name="role" type="checkbox" value="0">
+                                    <label class="form-check-label" style="margin-right:30px">
+                                        Guest
+                                    </label>
+                                    <input class="form-check-input" name="role" type="checkbox" value="1">
+                                    <label class="form-check-label" style="margin-right:30px">
+                                        Admin
+                                    </label>
+                                    
+                                </div>  
+                            <div class="form-group">
+                                <input type="submit" id="submit" value="Lưu thay đổi" class="btn btn-primary login-btn align-input" name="submit">
+                            </div>
+                        </form>
+                    
+                    
+                        
+                    </div>
+                </div>
+                </div>
 
 </div>
 <!-- /.container-fluid -->
@@ -185,21 +182,21 @@ input[type=submit] {
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="/js/demo/datatables-demo.js"></script>
 
 <script>
     //fetch('http://localhost:3000/data')
@@ -331,6 +328,9 @@ console.log("data" + dataUsers[0])
     $(document).ready(async function (){
         
         autocomplete(document.getElementById("inputUser"), dataUsers.map(x => x.username));
+        $('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
     })
     
 </script>
