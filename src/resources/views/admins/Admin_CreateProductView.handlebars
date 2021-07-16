@@ -54,7 +54,7 @@ input[type=submit] {
 <form class=" navbar-search" style="width:70%; margin: 0 auto;">
     <div class="input-group autocomplete">
         
-        <input id="inputUser" type="text" class="form-control bg-light border-1" placeholder="Search for product name"
+        <input id="inputUser" type="text" class="form-control bg-light border-1" placeholder="Search for product"
             aria-label="Search" aria-describedby="basic-addon2">
         <div class="input-group-append">
             <button class="btn btn-primary" type="button">
@@ -67,85 +67,51 @@ input[type=submit] {
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-2 mt-4 text-gray-800">LIST OF PRODUCTS</h1>
-    <p class="mb-4">The list of products you can Create - Read - Update - Detele.</p>
+    <h1 class="h3 mb-2 mt-4 text-gray-800">CREATE PRODUCT</h1>
+    
 
     <!-- DataTales Example -->
-    <div class="card shadow mb-4">
-        <div class="card-header py-3 row flex-nowrap justify-content-between px-5" style="margin:0">
-            <h4 class="m-0 font-weight-bold text-primary">DataTables</h4>
-            <h6 class="m-0 font-weight-bold text-primary">
-                <form action="/admin/create-product" method="GET">
-                    <input type="submit" value="Create Product" class="btn btn-primary">
-                </form>
-            </h6>
-        </div>
-
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                    <thead>
-                        <tr>
-                            <th>Id danh mục</th>
-                            <th>Id sản phẩm</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Ngày đăng</th>
-                            <th>Giá sản phẩm</th>
-                            <th>Giá khuyến mãi</th>
-                            <th>Upload ảnh</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                        <tr>
-                            <th>Id danh mục</th>
-                            <th>Id sản phẩm</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Ngày đăng</th>
-                            <th>Giá sản phẩm</th>
-                            <th>Giá khuyến mãi</th>
-                            <th>Upload ảnh</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </tfoot>
-                    <tbody>
-                        {{#each products as |product|}}
-                        <tr>
-                            <td>{{product.id_danhmuc}}</td>
-                            <td>{{product._id}}</td>
-                            <td>{{product.ten_sanpham}}</td>
-                            <td>{{product.ngaydang}}</td>
-                            <td>{{product.gia}}</td>
-                            <td>{{product.gia_km}}</td>
+    <div class="col none-mp">
+                <div class="row none-mp">
+                    <!--Box Update Comics-->
+                    <div class="col box-update-tag">
+                        <form method="POST"  id="signupForm" action="/admin/create-product">
                             
-                            <td>
-                                <form action="/admin/edit-img-product/{{product._id}}" method="POST" enctype="multipart/form-data">
-                                    <input width="20px" type="file" name="filetoupload">
-                                    <input style="margin:auto" type="submit" value="Upload" class="btn btn-warning">
-                                    
-                                </form>
-                            </td>
-                            <td>
-                                <form action="/admin/edit-product" method="GET">
-                                    <input style="display: none" type="text" name="id" value="{{product._id}}" class="btn btn-warning">
-                                    <input type="submit" value="Edit" class="btn btn-warning">
-                                </form>
-                            </td>
-                            <td>
-                                <form action="/admin/delete-product" method="POST">
-                                    <input style="display: none" type="text" name="id" value="{{product._id}}" class="btn btn-danger">
-                                    <input type="submit" value="Delete" class="btn btn-danger">
-                                </form>
-                            </td>
-                        </tr>
-                        {{/each}}
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+                           
+                            
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Id danh mục</label>
+                                <input class="form-control" name="id_danhmuc" type="text" autocomplete="off">
+                            </div>
+                            
+
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Tên sản phẩm</label>
+                                <input class="form-control" name="ten_sanpham" type="text" autocomplete="off">
+                            </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Giá sản phẩm</label>
+                                <input class="form-control" name="gia" type="text" autocomplete="off"> 
+                            </div>
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Mô tả</label>
+                                <input class="form-control" name="mota" type="text" autocomplete="off"> 
+                            </div>
+                                
+                            <div class="form-group input_group al-login">
+                                <label class="title-form" for="my-input">Giá khuyến mãi</label>
+                                <input class="form-control" name="gia_km" type="text" autocomplete="off">
+                            </div>    
+                            <div class="form-group">
+                                <input type="submit" id="submit" value="Tạo sản phẩm" class="btn btn-primary login-btn align-input" name="submit">
+                            </div>
+                        </form>
+                    
+                    
+                        
+                    </div>
+                </div>
+                </div>
 
 </div>
 <!-- /.container-fluid -->
@@ -154,13 +120,7 @@ input[type=submit] {
 <!-- End of Main Content -->
 
 <!-- Footer -->
-<footer class="sticky-footer bg-white">
-    <div class="container my-auto">
-        <div class="copyright text-center my-auto">
-            <span>Copyright &copy; Your Website 2020</span>
-        </div>
-    </div>
-</footer>
+
 <!-- End of Footer -->
 
 </div>
@@ -195,21 +155,21 @@ input[type=submit] {
 </div>
 
 <!-- Bootstrap core JavaScript-->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 <!-- Core plugin JavaScript-->
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
 <!-- Custom scripts for all pages-->
-<script src="js/sb-admin-2.min.js"></script>
+<script src="/js/sb-admin-2.min.js"></script>
 
 <!-- Page level plugins -->
-<script src="vendor/datatables/jquery.dataTables.min.js"></script>
-<script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="/vendor/datatables/jquery.dataTables.min.js"></script>
+<script src="/vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
 <!-- Page level custom scripts -->
-<script src="js/demo/datatables-demo.js"></script>
+<script src="/js/demo/datatables-demo.js"></script>
 
 <script>
     //fetch('http://localhost:3000/data')
@@ -342,6 +302,9 @@ console.log("data" + dataUsers[0])
     $(document).ready(async function (){
         
         
+        $('input[type="checkbox"]').on('change', function() {
+   $('input[type="checkbox"]').not(this).prop('checked', false);
+});
     })
     
 </script>

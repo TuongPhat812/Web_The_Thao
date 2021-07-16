@@ -82,12 +82,10 @@ class HomeController {
                     console.log("Username has already existed" + user.username)
                     res.render('Dangky', { message: 'Tên đăng nhập đã tồn tại' })
                 } else {
-                    let countUser = Math.random() * 1000000;
+                    let countUser = Math.round(Math.random() * 1000000);
                     console.log(countUser)
                     while (!User.findOne({ _id: countUser })) {
                         countUser = Math.ceil(Math.random() * 1000000);
-
-
                     }
                     const user = new User({
                         _id: countUser,

@@ -17,6 +17,13 @@ router.post('/edit-user', adminController.postEditUser);
 router.post('/delete-user', adminController.postDeleteUser);
 
 router.get('/products', adminController.getProducts)
+router.get('/create-product', adminController.getCreateProduct)
+router.post('/create-product', adminController.postCreateProduct)
+router.post('/edit-img-product/:id', adminController.postEditImgProduct)
+router.get('/edit-product', adminController.getEditProduct)
+router.post('/edit-product', adminController.postEditProduct)
+router.post('/delete-product', adminController.postDeleteProduct)
+
 
 router.get('/', adminController.index);
 
