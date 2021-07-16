@@ -44,6 +44,7 @@ class HomeController {
             })
             .then(user => {
                 if (user) {
+                    req.session._id = user._id;
                     req.session.userName = user.username;
                     req.session.password = user.password;
                     req.session.email = user.email;
@@ -62,6 +63,7 @@ class HomeController {
 
     //[GET]: /logout - Đăng xuất | di chuyển về trang chủ
     getLogout(req, res, next) {
+        req.session._id = undefined;
         req.session.userName = undefined
         req.session.email = undefined
         req.session.fullname = undefined

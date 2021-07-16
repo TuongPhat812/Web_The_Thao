@@ -7,6 +7,6 @@ const Invoice = new Schema({
     _id: { type: Number },
     id_khachhang: { type: Number, ref: 'users' },
     tinhtrang: { type: Number, enum: [0, 1], required: true, default: 0 },
-    date: { type: Date, default: Date.now }
+    date: { type: String, default: Date.now }
 })
 module.exports = mongoose.model('invoice', Invoice);
