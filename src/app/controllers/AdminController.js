@@ -9,9 +9,10 @@ class AdminController {
     index(req, res, next) {
         //Lấy ra user nếu đã đăng nhập thành công
         const authUser = res.locals.user;
+        console.log(authUser)
         if (authUser.role == 0 || authUser.role == undefined)
             res.redirect('/')
-
+        else{
         let count = {
             users: 0,
             products: 0,
@@ -30,12 +31,11 @@ class AdminController {
         Contact.countDocuments({}).then(total => {
             count.contacts = total
         }).catch(next)
-
-
         res.render('admins/index', {
             authUser,
             count
         })
+    }
     }
 
     //[GET]: /admin/users - Hiển thị toàn bộ user

@@ -12,6 +12,8 @@ router.post('/register', homeController.postRegister)
 router.get('/login', homeController.getLogin)
 router.post('/login', homeController.postLogin)
 router.get('/logout', homeController.getLogout)
+router.get('/forgot-password', homeController.getForgotPassword)
+router.post('/forgot-password', homeController.postForgotPassword)
 router.get('/', homeController.index)
 
 

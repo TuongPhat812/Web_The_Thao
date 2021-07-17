@@ -1,6 +1,7 @@
 const Product = require('../models/Product')
 const User = require('../models/User')
 const News = require('../models/News')
+const nodemailer = require('nodemailer');
 class HomeController {
     //[GET]: / - Di chuyển đến trang chủ
     index(req, res, next) {
@@ -120,7 +121,51 @@ class HomeController {
         res.render('Dangky', authUser)
     }
 
+    getForgotPassword(req, res, next) {
+        const authUser = res.locals.user;
+        console.log(authUser)
+        if(authUser.userName)
+            res.redirect("/")
+        else
+            res.render("ForgotPasswordView")
+        
+    }
 
+    postForgotPassword(req, res, next) {
+        User.findOne({username: req.body.username})
+        .then(user => {
+
+
+            var transporter = nodemailer.createTransport({ // config mail server
+                service: 'Gmail',
+                auth: {
+                    user: 'thomnd131200@gmail.com',
+                    pass: 'pastwent12345'
+                }
+            });
+            var mainOptions = { // thiết lập đối tượng, nội dung gửi mail
+                from: 'Thanh Batmon',
+                to: req.body.email,
+                subject: '[Contact] Thank for your contact',
+                text: 'We recieved message from ' + req.body.email,
+                html: '<p>Tên tài khoản của bạn: ' + user.username + '</p><br>' + '<p>Mật khẩu của bạn: ' + user.password + '</p>' 
+            }
+            transporter.sendMail(mainOptions, function(err, info) {
+                if (err) {
+                    console.log(err);
+                    res.redirect('/');
+                } else {
+                    console.log('Message sent: ' + info.response);
+                    res.redirect('/');
+                }
+            });
+        })
+        .then(() => res.redirect('login'))
+        .catch(next)
+
+        
+
+    }
 
 }
 
